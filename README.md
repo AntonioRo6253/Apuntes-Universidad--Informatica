@@ -19,6 +19,16 @@
     └── ...
 ```
 
+## Ramas
+
+- **dev**: Rama de desarrollo. Aquí se suben los avances y trabajos durante el semestre.
+- **main**: Rama principal. Al finalizar el semestre, el código final se publica aquí.
+
+## Flujo de trabajo
+
+1. Todos los cambios y trabajos se realizan en la rama `dev`.
+2. Al terminar el semestre, se fusiona la rama `dev` en `main` para publicar el código final.
+
 ## 🔍 Contenido destacado
 
 - Códigos fuente en múltiples lenguajes (Python, Java, C++, etc.)
