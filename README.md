@@ -1,7 +1,5 @@
 # 📚 Repositorio de Trabajos Universitarios
 
----
-
 **Colección organizada de proyectos, prácticas y asignaciones académicas** desarrollados durante mi formación universitaria. Este repositorio funciona como archivo digital y muestra de mis habilidades técnicas aplicadas en distintas asignaturas.
 
 ## 🗂️ Estructura
@@ -21,6 +19,16 @@
     └── ...
 ```
 
+## Ramas
+
+- **dev**: Rama de desarrollo. Aquí se suben los avances y trabajos durante el semestre.
+- **main**: Rama principal. Al finalizar el semestre, el código final se publica aquí.
+
+## Flujo de trabajo
+
+1. Todos los cambios y trabajos se realizan en la rama `dev`.
+2. Al terminar el semestre, se fusiona la rama `dev` en `main` para publicar el código final.
+
 ## 🔍 Contenido destacado
 
 - Códigos fuente en múltiples lenguajes (Python, Java, C++, etc.)
@@ -36,5 +44,3 @@ Este material es de carácter **estrictamente académico y personal**. Su propó
 - Plagio académico
 - Uso comercial
 - Copia total para entregas estudiantiles
-
----
