@@ -68,3 +68,7 @@ A lo largo del curso, se trabajarán los siguientes temas esenciales:
 - Este repositorio es de uso académico y personal.
 - Se recomienda consultar el libro de Luis Joyanes Aguilar para profundizar en los temas.
 - Para dudas técnicas, revisa la documentación oficial de C y los foros de programación.
+
+---
+
+---
