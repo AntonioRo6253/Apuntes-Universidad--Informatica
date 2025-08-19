@@ -23,3 +23,6 @@
 
 # Otros archivos innecesarios
 *.log
+
+# Configuracion de Formateo de C/C++
+*.clang-format
