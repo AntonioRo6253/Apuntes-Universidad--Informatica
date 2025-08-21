@@ -7,7 +7,7 @@ export default function CodeLayout() {
       {/* index -> /code/index será la pantalla principal dentro del tab "Code" */}
       <Stack.Screen
         name="index"
-        options={{ headerShown: true, title: "Code" }}
+        options={{ headerShown: false, title: "Code" }}
       />
       {/* otras pantallas dentro de /code no generarán tabs, sino navegacion en stack */}
       <Stack.Screen

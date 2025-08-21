@@ -65,15 +65,14 @@ export default function Code() {
         <WorkItem
           numero={1}
           titulo="Selectiva Simple"
-          descripcion="Ejercicios con If y Else"
-          onPress={() => router.push("/code/SelectivaSimple")}
+          descripcion="Ejercicios con If"
+          onPress={() => router.push("/code/SelectivaSimpleDos")}
         />
-
         <WorkItem
           numero={2}
-          titulo="Trabajo"
-          descripcion="Otra descripción"
-          onPress={() => router.push("/code/trabajo2")}
+          titulo="Selectiva Simple y Doble"
+          descripcion="Ejercicios con If y Else"
+          onPress={() => router.push("/code/SelectivaSimple")}
         />
       </ScrollView>
     </View>
