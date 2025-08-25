@@ -1,0 +1,50 @@
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{flowchart TD}
+\DoxyCodeLine{    A[Inicio Componente SelectivaSimple] -\/-\/> B[Declarar estados:<br/>numero, resultado]}
+\DoxyCodeLine{    B -\/-\/> C[Renderizar interfaz inicial]}
+\DoxyCodeLine{    C -\/-\/> D[Usuario interactúa con TextInput]}
+\DoxyCodeLine{    D -\/-\/> E[onChangeText actualiza estado numero]}
+\DoxyCodeLine{    E -\/-\/> F\{useEffect se activa\}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    F -\/-\/> G\{¿Input vacío?\}}
+\DoxyCodeLine{    G -\/-\/ Sí -\/-\/> H[Set resultado: 'Escuchando...']}
+\DoxyCodeLine{    G -\/-\/ No -\/-\/> I[Convertir a número]}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    I -\/-\/> J\{¿Es número válido?\}}
+\DoxyCodeLine{    J -\/-\/ No -\/-\/> K[Set resultado: 'Por favor ingresa un número válido']}
+\DoxyCodeLine{    J -\/-\/ Sí -\/-\/> L\{Evaluar número\}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    L -\/-\/> M\{¿Número > 0?\}}
+\DoxyCodeLine{    M -\/-\/ Sí -\/-\/> N[Set resultado: 'X es mayor a cero']}
+\DoxyCodeLine{    M -\/-\/ No -\/-\/> O\{¿Número < 0?\}}
+\DoxyCodeLine{    O -\/-\/ Sí -\/-\/> P[Set resultado: 'X es menor a cero']}
+\DoxyCodeLine{    O -\/-\/ No -\/-\/> Q[Set resultado: 'X es igual a cero']}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    H -\/-\/> R[Actualizar UI con nuevo resultado]}
+\DoxyCodeLine{    K -\/-\/> R}
+\DoxyCodeLine{    N -\/-\/> R}
+\DoxyCodeLine{    P -\/-\/> R}
+\DoxyCodeLine{    Q -\/-\/> R}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    R -\/-\/> D[Esperar nueva interacción]}
+
+\end{DoxyCode}
+\hypertarget{md_manuals_Diagrama_de_Flujo_Componente_SelectivaSimple_de_React_Native_autotoc_md0}{}\doxysubsection{Explicación del diagrama\+:}\label{md_manuals_Diagrama_de_Flujo_Componente_SelectivaSimple_de_React_Native_autotoc_md0}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Inicio del componente}}\+: Se inicializan los estados {\ttfamily numero} (string) y {\ttfamily resultado} (\char`\"{}\+Escuchando...\char`\"{}).
+\item {\bfseries{Renderizado inicial}}\+: Se muestra la interfaz con el título, descripción, campo de entrada y área de resultado.
+\item {\bfseries{Interacción del usuario}}\+: Cuando el usuario escribe en el Text\+Input, se activa el evento {\ttfamily on\+Change\+Text}.
+\item {\bfseries{Actualización de estado}}\+: El estado {\ttfamily numero} se actualiza con el valor ingresado.
+\item {\bfseries{Efecto secundario}}\+: El {\ttfamily use\+Effect} se ejecuta automáticamente al cambiar {\ttfamily numero}.
+\item {\bfseries{Validaciones}}\+:
+\begin{DoxyItemize}
+\item Si el input está vacío → \char`\"{}\+Escuchando...\char`\"{}
+\item Si no es número válido → Mensaje de error
+\item Si es número válido → Evalúa si es mayor, menor o igual a cero
+\end{DoxyItemize}
+\item {\bfseries{Actualización de UI}}\+: El resultado se muestra en la interfaz y el componente espera nueva interacción.
+\end{DoxyEnumerate}
+
+Este diagrama representa el flujo unidireccional típico de React\+: interacción → actualización de estado → re-\/renderizado. 

@@ -1,0 +1,19 @@
+var NAVTREEINDEX0 =
+{
+"Selectiva-Simple2_8c.html":[3,0,0,0,0],
+"Selectiva-Simple2_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[3,0,0,0,0,0],
+"dir_5933aed5d4e98b04de101ea2dd726dc2.html":[3,0,0,0],
+"dir_68267d1309a1af8e8297ef4c3efbcdba.html":[3,0,0],
+"files.html":[3,0],
+"globals.html":[3,1,0],
+"globals_func.html":[3,1,1],
+"index.html":[],
+"index.html":[0],
+"index.html#autotoc_md2":[0,0],
+"index.html#autotoc_md4":[0,1],
+"index.html#autotoc_md6":[0,2],
+"index.html#autotoc_md8":[0,3],
+"md_manuals_Diagrama_de_Flujo_Componente_SelectivaSimple_de_React_Native.html":[1],
+"md_manuals_Sin_t_xC3_xADtulo.html":[2],
+"pages.html":[]
+};
