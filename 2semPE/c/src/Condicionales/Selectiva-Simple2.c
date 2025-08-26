@@ -1,20 +1,5 @@
 #include <stdio.h>
 
-/**
- * @file Selectiva-Simple2.c
- * @author Antonio Rafael
- * @brief Ejemplo sencillo de comparaciones usando sentencias if en C.
- * @date 24 de agosto de 2025
- */
-
-/**
- * @brief Punto de entrada principal main().
- *
- * La logica dentro de main() define, scanea y lee dos números flotantes(num y
- * num2).Para después Comparar sus valores e imprimir las relaciones que se
- * cumplen.
- * @return int 0 si termina correctamente.
- */
 int main() {
   //----- declarar variables
   float num, num2;
@@ -25,7 +10,7 @@ int main() {
   //----- entrada del 2
   printf("Teclea el numero2: ");
   scanf("%f", &num2);
-
+  //----- Comparar
   if (num > num2)  //--- Comparamos
   {
     printf("%.0f es mayor a %.0f \n", num, num2);  //-- Imprimimos
@@ -45,5 +30,16 @@ int main() {
   if (num != num2) {
     printf("%.0f es Diferente a %.0f \n", num, num2);
   }
-  return 0;  //-- Finaliza
+  return 0;
 }
+
+/**
+ * @file Selectiva-Simple2.c
+ * @author Antonio Rafael
+ * @brief Ejemplo sencillo de comparaciones usando sentencias if en C.
+ * @date 24 de agosto de 2025
+ *
+ * \anchor sel_simple
+ * @see \ref apunte_if "Apunte IF"
+ *
+ */

@@ -26,26 +26,31 @@ var NAVTREE =
 [
   [ "Programacion Estructurada", "index.html", [
     [ "📘 Programación Estructurada 2023A (V0716)", "index.html", [
-      [ "🧠 Conocimientos clave abordados", "index.html#autotoc_md2", null ],
-      [ "🚀 Cómo usar este proyecto en Code::Blocks", "index.html#autotoc_md4", null ],
-      [ "⚡ Cómo usar este proyecto en Visual Studio Code", "index.html#autotoc_md6", null ],
-      [ "📑 Notas", "index.html#autotoc_md8", null ]
+      [ "🧠 Conocimientos clave abordados", "index.html#autotoc_md16", null ],
+      [ "🚀 Cómo usar este proyecto en Code::Blocks", "index.html#autotoc_md18", null ],
+      [ "⚡ Cómo usar este proyecto en Visual Studio Code", "index.html#autotoc_md20", null ],
+      [ "📑 Notas", "index.html#autotoc_md22", null ]
     ] ],
-    [ "Diagrama de Flujo Componente SelectivaSimple de React Native", "md_manuals_Diagrama_de_Flujo_Componente_SelectivaSimple_de_React_Native.html", null ],
-    [ "Sin título", "md_manuals_Sin_t_xC3_xADtulo.html", null ],
-    [ "Archivos", "files.html", [
-      [ "Lista de archivos", "files.html", "files_dup" ],
-      [ "Miembros de los ficheros", "globals.html", [
-        [ "Todo", "globals.html", null ],
-        [ "Funciones", "globals_func.html", null ]
+    [ "Instrucciones", "md_apuntes_Instrucciones.html", [
+      [ "Apuntes de C — Uso con Obsidian y Doxygen", "md_apuntes_Instrucciones.html#autotoc_md8", [
+        [ "Requisitos", "md_apuntes_Instrucciones.html#autotoc_md9", null ],
+        [ "Flujo de trabajo sugerido", "md_apuntes_Instrucciones.html#autotoc_md10", null ],
+        [ "Generar documentación con Doxygen", "md_apuntes_Instrucciones.html#autotoc_md11", null ],
+        [ "Diagramas y dependencias", "md_apuntes_Instrucciones.html#autotoc_md12", null ],
+        [ "Buenas prácticas", "md_apuntes_Instrucciones.html#autotoc_md13", null ],
+        [ "Solución de problemas rápida", "md_apuntes_Instrucciones.html#autotoc_md14", null ]
       ] ]
+    ] ],
+    [ "Módulos", "modules.html", "modules" ],
+    [ "Archivos", "files.html", [
+      [ "Lista de archivos", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"Selectiva-Simple2_8c.html"
+"Selectiva-Doble-anidada-calif_8c.html"
 ];
 
 var SYNCONMSG = 'click en deshabilitar sincronización';

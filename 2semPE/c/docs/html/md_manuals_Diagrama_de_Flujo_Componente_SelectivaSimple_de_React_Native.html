@@ -87,51 +87,10 @@ $(document).ready(function(){initNavTree('md_manuals_Diagrama_de_Flujo_Component
   <div class="headertitle"><div class="title">Diagrama de Flujo Componente SelectivaSimple de React Native </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="fragment"><div class="line">flowchart TD</div>
-<div class="line">    A[Inicio Componente SelectivaSimple] --&gt; B[Declarar estados:&lt;br/&gt;numero, resultado]</div>
-<div class="line">    B --&gt; C[Renderizar interfaz inicial]</div>
-<div class="line">    C --&gt; D[Usuario interactúa con TextInput]</div>
-<div class="line">    D --&gt; E[onChangeText actualiza estado numero]</div>
-<div class="line">    E --&gt; F{useEffect se activa}</div>
-<div class="line">    </div>
-<div class="line">    F --&gt; G{¿Input vacío?}</div>
-<div class="line">    G -- Sí --&gt; H[Set resultado: &#39;Escuchando...&#39;]</div>
-<div class="line">    G -- No --&gt; I[Convertir a número]</div>
-<div class="line">    </div>
-<div class="line">    I --&gt; J{¿Es número válido?}</div>
-<div class="line">    J -- No --&gt; K[Set resultado: &#39;Por favor ingresa un número válido&#39;]</div>
-<div class="line">    J -- Sí --&gt; L{Evaluar número}</div>
-<div class="line">    </div>
-<div class="line">    L --&gt; M{¿Número &gt; 0?}</div>
-<div class="line">    M -- Sí --&gt; N[Set resultado: &#39;X es mayor a cero&#39;]</div>
-<div class="line">    M -- No --&gt; O{¿Número &lt; 0?}</div>
-<div class="line">    O -- Sí --&gt; P[Set resultado: &#39;X es menor a cero&#39;]</div>
-<div class="line">    O -- No --&gt; Q[Set resultado: &#39;X es igual a cero&#39;]</div>
-<div class="line">    </div>
-<div class="line">    H --&gt; R[Actualizar UI con nuevo resultado]</div>
-<div class="line">    K --&gt; R</div>
-<div class="line">    N --&gt; R</div>
-<div class="line">    P --&gt; R</div>
-<div class="line">    Q --&gt; R</div>
-<div class="line">    </div>
-<div class="line">    R --&gt; D[Esperar nueva interacción]</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md0"></a>
-Explicación del diagrama:</h2>
-<ol type="1">
-<li><b>Inicio del componente</b>: Se inicializan los estados <code>numero</code> (string) y <code>resultado</code> ("Escuchando...").</li>
-<li><b>Renderizado inicial</b>: Se muestra la interfaz con el título, descripción, campo de entrada y área de resultado.</li>
-<li><b>Interacción del usuario</b>: Cuando el usuario escribe en el TextInput, se activa el evento <code>onChangeText</code>.</li>
-<li><b>Actualización de estado</b>: El estado <code>numero</code> se actualiza con el valor ingresado.</li>
-<li><b>Efecto secundario</b>: El <code>useEffect</code> se ejecuta automáticamente al cambiar <code>numero</code>.</li>
-<li><b>Validaciones</b>:<ul>
-<li>Si el input está vacío → "Escuchando..."</li>
-<li>Si no es número válido → Mensaje de error</li>
-<li>Si es número válido → Evalúa si es mayor, menor o igual a cero</li>
+<div class="textblock"><p >/*!</p>
+<ul>
+<li></li>
 </ul>
-</li>
-<li><b>Actualización de UI</b>: El resultado se muestra en la interfaz y el componente espera nueva interacción.</li>
-</ol>
-<p >Este diagrama representa el flujo unidireccional típico de React: interacción → actualización de estado → re-renderizado. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
