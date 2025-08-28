@@ -1,4 +1,4 @@
-@ingroup apuntes
+@ingroup apuntes-teoria
 
 ## If, else if y else — resumen
 

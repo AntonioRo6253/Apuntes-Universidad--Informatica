@@ -282,7 +282,7 @@ TAB_SIZE               = 4
 # with the commands \{ and \} for these it is advised to use the version @{ and
 # @} or use a double escape (\\{ and \\})
 
-ALIASES                =
+ALIASES                = 
 
 # Set the OPTIMIZE_OUTPUT_FOR_C tag to YES if your project consists of C sources
 # only. Doxygen will then generate output that is more tailored for C. For
@@ -341,7 +341,7 @@ OPTIMIZE_OUTPUT_SLICE  = NO
 #
 # Note see also the list of default file extension mappings.
 
-EXTENSION_MAPPING      =
+EXTENSION_MAPPING      = md=Markdown
 
 # If the MARKDOWN_SUPPORT tag is enabled then doxygen pre-processes all comments
 # according to the Markdown format, which allows for more readable
@@ -733,6 +733,9 @@ GENERATE_BUGLIST       = YES
 
 GENERATE_DEPRECATEDLIST= YES
 
+# Habilitar generación de grupos/módulos para que se indexen y aparezcan en la búsqueda
+GENERATE_GROUPS        = YES
+
 # The ENABLED_SECTIONS tag can be used to enable conditional documentation
 # sections, marked by \if <section_label> ... \endif and \cond <section_label>
 # ... \endcond blocks.
@@ -793,7 +796,7 @@ FILE_VERSION_FILTER    =
 # DoxygenLayout.xml, doxygen will parse it automatically even if the LAYOUT_FILE
 # tag is left empty.
 
-LAYOUT_FILE            =
+LAYOUT_FILE            = 
 
 # The CITE_BIB_FILES tag can be used to specify one or more bib files containing
 # the reference definitions. This must be a list of .bib files. The .bib
@@ -2390,8 +2393,8 @@ ALLEXTERNALS           = NO
 EXTERNAL_GROUPS        = YES
 
 # If the EXTERNAL_PAGES tag is set to YES, all external pages will be listed in
-# the related pages index. If set to NO, only the current project's pages will
-# be listed.
+# the related pages index. If set to NO, only the current project's pages will be
+# listed.
 # The default value is: YES.
 
 EXTERNAL_PAGES         = YES

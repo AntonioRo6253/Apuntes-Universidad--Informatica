@@ -1,2 +1,9 @@
-# Ignorar configuración
-.obsidian/
+# Ignorar salidas de Doxygen y LaTeX generadas
+docs/
+docs/html/
+docs/latex/
+
+# Obsidian (metadatos del vault)
+.obsidian
+apuntes/.obsidian/
+apuntes/.obsidian/**
