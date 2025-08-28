@@ -1,6 +1,6 @@
 @ingroup apuntes-teoria
 
-## If, else if y else — resumen
+# If, else if y else — resumen
 
 ### Sintaxis básica
 

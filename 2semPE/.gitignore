@@ -26,3 +26,5 @@
 
 # Configuracion de Formateo de C/C++
 *.clang-format
+    
+*docs/
