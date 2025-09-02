@@ -182,3 +182,8 @@ Este repositorio contiene apuntes y ejemplos en C. Aquí se explica cómo usar c
 - "doxygen: command not found" → instalar doxygen.
 - Diagramas en blanco → instalar graphviz y regenerar.
 - Archivos no indexados por Doxygen → revisar rutas y patrones en `Doxyfile` (`INPUT`, `FILE_PATTERNS`, `RECURSIVE`).
+
+## Lincks
+
+- [Doxygen](https://www.doxygen.nl/manual/grouping.html#memgroup)
+- [Doxygen Awesome](https://jothepro.github.io/doxygen-awesome-css/) Estilos

@@ -28,3 +28,40 @@
 *.clang-format
     
 *docs/
+
+# Build artifacts y binarios comunes
+**/bin/
+**/obj/
+**/out/
+**/build/
+**/dist/
+
+# Archivos ejecutables y de prueba
+*.exe
+*.out
+**/main
+
+# Archivos de C/C++ compilados y objetos
+*.o
+*.a
+*.so
+*.dll
+
+# Carpetas y archivos de pruebas/outputs locales
+**/output/
+**/outputs/
+
+# Archivos de editores / temporales
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Diagramas y documentos de diseño generados
+*.drawio
+*.drawio.png
+*.vsdx
+
+# Archivos de Word/RTF temporales que aparecen en los adjuntos
+*.rtf
