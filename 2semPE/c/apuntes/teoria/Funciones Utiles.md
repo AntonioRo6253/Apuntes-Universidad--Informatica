@@ -3,6 +3,10 @@
 ---
 # Funciones Utiles
 ## Printf()
+**Libreria:**
+```c
+#include <stdio.h>
+```
 Sirve para imprimir datos en consola
 ```c
 // printf("Mi Texto");
@@ -63,6 +67,10 @@ Producto: Laptop          Cantidad:  42 Precio:   123.46
 ---
 
 ## Scanf()
+**Libreria:**
+```c
+#include <stdio.h>
+```
 Sirve para leer datos y guardarlos en una variable
 ```c
 // printf("%tipo",variable);
@@ -82,3 +90,5 @@ scanf("%4s",array);
 - **Especificar anchos**:
     
 	Para evitar desbordamientos, se debe especificar un ancho máximo en la cadena de formato, por ejemplo, `%10s` para leer un máximo de 10 caracteres.
+---
+---

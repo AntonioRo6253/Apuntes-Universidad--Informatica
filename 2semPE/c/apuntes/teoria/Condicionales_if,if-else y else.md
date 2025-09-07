@@ -136,3 +136,5 @@ switch (opcion) {
   - Las etiquetas case deben ser constantes en tiempo de compilación.
   - default es opcional y se ejecuta si ningún case coincide.
   - El orden de los case no afecta la comparación (se compara el valor).
+---
+---
