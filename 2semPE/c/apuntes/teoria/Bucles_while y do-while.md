@@ -164,3 +164,6 @@ do {
 ---
 
 **Nota**: Ambos bucles son fundamentales para controlar flujos repetitivos en C. La elección depende de si necesitas o no garantizar la primera ejecución del bloque.
+
+---
+---
