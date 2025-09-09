@@ -133,3 +133,7 @@ for (int i = 0, j = 10; i < j; i++, j--) {
 - Evita modificar la variable de control dentro del cuerpo del bucle (puede causar comportamientos inesperados).
 
 Este bucle es ideal cuando se conoce el número de iteraciones de antemano. ¡Practica con variaciones para dominarlo!
+
+---
+---
+
