@@ -1,6 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+//
+//Robles Arambura Rafael Antonio
+//El programa convierte grados Celsius a Fahrenheit y viceversa 
+//usando funciones.
+
 // TODO:---Prototipos de Funciones
 /**
  * @brief Convierte grados Celsius a Fahrenheit
@@ -79,3 +84,12 @@ double fahr_a_cent(double LOCAL_gradosF)
 {
     return (LOCAL_gradosF - 32.0) / 1.8;
 }
+
+/**
+ * @file conversion_de_grados.c
+ * @author Antonio Rafael
+ * @brief  Usando funciones para conversion de grados
+ * @date 01 de septiembre de 2025
+ *
+ * \anchor conversion_de_grados
+ */
