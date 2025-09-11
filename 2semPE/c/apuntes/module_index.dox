@@ -1,32 +1,37 @@
 /** \file module_index.dox
  *  \brief Índice de módulos (grupos) del proyecto.
- *
- *  Esta cabecera facilita que Doxygen indexe este archivo y lo incluya en la
- *  búsqueda (search) junto con los demás elementos documentados.
+ *  
+ *  Este archivo organiza la documentación de módulos y facilita 
+ *  su indexación por Doxygen.
  */
 
 /** \defgroup apuntes Apuntes
  *  \brief Recopilación de notas rápidas (módulo independiente).
- *
  *  @{
  */
 
 /** \defgroup apuntes-teoria Teoría
- *  \ingroup apuntes
  *  \brief Conceptos y explicaciones teóricas.
- *
+ *  \ingroup apuntes
  *  @{
  */
 // ... aquí van los archivos o secciones de teoría ...
 /** @}*/
 
 /** \defgroup apuntes-practicas Prácticas
- *  \ingroup apuntes
  *  \brief Ejercicios y prácticas relacionados.
- *
+ *  \ingroup apuntes
  *  @{
  */
 // ... aquí van los archivos o ejercicios prácticos ...
+/** @}*/
+
+/** \defgroup apuntes-codigos Codigos de Ejemplo
+ *  \brief Varios ejmplos de codigos.
+ *  \ingroup apuntes
+ *  @{
+ */
+// ... aquí van los archivos o secciones de teoría ...
 /** @}*/
 
 /** @}*/
