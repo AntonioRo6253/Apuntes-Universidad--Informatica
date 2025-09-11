@@ -1,8 +1,16 @@
 @ingroup apuntes-teoria
 
+# Bucle for en C
+
 ---
 
-# Sintaxis Básica
+## Descripción
+
+El bucle `for` es una estructura de control que permite repetir un bloque de código un número determinado de veces. Es especialmente útil cuando conoces de antemano cuántas iteraciones necesitas realizar.
+
+---
+
+## Sintaxis Básica
 
 ```c
 for (inicialización; condición; actualización) {
@@ -16,7 +24,7 @@ for (inicialización; condición; actualización) {
 
 ---
 
-## Consideraciones Importantes
+## Reglas y Consideraciones
 
 1. **Variables de control**:
 
@@ -41,16 +49,24 @@ for (inicialización; condición; actualización) {
 
 3. **Alcance de la variable**:
 
-   - Si se declara dentro del `for`, solo existe dentro del bucle.
+   - Si se declara dentro del `for`, solo existe dentro del bucle `i, j, k`.
 
 4. **Anidamiento**:
    - Los bucles `for` pueden anidarse para trabajar con estructuras multidimensionales.
 
+```c
+   for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			for (int k = 0; k < 5; k++) { ... }
+		}
+	}
+```
+
 ---
 
-### Ejemplos Prácticos
+## Ejemplos Prácticos
 
-#### 1. Contar del 0 al 4:
+1. Contar del 0 al 4:
 
 ```c
 #include <stdio.h>
@@ -63,7 +79,7 @@ int main() {
 }
 ```
 
-#### 2. Sumar números del 1 al 10:
+2. Sumar números del 1 al 10:
 
 ```c
 #include <stdio.h>
@@ -77,7 +93,7 @@ int main() {
 }
 ```
 
-#### 3. Recorrer un array:
+3. Recorrer un array:
 
 ```c
 #include <stdio.h>
@@ -91,7 +107,21 @@ int main() {
 }
 ```
 
-#### 4. Decrementar (contar regresivamente):
+4. Recorrer una matriz/array de dos dimenciones
+
+```c
+int matriz[2][4];//Definir las filas y columnas de la matriz
+
+for (int f = 0; f < 2; f++)// f=fila, c=columna
+{
+	for ( int c = 0; c < 4; c++)
+	{
+		printf("Mostrar Cuadro de matriz: %d \n",matriz[f][c]);
+	}
+}
+```
+
+5. Decrementar (contar regresivamente):
 
 ```c
 for (int i = 5; i > 0; i--) {
@@ -100,7 +130,7 @@ for (int i = 5; i > 0; i--) {
 // Output: 5 4 3 2 1
 ```
 
-#### 5. Múltiples variables en el bucle:
+5. Múltiples variables en el bucle:
 
 ```c
 for (int i = 0, j = 10; i < j; i++, j--) {
@@ -114,7 +144,9 @@ for (int i = 0, j = 10; i < j; i++, j--) {
 
 ---
 
-#### Errores Comunes
+## Casos de Uso Comunes
+
+### Errores Comunes
 
 - **Condiciones infinitas**:
   ```c
@@ -127,13 +159,9 @@ for (int i = 0, j = 10; i < j; i++, j--) {
 
 ---
 
-#### Consejos
+## Consejos y Buenas Prácticas
 
 - Usa variables con nombres significativos (ej: `contador` en lugar de `i` si mejora la legibilidad).
 - Evita modificar la variable de control dentro del cuerpo del bucle (puede causar comportamientos inesperados).
-
-Este bucle es ideal cuando se conoce el número de iteraciones de antemano. ¡Practica con variaciones para dominarlo!
-
----
----
-
+- Este bucle es ideal cuando se conoce el número de iteraciones de antemano.
+- ¡Practica con variaciones para dominarlo!

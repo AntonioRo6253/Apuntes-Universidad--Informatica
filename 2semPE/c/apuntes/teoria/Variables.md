@@ -1,0 +1,255 @@
+@ingroup apuntes-teoria
+
+# Variables en C
+
+---
+
+## Descripción
+
+### ¿Qué es una Variable?
+
+Una **variable** es un espacio de memoria que se reserva para almacenar un valor que puede cambiar durante la ejecución del programa. En C, todas las variables deben ser declaradas antes de ser utilizadas, especificando su tipo de dato.
+
+---
+
+## Sintaxis Básica
+
+```c
+tipo_de_dato nombre_variable;
+tipo_de_dato nombre_variable = valor_inicial;
+```
+
+### Ejemplos básicos:
+
+```c
+int edad;           // Declaración sin inicializar
+int edad = 25;      // Declaración con inicialización
+float precio = 19.99;
+char letra = 'A';
+```
+
+---
+
+## Tipos de Datos en C
+
+| Tipo                 | Ejemplo de valor en 0 | Ejemplo de dato  | Sintaxis en C                       | Especificador printf | Descripción                                                            |
+| -------------------- | --------------------- | ---------------- | ----------------------------------- | -------------------- | ---------------------------------------------------------------------- |
+| `int`                | `0`                   | `42`             | `int numero = 0;`                   | `%d`                 | Entero con signo, típicamente 32 bits (-2,147,483,648 a 2,147,483,647) |
+| `float`              | `0.000000`            | `3.14f`          | `float decimal = 0.0f;`             | `%f`                 | Número decimal de precisión simple (32 bits, ~6-7 dígitos)             |
+| `double`             | `0.000000`            | `3.141592`       | `double decimal = 0.0;`             | `%lf`                | Número decimal de precisión doble (64 bits, ~15-17 dígitos)            |
+| `char`               | `'\0'`                | `'A'`            | `char caracter = '\0';`             | `%c`                 | Carácter único (8 bits, valores ASCII)                                 |
+| `short`              | `0`                   | `100`            | `short numero = 0;`                 | `%hd`                | Entero corto con signo (16 bits, -32,768 a 32,767)                     |
+| `long`               | `0`                   | `1000000L`       | `long numero = 0L;`                 | `%ld`                | Entero largo con signo (32 o 64 bits según sistema)                    |
+| `long long`          | `0`                   | `9876543210LL`   | `long long numero = 0LL;`           | `%lld`               | Entero muy largo con signo (64 bits mínimo)                            |
+| `unsigned int`       | `0`                   | `42U`            | `unsigned int numero = 0U;`         | `%u`                 | Entero sin signo (0 a 4,294,967,295)                                   |
+| `unsigned char`      | `0`                   | `255`            | `unsigned char byte = 0;`           | `%hhu`               | Carácter sin signo (0 a 255)                                           |
+| `unsigned short`     | `0`                   | `65535U`         | `unsigned short numero = 0U;`       | `%hu`                | Entero corto sin signo (0 a 65,535)                                    |
+| `unsigned long`      | `0`                   | `4000000000UL`   | `unsigned long numero = 0UL;`       | `%lu`                | Entero largo sin signo                                                 |
+| `unsigned long long` | `0`                   | `18446744073ULL` | `unsigned long long numero = 0ULL;` | `%llu`               | Entero muy largo sin signo                                             |
+
+---
+
+## Tipos de Datos Derivados y Simulados
+
+Aunque C no incluye nativamente algunos tipos de datos comunes en otros lenguajes, pueden ser simulados o implementados:
+
+| Tipo               | Valor inicial/nulo   | Ejemplo de dato     | Implementación en C                            | Especificador printf | Descripción                                                         |
+| ------------------ | -------------------- | ------------------- | ---------------------------------------------- | -------------------- | ------------------------------------------------------------------- |
+| `string` (cadena)  | `""`                 | `"Hola mundo"`      | `char cadena[50] = "";`                        | `%s`                 | Array de caracteres terminado en '\0'                               |
+| `boolean` (lógico) | `false` (0)          | `true`/`false`      | `#include <stdbool.h>` `bool activo = false;`  | `%d`                 | Valores lógicos verdadero/falso (desde C99)                         |
+| `void*` (puntero)  | `NULL`               | `&variable`         | `void* ptr = NULL;`                            | `%p`                 | Puntero genérico que puede apuntar a cualquier tipo                 |
+| `size_t`           | `0`                  | `sizeof(int)`       | `size_t tamaño = 0;`                           | `%zu`                | Tipo para tamaños de memoria (sin signo)                            |
+| `FILE*`            | `NULL`               | `fopen("file.txt")` | `FILE* archivo = NULL;`                        | `%p`                 | Puntero a estructura de archivo                                     |
+| `enum`             | primer valor         | `LUNES`, `MARTES`   | `enum dias {LUNES, MARTES};`                   | `%d`                 | Conjunto de constantes enteras con nombres                          |
+| `struct`           | `{0}` o inicializado | `{25, "Juan"}`      | `struct persona {int edad; char nombre[20];};` | múltiples            | Agrupación de diferentes tipos de datos                             |
+| `union`            | primer miembro       | según el miembro    | `union data {int i; float f;};`                | según miembro        | Permite almacenar diferentes tipos en la misma ubicación de memoria |
+
+---
+
+## Ejemplos Prácticos
+
+### Ejemplos de uso:
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+
+int main() {
+    // String (array de caracteres)
+    char nombre[20] = "Antonio";
+    char apellido[] = "Rodriguez";
+
+    // Boolean
+    bool es_estudiante = true;
+    bool tiene_trabajo = false;
+
+    // Enum
+    enum estado {ACTIVO, INACTIVO, PENDIENTE};
+    enum estado usuario_estado = ACTIVO;
+
+    // Struct
+    struct persona {
+        char nombre[50];
+        int edad;
+        bool activo;
+    };
+    struct persona estudiante = {"María", 20, true};
+
+    // Punteros
+    int numero = 42;
+    int* ptr_numero = &numero;
+
+    printf("Nombre: %s %s\n", nombre, apellido);
+    printf("Es estudiante: %s\n", es_estudiante ? "Sí" : "No");
+    printf("Estado: %d\n", usuario_estado);
+    printf("Estudiante: %s, %d años\n", estudiante.nombre, estudiante.edad);
+    printf("Valor a través de puntero: %d\n", *ptr_numero);
+
+    return 0;
+}
+```
+
+---
+
+## Reglas y Consideraciones
+
+### Reglas para Nombres de Variables
+
+1. **Debe comenzar** con una letra (a-z, A-Z) o guión bajo (\_)
+2. **Puede contener** letras, dígitos (0-9) y guiones bajos
+3. **No puede contener** espacios ni caracteres especiales
+4. **Es sensible a mayúsculas** (case-sensitive)
+5. **No puede ser** una palabra reservada del lenguaje
+
+### Ejemplos válidos:
+
+```c
+int edad;
+float _precio;
+char nombre1;
+double PI_VALUE;
+```
+
+### Ejemplos inválidos:
+
+```c
+int 2edad;      // No puede empezar con número
+float precio$;  // No puede contener $
+char if;        // 'if' es palabra reservada
+double mi edad; // No puede contener espacios
+```
+
+---
+
+## Casos de Uso Comunes
+
+### Modificadores de Tipo
+
+### const
+
+Variables que no pueden modificarse después de su inicialización:
+
+```c
+const int MAX_USUARIOS = 100;
+const float PI = 3.14159f;
+```
+
+### static
+
+Variables que mantienen su valor entre llamadas a funciones:
+
+```c
+static int contador = 0;
+```
+
+### extern
+
+Para declarar variables definidas en otro archivo:
+
+```c
+extern int variable_global;
+```
+
+---
+
+## Alcance de Variables
+
+### Variables Locales
+
+Declaradas dentro de una función, solo accesibles en esa función:
+
+```c
+void miFuncion() {
+    int variable_local = 10; // Solo existe en esta función
+}
+```
+
+### Variables Globales
+
+Declaradas fuera de todas las funciones, accesibles desde cualquier parte:
+
+```c
+int variable_global = 50; // Accesible desde cualquier función
+
+int main() {
+    printf("%d", variable_global);
+    return 0;
+}
+```
+
+---
+
+## Inicialización vs Declaración
+
+```c
+// Declaración (reserva memoria pero valor indefinido)
+int numero;
+
+// Inicialización (asigna valor inicial)
+int numero = 42;
+
+// Asignación posterior
+numero = 100;
+```
+
+---
+
+## Ejemplo Completo
+
+```c
+#include <stdio.h>
+
+// Variable global
+int contador_global = 0;
+
+int main() {
+    // Variables locales con diferentes tipos
+    int edad = 25;
+    float altura = 1.75f;
+    char inicial = 'J';
+    double salario = 2500.50;
+
+    // Constante
+    const int DIAS_SEMANA = 7;
+
+    // Mostrar valores
+    printf("Edad: %d años\n", edad);
+    printf("Altura: %.2f metros\n", altura);
+    printf("Inicial del nombre: %c\n", inicial);
+    printf("Salario: $%.2f\n", salario);
+    printf("Días en una semana: %d\n", DIAS_SEMANA);
+
+    return 0;
+}
+```
+
+---
+
+## Consejos y Buenas Prácticas
+
+1. **Siempre inicializa** las variables antes de usarlas
+2. **Usa nombres descriptivos** para las variables
+3. **Declara variables** lo más cerca posible de donde las uses
+4. **Usa `const`** para valores que no cambiarán
+5. **Evita variables globales** cuando sea posible

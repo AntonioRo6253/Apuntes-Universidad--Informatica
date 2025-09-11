@@ -1,43 +1,106 @@
 @ingroup apuntes-teoria
 
-# If, else if y else — resumen
+# Condicionales if, else if y else en C
 
-### Sintaxis básica
+---
 
-- if: la sintaxis general es:
+## Descripción
 
-  ```c
-  if (condición) {
-      /* sentencia(s) */
-  }
-  ```
+Las estructuras condicionales `if`, `else if` y `else` permiten que un programa tome decisiones basadas en condiciones específicas. Estas estructuras evalúan expresiones booleanas y ejecutan diferentes bloques de código según el resultado.
 
-  Donde "condición" es una expresión booleana o integral; en C se considera verdadera si el resultado es distinto de 0 y falsa si es 0. Desde C99 puede usarse el tipo \_Bool o el alias bool (incluyendo <stdbool.h>).
+---
 
-  Ejemplo usando una variable booleana:
+## Sintaxis Básica
 
-  ```c
-  bool bandera = true;
-  if (bandera) {
-      puts("La bandera está activa");
-  }
-  ```
+### if
 
-  (en C, cualquier expresión entera distinta de 0 se trata como verdadera).
+La sintaxis general es:
 
-- else if y else:
+```c
+if (condición) {
+    /* sentencia(s) */
+}
+```
 
-  ```c
-  if (cond1) {
-      /* ... */
-  } else if (cond2) {
-      /* ... */
-  } else {
-      /* ... */
-  }
-  ```
+Donde "condición" es una expresión booleana o integral; en C se considera verdadera si el resultado es distinto de 0 y falsa si es 0. Desde C99 puede usarse el tipo \_Bool o el alias bool (incluyendo <stdbool.h>).
 
-  Nota: los paréntesis son obligatorios alrededor de la condición y las llaves {} delimitan el bloque de código.
+### else if y else:
+
+```c
+if (cond1) {
+    /* ... */
+} else if (cond2) {
+    /* ... */
+} else {
+    /* ... */
+}
+```
+
+**Nota**: Los paréntesis son obligatorios alrededor de la condición y las llaves {} delimitan el bloque de código.
+
+---
+
+## Ejemplos Prácticos
+
+### Ejemplo usando una variable booleana:
+
+```c
+bool bandera = true;
+if (bandera) {
+    puts("La bandera está activa");
+}
+```
+
+(En C, cualquier expresión entera distinta de 0 se trata como verdadera).
+
+---
+
+## Casos de Uso Comunes
+
+### if simple
+
+Ejecuta un bloque cuando la condición es verdadera.
+
+```c
+int x = 5;
+if (x > 0) {
+    printf("x es positivo
+");
+}
+```
+
+### else
+
+Bloque alternativo cuando la condición del if es falsa.
+
+```c
+if (x % 2 == 0) {
+    puts("par");
+} else {
+    puts("impar");
+}
+```
+
+### else if
+
+Encadena varias condiciones mutuamente excluyentes.
+
+```c
+int nota = 78;
+if (nota >= 90) {
+    puts("A");
+} else if (nota >= 80) {
+    puts("B");
+} else if (nota >= 70) {
+    puts("C");
+} else {
+    puts("F");
+}
+```
+
+---
+
+## Ejemplo Completo
 
 ### Ver Documentacion
 
@@ -83,58 +146,39 @@
   }
   ```
 
-## Switch — resumen
-
-- switch: selecciona entre varias ramas según el valor de una expresión integral (int, char, enum, etc.).
-
-### Sintaxis básica:
+Aquí tienes un ejemplo más completo que demuestra el uso de todas las estructuras condicionales:
 
 ```c
-switch (expresión_integral) {
-    case constante1:
-        /* sentencia(s) */
-        break;
-    case constante2:
-        /* ... */
-        break;
-    default:
-        /* alternativa si no coincide ningún case */
+#include <stdio.h>
+
+int main() {
+    int edad;
+
+    printf("Ingrese su edad: ");
+    scanf("%d", &edad);
+
+    if (edad < 0) {
+        printf("Edad inválida\n");
+    } else if (edad < 13) {
+        printf("Eres un niño\n");
+    } else if (edad < 18) {
+        printf("Eres un adolescente\n");
+    } else if (edad < 65) {
+        printf("Eres un adulto\n");
+    } else {
+        printf("Eres un adulto mayor\n");
+    }
+
+    return 0;
 }
 ```
 
-### Ejemplos:
-
-```c
-int opcion = 2;
-switch (opcion) {
-    case 1:
-        puts("Opción 1");
-        break;
-    case 2:
-        puts("Opción 2");
-        break;
-    default:
-        puts("Otra opción");
-}
-```
-
-- break: termina la ejecución del switch para evitar "fall-through" (caída a la siguiente etiqueta).
-- Fall-through: si omites break, la ejecución continúa en el siguiente case — útil para agrupar casos:
-
-  ```c
-  switch (opcion) {
-      case 1:
-      case 2:
-          puts("Opción 1 o 2");
-          break;
-      default:
-          puts("Otra opción");
-  }
-  ```
-
-- Notas rápidas:
-  - Las etiquetas case deben ser constantes en tiempo de compilación.
-  - default es opcional y se ejecuta si ningún case coincide.
-  - El orden de los case no afecta la comparación (se compara el valor).
 ---
----
+
+## Consejos y Buenas Prácticas
+
+1. **Siempre usa llaves** `{}` incluso para una sola línea, mejora la legibilidad
+2. **Ordena las condiciones** de la más específica a la más general
+3. **Usa paréntesis** para clarificar expresiones complejas
+4. **Evita condiciones demasiado complejas**, divide en variables auxiliares si es necesario
+5. **Considera usar switch** cuando tengas muchas condiciones basadas en el mismo valor

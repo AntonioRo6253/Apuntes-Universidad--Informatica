@@ -1,8 +1,20 @@
 @ingroup apuntes-teoria
 
-# 1. Bucle while
+# Bucles while y do-while en C
 
-## Sintaxis básica:
+---
+
+## Descripción
+
+Los bucles `while` y `do-while` son estructuras de control que permiten repetir un bloque de código mientras una condición sea verdadera. La diferencia principal es que `while` evalúa la condición antes de ejecutar el código, mientras que `do-while` la evalúa después.
+
+---
+
+## 1. Bucle while
+
+---
+
+## Sintaxis Básica
 
 ```c
 while (condición) {
@@ -13,7 +25,11 @@ while (condición) {
 - **Funcionamiento**: Evalúa la `condición` antes de ejecutar el bloque. Si es verdadera (`true`), ejecuta el código y repite el proceso.
 - **Característica clave**: Puede que el bloque no se ejecute nunca si la condición es falsa inicialmente.
 
-## Ejemplo:
+---
+
+## Ejemplos Prácticos
+
+### Ejemplo de while:
 
 ```c
 #include <stdio.h>
@@ -40,7 +56,7 @@ Iteración: 5
 
 ---
 
-# 2. Bucle do-while
+## 2. Bucle do-while
 
 ### Sintaxis básica:
 
@@ -166,4 +182,5 @@ do {
 **Nota**: Ambos bucles son fundamentales para controlar flujos repetitivos en C. La elección depende de si necesitas o no garantizar la primera ejecución del bloque.
 
 ---
+
 ---
