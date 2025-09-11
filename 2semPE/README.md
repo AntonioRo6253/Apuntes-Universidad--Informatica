@@ -1,6 +1,6 @@
 @mainpage
 
-# 📘 Ciclo 2023A (V0716)
+# 📘 Ciclo 2025A (V0716)
 
 Este repositorio contiene ejercicios y proyectos desarrollados durante el curso de Programación Estructurada, siguiendo el libro **"Programación en C, C++, Java y UML" de Luis Joyanes Aguilar, 2ª edición**. El material está orientado a reforzar los conceptos fundamentales de la programación estructurada y modular.
 
