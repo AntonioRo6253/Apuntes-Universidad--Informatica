@@ -1,0 +1,39 @@
+{
+  // Excluir completamente del explorador y de la indexación general de VS Code
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/bin": true,
+    "**/obj": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/out": true,
+    "**/docs/html": true,
+    "**/docs/latex": true,
+    "**/.expo": true
+  },
+  // Mantener visibles pero fuera de las búsquedas de texto y símbolo
+    "search.exclude": {
+    "**/bin": true,
+    "**/obj": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/out": true,
+    "**/docs": true,
+    "**/.expo": true
+  },
+  // Excluir del análisis de la extensión C/C++ (no se añaden a la BD de símbolos)
+  "C_Cpp.files.exclude": {
+    "**/bin": true,
+    "**/obj": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/out": true,
+    "**/docs": true,
+    "**/.expo": true,
+    "**/styles": true,
+    "**/apuntes": true
+  }
+}
