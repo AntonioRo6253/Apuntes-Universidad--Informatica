@@ -8,23 +8,23 @@ Este repositorio contiene ejercicios y proyectos desarrollados durante el curso 
 
 A lo largo del curso, se trabajarán los siguientes temas esenciales:
 
-- **C1. Concepto de abstracción y modularidad**
-- **C2. Funciones y procedimientos**
-- **C3. Paso de parámetros por valor**
-- **C4. Paso de parámetros por referencia**
-- **C5. Datos de tipo estructurado:** arreglos unidimensionales, bidimensionales, N-dimensionales, registros
-- **C6. Datos estructurados: Vectores**
-- **C7. Datos estructurados: Matrices**
-- **C8. Datos estructurados: Registros**
-- **C9. Apuntadores**
-- **C10. Manejo de memoria dinámica**
-- **C11. Recursividad**
-- **C12. Manejo de caracteres y cadenas de caracteres**
-- **C13. Estructuras de control**
+- [*] **C1. Concepto de abstracción y modularidad**
+- [*] **C2. Funciones y procedimientos**
+- [*] **C3. Paso de parámetros por valor**
+- [*] **C4. Paso de parámetros por referencia**
+- [*] **C5. Datos de tipo estructurado:** arreglos unidimensionales, bidimensionales, N-dimensionales, registros
+- [] **C6. Datos estructurados: Vectores**
+- [*] **C7. Datos estructurados: Matrices**
+- [] **C8. Datos estructurados: Registros**
+- [*] **C9. Apuntadores**
+- [*] **C10. Manejo de memoria dinámica**
+- [] **C11. Recursividad**
+- [*] **C12. Manejo de caracteres y cadenas de caracteres**
+- [*] **C13. Estructuras de control**
 
 ---
 
-> **Nota:** Configura tu editor como prederminado para abrir archivos **.c y .tsx**
+> **Nota:** Configura tu editor como prederminado para abrir archivos **.c y .tsx** para que obsidian te habra los links en ellos
 
 ## 🚀 Cómo usar este proyecto en Code::Blocks
 
