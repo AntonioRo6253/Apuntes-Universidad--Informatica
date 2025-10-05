@@ -1,0 +1,4 @@
+Original: Hola123!
+Minuscula: hola123!
+Mayuscula: HOLA123!
+Letras: 4 Digitos: 3 Otros: 1
