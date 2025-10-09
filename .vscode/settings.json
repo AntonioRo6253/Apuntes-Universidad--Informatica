@@ -34,6 +34,9 @@
     "**/docs": true,
     "**/.expo": true,
     "**/styles": true,
-    "**/apuntes": true
+    "**/apuntes": true,
+    "**/output": true,
+    "**/*.md": true,
+    "**/*.txt": true,
   }
 }
