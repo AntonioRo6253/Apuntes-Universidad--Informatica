@@ -4,6 +4,6 @@ docs/html/
 docs/latex/
 
 # Obsidian (metadatos del vault)
-.obsidian
-apuntes/.obsidian/
-apuntes/.obsidian/**
+# .obsidian
+# apuntes/.obsidian/
+# apuntes/.obsidian/**
