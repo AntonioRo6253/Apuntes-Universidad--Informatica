@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "0a3742d95aea42b8",
+        "id": "c2117680f03e66c9",
         "type": "tabs",
         "children": [
           {
-            "id": "b8ed99c430b5ea4d",
+            "id": "571f39049901d1d3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "practicas/05. Strings/01-concat-nombre-apellido/concept--easy.md",
+                "file": "teoria/17. Struct.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "concept--easy"
-            }
-          },
-          {
-            "id": "5ef283fb87e6f1b9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "teoria/00. Useful Functions.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "00. Useful Functions"
+              "title": "17. Struct"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "b2e00406413b11d7",
@@ -184,12 +170,15 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "5ef283fb87e6f1b9",
+  "active": "571f39049901d1d3",
   "lastOpenFiles": [
+    "teoria/11. Code Documentation.md",
+    "teoria/17. Struct.md",
+    "teoria/00. Useful Functions.md",
     "teoria/16. Strings.md",
+    "practicas/05. Strings/01-concat-nombre-apellido/concept--easy.md",
     "practicas/05. Strings/01-concat-nombre-apellido/src/output/respuesta.exe",
     "practicas/05. Strings/01-concat-nombre-apellido/src/output",
-    "practicas/05. Strings/01-concat-nombre-apellido/concept--easy.md",
     "teoria/000. things.md",
     "Pasted image 20251012232430.png",
     "teoria/1. Development Environments.md",
@@ -210,7 +199,6 @@
     "practicas/05. Strings/02-contar-vocales/guide--easy.md",
     "practicas/05. Strings/01-concat-nombre-apellido/respuestas/REFLEXION.md",
     "teoria/4. Operators.md",
-    "teoria/00. Useful Functions.md",
     "teoria/15. Dynamic Memory.md",
     "teoria/9. Function.md",
     "teoria/8. switch.md",
