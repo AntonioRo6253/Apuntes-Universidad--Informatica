@@ -20,6 +20,20 @@
               "icon": "lucide-file",
               "title": "17. Struct"
             }
+          },
+          {
+            "id": "b7c96de9bf696c75",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "teoria/13. Array.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "13. Array"
+            }
           }
         ]
       }
@@ -78,8 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "b2e00406413b11d7",
@@ -172,8 +185,9 @@
   },
   "active": "571f39049901d1d3",
   "lastOpenFiles": [
-    "teoria/11. Code Documentation.md",
+    "teoria/13. Array.md",
     "teoria/17. Struct.md",
+    "teoria/11. Code Documentation.md",
     "teoria/00. Useful Functions.md",
     "teoria/16. Strings.md",
     "practicas/05. Strings/01-concat-nombre-apellido/concept--easy.md",
@@ -208,7 +222,6 @@
     "teoria/13. Punteros.md",
     "Pasted image 20250930132102.png",
     "README.md",
-    "teoria/switch.md",
-    "teoria/Funciones Utiles.md"
+    "teoria/switch.md"
   ]
 }
