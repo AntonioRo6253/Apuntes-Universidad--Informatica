@@ -1,0 +1,154 @@
+{\bfseries{Apunte\+: Uso del bucle {\ttfamily for} en C}}
+
+\DoxyHorRuler{0}
+\hypertarget{md_apuntes_teoria_Bucle_for_autotoc_md1}{}\doxysubsubsection{$<$strong$>$\+Sintaxis Básica$<$/strong$>$}\label{md_apuntes_teoria_Bucle_for_autotoc_md1}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (inicialización; condición; actualización) \{}
+\DoxyCodeLine{    \textcolor{comment}{// Código a repetir}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Inicialización}}\+: Se ejecuta una vez al inicio. Suele declarar/inicializar la variable de control (ej\+: {\ttfamily int i = 0}).
+\item {\bfseries{Condición}}\+: Se evalúa antes de cada iteración. Si es verdadera ({\ttfamily true}), el bucle continúa.
+\item {\bfseries{Actualización}}\+: Se ejecuta al final de cada iteración (ej\+: incrementar/decrementar la variable).
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_apuntes_teoria_Bucle_for_autotoc_md3}{}\doxysubsubsection{$<$strong$>$\+Consideraciones Importantes$<$/strong$>$}\label{md_apuntes_teoria_Bucle_for_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Variables de control}}\+:
+\begin{DoxyItemize}
+\item La variable de control puede declararse dentro del bucle (en C99 o superior)\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; i++) \{ ... \}}
+
+\end{DoxyCode}
+
+\item En C antiguo, debe declararse fuera\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (i = 0; i < 5; i++) \{ ... \}}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\item {\bfseries{Expresiones opcionales}}\+:
+\begin{DoxyItemize}
+\item Cualquier parte del {\ttfamily for} puede omitirse, pero los {\ttfamily ;} deben permanecer\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (; i < 5; i++) \{ ... \} \textcolor{comment}{// Sin inicialización}}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (;;) \{ ... \}           \textcolor{comment}{// Bucle infinito (requiere `break` para salir)}}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\item {\bfseries{Alcance de la variable}}\+:
+\begin{DoxyItemize}
+\item Si se declara dentro del {\ttfamily for}, solo existe dentro del bucle.
+\end{DoxyItemize}
+\item {\bfseries{Anidamiento}}\+:
+\begin{DoxyItemize}
+\item Los bucles {\ttfamily for} pueden anidarse para trabajar con estructuras multidimensionales.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md_apuntes_teoria_Bucle_for_autotoc_md5}{}\doxysubsubsection{$<$strong$>$\+Ejemplos Prácticos$<$/strong$>$}\label{md_apuntes_teoria_Bucle_for_autotoc_md5}
+\hypertarget{md_apuntes_teoria_Bucle_for_autotoc_md6}{}\doxyparagraph{1. $<$strong$>$\+Contar del 0 al 4$<$/strong$>$\+:}\label{md_apuntes_teoria_Bucle_for_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main() \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; i++) \{}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}\%d "{}}, i);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{comment}{// Output: 0 1 2 3 4}}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_apuntes_teoria_Bucle_for_autotoc_md7}{}\doxyparagraph{2. $<$strong$>$\+Sumar números del 1 al 10$<$/strong$>$\+:}\label{md_apuntes_teoria_Bucle_for_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main() \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} suma = 0;}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i <= 10; i++) \{}
+\DoxyCodeLine{        suma += i;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Suma: \%d"{}}, suma); \textcolor{comment}{// Output: Suma: 55}}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_apuntes_teoria_Bucle_for_autotoc_md8}{}\doxyparagraph{3. $<$strong$>$\+Recorrer un array$<$/strong$>$\+:}\label{md_apuntes_teoria_Bucle_for_autotoc_md8}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main() \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} arr[] = \{10, 20, 30\};}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++) \{}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}\%d "{}}, arr[i]);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{comment}{// Output: 10 20 30}}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_apuntes_teoria_Bucle_for_autotoc_md9}{}\doxyparagraph{4. $<$strong$>$\+Decrementar (contar regresivamente)$<$/strong$>$\+:}\label{md_apuntes_teoria_Bucle_for_autotoc_md9}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 5; i > 0; i-\/-\/) \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}\%d "{}}, i);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{comment}{// Output: 5 4 3 2 1}}
+
+\end{DoxyCode}
+\hypertarget{md_apuntes_teoria_Bucle_for_autotoc_md10}{}\doxyparagraph{5. $<$strong$>$\+Múltiples variables en el bucle$<$/strong$>$\+:}\label{md_apuntes_teoria_Bucle_for_autotoc_md10}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0, j = 10; i < j; i++, j-\/-\/) \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}i=\%d, j=\%d\(\backslash\)n"{}}, i, j);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{comment}{/* Output:}}
+\DoxyCodeLine{\textcolor{comment}{   i=0, j=10}}
+\DoxyCodeLine{\textcolor{comment}{   i=1, j=9}}
+\DoxyCodeLine{\textcolor{comment}{   ... (hasta i=4, j=6) */}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_apuntes_teoria_Bucle_for_autotoc_md12}{}\doxysubsubsection{$<$strong$>$\+Errores Comunes$<$/strong$>$}\label{md_apuntes_teoria_Bucle_for_autotoc_md12}
+
+\begin{DoxyItemize}
+\item {\bfseries{Condiciones infinitas}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i >= 0; i++) \{ ... \} \textcolor{comment}{// Nunca termina (i siempre >= 0).}}
+
+\end{DoxyCode}
+
+\item {\bfseries{Actualización incorrecta}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; i-\/-\/) \{ ... \} \textcolor{comment}{// i decrece, nunca alcanza i < 5.}}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_apuntes_teoria_Bucle_for_autotoc_md14}{}\doxysubsubsection{$<$strong$>$\+Consejos$<$/strong$>$}\label{md_apuntes_teoria_Bucle_for_autotoc_md14}
+
+\begin{DoxyItemize}
+\item Usa variables con nombres significativos (ej\+: {\ttfamily contador} en lugar de {\ttfamily i} si mejora la legibilidad).
+\item Evita modificar la variable de control dentro del cuerpo del bucle (puede causar comportamientos inesperados).
+\end{DoxyItemize}
+
+Este bucle es ideal cuando se conoce el número de iteraciones de antemano. ¡\+Practica con variaciones para dominarlo! 

@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Programacion Estructurada: switch</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Programacion Estructurada
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md_apuntes_teoria_switch.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">switch </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p ><b>Apunte Mejorado: Sentencia switch en C</b></p>
+<hr  />
+<p ><b>Introducción</b> <br  />
+ La sentencia <code>switch</code> es una estructura de control que permite seleccionar una entre múltiples alternativas, basándose en el valor de una <b>expresión de control (selector)</b>. Es ideal cuando las decisiones dependen de valores discretos (ej: menús, categorías, opciones).</p>
+<hr  />
+<p ><b>Sintaxis Básica</b> <br  />
+ </p><div class="fragment"><div class="line"><span class="keywordflow">switch</span> (selector) {</div>
+<div class="line">    <span class="keywordflow">case</span> etiqueta1: </div>
+<div class="line">        sentencias1;</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> etiqueta2: </div>
+<div class="line">        sentencias2;</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">default</span>: </div>
+<div class="line">        sentencias_default; <span class="comment">// Opcional</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><hr  />
+<p ><b>Reglas Importantes</b> <br  />
+</p><ol type="1">
+<li>El <b>selector</b> debe ser de tipo <code>int</code> o <code>char</code> (no <code>float</code>, <code>double</code> o strings). <br  />
+</li>
+<li>Las <b>etiquetas</b> deben ser constantes únicas (ej: <code>case 5:</code>, &lsquo;case 'A&rsquo;:<code>). &lt;br&gt;</code></li>
+<li><code>El</code>default<code>es opcional, pero recomendado para manejar valores inesperados. &lt;br&gt;</code></li>
+<li><code>La sentencia</code>break<code>termina la ejecución del</code>switch`. Sin ella, se ejecutarán todos los casos siguientes (<b>fall-through</b>). <br  />
+</li>
+</ol>
+<hr  />
+<p ><b>IA: Tabla de Operadores Comunes</b> <br  />
+ </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Operador   </th><th class="markdownTableHeadNone">Uso   </th><th class="markdownTableHeadNone">Ejemplo    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Incremento   </td><td class="markdownTableBodyNone"><code>variable++</code>   </td><td class="markdownTableBodyNone"><code>i++;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Decremento   </td><td class="markdownTableBodyNone"><code>variable--</code>   </td><td class="markdownTableBodyNone"><code>j--;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Suma y asignación   </td><td class="markdownTableBodyNone"><code>variable +=</code>   </td><td class="markdownTableBodyNone"><code>k += 2;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Lógico AND   </td><td class="markdownTableBodyNone"><code>&amp;&amp;</code>   </td><td class="markdownTableBodyNone"><code>if (a &amp;&amp; b)</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Lógico OR   </td><td class="markdownTableBodyNone"><code>\|\|</code>   </td><td class="markdownTableBodyNone"><code>if (a \|\| b)</code>   </td></tr>
+</table>
+<hr  />
+<p ><b>Ejemplo 1: Selección Simple</b> <br  />
+ </p><div class="fragment"><div class="line"><span class="keywordflow">switch</span> (opcion) {</div>
+<div class="line">    <span class="keywordflow">case</span> 0: </div>
+<div class="line">        puts(<span class="stringliteral">&quot;Cero!&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> 1: </div>
+<div class="line">        puts(<span class="stringliteral">&quot;Uno!&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">default</span>: </div>
+<div class="line">        puts(<span class="stringliteral">&quot;Fuera de rango&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --><hr  />
+<p ><b>Ejemplo 2: Múltiples Etiquetas (Fall-Through Controlado)</b> <br  />
+ </p><div class="fragment"><div class="line"><span class="keywordflow">switch</span> (nota) {</div>
+<div class="line">    <span class="keywordflow">case</span> <span class="charliteral">&#39;A&#39;</span>: </div>
+<div class="line">    <span class="keywordflow">case</span> <span class="charliteral">&#39;B&#39;</span>: </div>
+<div class="line">    <span class="keywordflow">case</span> <span class="charliteral">&#39;C&#39;</span>: </div>
+<div class="line">        puts(<span class="stringliteral">&quot;Aprobado&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <span class="charliteral">&#39;D&#39;</span>: </div>
+<div class="line">    <span class="keywordflow">case</span> <span class="charliteral">&#39;F&#39;</span>: </div>
+<div class="line">        puts(<span class="stringliteral">&quot;Reprobado&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">default</span>: </div>
+<div class="line">        puts(<span class="stringliteral">&quot;Nota inválida&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --><hr  />
+<p ><b>Comparación if-else vs. switch</b> <br  />
+ </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Característica   </th><th class="markdownTableHeadNone"><code>if-else</code>   </th><th class="markdownTableHeadNone"><code>switch</code>    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Tipo de condiciones   </td><td class="markdownTableBodyNone">Expresiones booleanas (ej: <code>&gt;=5</code>)   </td><td class="markdownTableBodyNone">Valores discretos (ej: <code>5</code>)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Legibilidad   </td><td class="markdownTableBodyNone">Mejor para rangos   </td><td class="markdownTableBodyNone">Ideal para opciones fijas    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Eficiencia   </td><td class="markdownTableBodyNone">Puede ser menos eficiente   </td><td class="markdownTableBodyNone">Optimizado para múltiples casos    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Uso de <code>break</code>   </td><td class="markdownTableBodyNone">No aplica   </td><td class="markdownTableBodyNone">Crítico para evitar fall-through   </td></tr>
+</table>
+<hr  />
+<p ><b>Precaución: Omisión de <code>break</code></b> <br  />
+ Si se omite <code>break</code>, el programa ejecutará <b>todos los casos siguientes</b> hasta encontrar un <code>break</code> o el final del <code>switch</code>. Esto puede causar comportamientos inesperados. Ejemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">switch</span> (tipo_vehiculo) {</div>
+<div class="line">    <span class="keywordflow">case</span> 1: </div>
+<div class="line">        printf(<span class="stringliteral">&quot;Turismo\n&quot;</span>);</div>
+<div class="line">        <span class="comment">// Sin break: ¡Ejecutará el siguiente caso!</span></div>
+<div class="line">    <span class="keywordflow">case</span> 2: </div>
+<div class="line">        printf(<span class="stringliteral">&quot;Autobús\n&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Si tipo_vehiculo es 1, imprimirá &quot;Turismo&quot; y &quot;Autobús&quot;.</span></div>
+</div><!-- fragment --><hr  />
+<p ><b>Evaluación en Cortocircuito</b> <br  />
+ En expresiones lógicas con <code>&amp;&amp;</code> y <code>||</code>, C evalúa solo hasta donde sea necesario. Ejemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (a != 0 &amp;&amp; b / a &gt; 2) { </div>
+<div class="line">    <span class="comment">// Si a es 0, evita la división (evita error)</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p> <b>Explicación</b>: <br  />
+</p><ul>
+<li>En <code>&amp;&amp;</code>: Si el primer operando es falso, el segundo no se evalúa. <br  />
+</li>
+<li>En <code>||</code>: Si el primer operando es verdadero, el segundo no se evalúa. <br  />
+</li>
+</ul>
+<hr  />
+<p ><b>Usos Prácticos</b> <br  />
+</p><ol type="1">
+<li><b>Menús Interactivos</b>: <br  />
+ <div class="fragment"><div class="line"><span class="keywordflow">switch</span> (opcion_menu) {</div>
+<div class="line">    <span class="keywordflow">case</span> 1: abrir_archivo(); <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> 2: guardar_archivo(); <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">default</span>: printf(<span class="stringliteral">&quot;Opción no válida\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --></li>
+<li><b>Autenticación de Usuarios</b>: <br  />
+ <div class="fragment"><div class="line"><span class="keywordflow">switch</span> (nivel_acceso) {</div>
+<div class="line">    <span class="keywordflow">case</span> 1: printf(<span class="stringliteral">&quot;Administrador\n&quot;</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> 2: printf(<span class="stringliteral">&quot;Usuario\n&quot;</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">default</span>: printf(<span class="stringliteral">&quot;Invitado\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --></li>
+</ol>
+<hr  />
+<p ><b>Conclusión</b> <br  />
+ El <code>switch</code> es una herramienta poderosa para decisiones basadas en valores discretos. Su correcto uso depende de: <br  />
+</p><ul>
+<li>Elegir el tipo correcto para el selector. <br  />
+</li>
+<li>Incluir <code>break</code> donde sea necesario. <br  />
+</li>
+<li>Manejar casos inesperados con <code>default</code>. <br  />
+</li>
+</ul>
+<p ><b>Ejemplo Adicional - Conversión de Grados</b> <br  />
+ </p><div class="fragment"><div class="line"><span class="keywordflow">switch</span> (escala) {</div>
+<div class="line">    <span class="keywordflow">case</span> <span class="charliteral">&#39;C&#39;</span>: </div>
+<div class="line">        printf(<span class="stringliteral">&quot;Convertir a Fahrenheit\n&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <span class="charliteral">&#39;F&#39;</span>: </div>
+<div class="line">        printf(<span class="stringliteral">&quot;Convertir a Celsius\n&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">default</span>: </div>
+<div class="line">        printf(<span class="stringliteral">&quot;Escala no soportada\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --><hr  />
+<p ><b>Referencia</b>: Apuntes de páginas 132-137 - Libro "C, C++, Java y UML" (Luis Joyanes). </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

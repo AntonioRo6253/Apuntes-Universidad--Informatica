@@ -1,0 +1,58 @@
+{\bfseries{Operadores en el Lenguaje C}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Categoría   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Operador   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Uso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Ejemplo   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Descripción    }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Categoría   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Operador   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Uso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Ejemplo   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Descripción    }\\\cline{1-5}
+\endhead
+{\bfseries{Aritméticos}}   &{\ttfamily +}   &{\ttfamily a + b}   &{\ttfamily resultado = 5 + 3;}   &Suma    \\\cline{1-5}
+&{\ttfamily -\/}   &{\ttfamily a -\/ b}   &{\ttfamily resultado = 5 -\/ 3;}   &Resta    \\\cline{1-5}
+&{\ttfamily $\ast$}   &{\ttfamily a $\ast$ b}   &{\ttfamily resultado = 5 $\ast$ 3;}   &Multiplicación    \\\cline{1-5}
+&{\ttfamily /}   &{\ttfamily a / b}   &{\ttfamily resultado = 5 / 3;}   &División    \\\cline{1-5}
+&{\ttfamily \%}   &{\ttfamily a \% b}   &{\ttfamily resultado = 5 \% 3;}   &Módulo (resto)    \\\cline{1-5}
+{\bfseries{Incremento/\+Decremento}}   &{\ttfamily ++}   &{\ttfamily variable++}   &{\ttfamily i++;}   &Incremento postfijo    \\\cline{1-5}
+&{\ttfamily ++}   &{\ttfamily ++variable}   &{\ttfamily ++i;}   &Incremento prefijo    \\\cline{1-5}
+&{\ttfamily -\/-\/}   &{\ttfamily variable-\/-\/}   &{\ttfamily j-\/-\/;}   &Decremento postfijo    \\\cline{1-5}
+&{\ttfamily -\/-\/}   &{\ttfamily -\/-\/variable}   &{\ttfamily -\/-\/j;}   &Decremento prefijo    \\\cline{1-5}
+{\bfseries{Asignación}}   &{\ttfamily =}   &{\ttfamily a = b}   &{\ttfamily x = 5;}   &Asignación básica    \\\cline{1-5}
+&{\ttfamily +=}   &{\ttfamily a += b}   &{\ttfamily x += 3;}   &Suma y asignación    \\\cline{1-5}
+&{\ttfamily -\/=}   &{\ttfamily a -\/= b}   &{\ttfamily x -\/= 3;}   &Resta y asignación    \\\cline{1-5}
+&{\ttfamily $\ast$=}   &{\ttfamily a $\ast$= b}   &{\ttfamily x $\ast$= 3;}   &Multiplicación y asignación    \\\cline{1-5}
+&{\ttfamily /=}   &{\ttfamily a /= b}   &{\ttfamily x /= 3;}   &División y asignación    \\\cline{1-5}
+&{\ttfamily \%=}   &{\ttfamily a \%= b}   &{\ttfamily x \%= 3;}   &Módulo y asignación    \\\cline{1-5}
+{\bfseries{Lógicos}}   &{\ttfamily \&\&}   &{\ttfamily a \&\& b}   &{\ttfamily if (a \&\& b)}   &AND lógico    \\\cline{1-5}
+&{\ttfamily \textbackslash{}$\vert$\textbackslash{}$\vert$}   &{\ttfamily a \textbackslash{}$\vert$\textbackslash{}$\vert$ b}   &{\ttfamily if (a \textbackslash{}$\vert$\textbackslash{}$\vert$ b)}   &OR lógico    \\\cline{1-5}
+&{\ttfamily !}   &{\ttfamily !a}   &{\ttfamily if (!a)}   &NOT lógico    \\\cline{1-5}
+{\bfseries{Comparación}}   &{\ttfamily ==}   &{\ttfamily a == b}   &{\ttfamily if (a == b)}   &Igual a    \\\cline{1-5}
+&{\ttfamily !=}   &{\ttfamily a != b}   &{\ttfamily if (a != b)}   &Diferente de    \\\cline{1-5}
+&{\ttfamily \texorpdfstring{$>$}{>}}   &{\ttfamily a \texorpdfstring{$>$}{>} b}   &{\ttfamily if (a \texorpdfstring{$>$}{>} b)}   &Mayor que    \\\cline{1-5}
+&{\ttfamily \texorpdfstring{$<$}{<}}   &{\ttfamily a \texorpdfstring{$<$}{<} b}   &{\ttfamily if (a \texorpdfstring{$<$}{<} b)}   &Menor que    \\\cline{1-5}
+&{\ttfamily \texorpdfstring{$>$}{>}=}   &{\ttfamily a \texorpdfstring{$>$}{>}= b}   &{\ttfamily if (a \texorpdfstring{$>$}{>}= b)}   &Mayor o igual que    \\\cline{1-5}
+&{\ttfamily \texorpdfstring{$<$}{<}=}   &{\ttfamily a \texorpdfstring{$<$}{<}= b}   &{\ttfamily if (a \texorpdfstring{$<$}{<}= b)}   &Menor o igual que    \\\cline{1-5}
+{\bfseries{Bits}}   &{\ttfamily \&}   &{\ttfamily a \& b}   &{\ttfamily flags = mask \& value;}   &AND a nivel de bits    \\\cline{1-5}
+&{\ttfamily \textbackslash{}$\vert$}   &{\ttfamily a \textbackslash{}$\vert$ b}   &{\ttfamily flags = mask \textbackslash{}$\vert$ value;}   &OR a nivel de bits    \\\cline{1-5}
+&{\ttfamily $^\wedge$}   &{\ttfamily a $^\wedge$ b}   &{\ttfamily flags = mask $^\wedge$ value;}   &XOR a nivel de bits    \\\cline{1-5}
+&{\ttfamily $\sim$}   &{\ttfamily $\sim$a}   &{\ttfamily flags = $\sim$mask;}   &NOT a nivel de bits    \\\cline{1-5}
+&{\ttfamily \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}}   &{\ttfamily a \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} b}   &{\ttfamily value = num \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2;}   &Desplazamiento izquierda    \\\cline{1-5}
+&{\ttfamily \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}}   &{\ttfamily a \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} b}   &{\ttfamily value = num \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 2;}   &Desplazamiento derecha    \\\cline{1-5}
+{\bfseries{Ternario}}   &{\ttfamily ? \+:}   &{\ttfamily cond ? a \+: b}   &{\ttfamily max = (a \texorpdfstring{$>$}{>} b) ? a \+: b;}   &Operador condicional    \\\cline{1-5}
+{\bfseries{Otros}}   &{\ttfamily sizeof()}   &{\ttfamily sizeof(tipo)}   &{\ttfamily size = sizeof(int);}   &Tamaño en bytes    \\\cline{1-5}
+&{\ttfamily \&}   &{\ttfamily \&variable}   &{\ttfamily ptr = \&var;}   &Dirección de    \\\cline{1-5}
+&{\ttfamily $\ast$}   &{\ttfamily $\ast$ptr}   &{\ttfamily valor = $\ast$ptr;}   &Indirección   \\\cline{1-5}
+\end{longtabu}
+
+
+{\bfseries{Notas importantes\+:}}
+\begin{DoxyItemize}
+\item C {\bfseries{no tiene}} un operador de exponenciación nativo ({\ttfamily $\ast$$\ast$} como en otros lenguajes)
+\item Para operaciones de potenciación, se utiliza la función {\ttfamily pow()} de la biblioteca {\ttfamily math.\+h}
+\item El operador de módulo {\ttfamily \%} solo funciona con tipos enteros
+\item Los operadores de bits trabajan a nivel de bits individuales
+\end{DoxyItemize}
+
+Esta tabla ampliada incluye los operadores más comunes del lenguaje C, organizados por categorías para mejor referencia. 

@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Programacion Estructurada: Bucle_for</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Programacion Estructurada
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md_apuntes_teoria_Bucle_for.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Bucle_for </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p ><b>Apunte: Uso del bucle <code>for</code> en C</b></p>
+<hr  />
+<h3><a class="anchor" id="autotoc_md1"></a>
+&lt;strong&gt;Sintaxis Básica&lt;/strong&gt;</h3>
+<div class="fragment"><div class="line"><span class="keywordflow">for</span> (inicialización; condición; actualización) {</div>
+<div class="line">    <span class="comment">// Código a repetir</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><ul>
+<li><b>Inicialización</b>: Se ejecuta una vez al inicio. Suele declarar/inicializar la variable de control (ej: <code>int i = 0</code>).</li>
+<li><b>Condición</b>: Se evalúa antes de cada iteración. Si es verdadera (<code>true</code>), el bucle continúa.</li>
+<li><b>Actualización</b>: Se ejecuta al final de cada iteración (ej: incrementar/decrementar la variable).</li>
+</ul>
+<hr  />
+<h3><a class="anchor" id="autotoc_md3"></a>
+&lt;strong&gt;Consideraciones Importantes&lt;/strong&gt;</h3>
+<ol type="1">
+<li><b>Variables de control</b>:<ul>
+<li>La variable de control puede declararse dentro del bucle (en C99 o superior): <div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++) { ... }</div>
+</div><!-- fragment --></li>
+<li>En C antiguo, debe declararse fuera: <div class="fragment"><div class="line"><span class="keywordtype">int</span> i;</div>
+<div class="line"><span class="keywordflow">for</span> (i = 0; i &lt; 5; i++) { ... }</div>
+</div><!-- fragment --></li>
+</ul>
+</li>
+<li><b>Expresiones opcionales</b>:<ul>
+<li>Cualquier parte del <code>for</code> puede omitirse, pero los <code>;</code> deben permanecer: <div class="fragment"><div class="line"><span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><span class="keywordflow">for</span> (; i &lt; 5; i++) { ... } <span class="comment">// Sin inicialización</span></div>
+<div class="line"><span class="keywordflow">for</span> (;;) { ... }           <span class="comment">// Bucle infinito (requiere `break` para salir)</span></div>
+</div><!-- fragment --></li>
+</ul>
+</li>
+<li><b>Alcance de la variable</b>:<ul>
+<li>Si se declara dentro del <code>for</code>, solo existe dentro del bucle.</li>
+</ul>
+</li>
+<li><b>Anidamiento</b>:<ul>
+<li>Los bucles <code>for</code> pueden anidarse para trabajar con estructuras multidimensionales.</li>
+</ul>
+</li>
+</ol>
+<hr  />
+<h3><a class="anchor" id="autotoc_md5"></a>
+&lt;strong&gt;Ejemplos Prácticos&lt;/strong&gt;</h3>
+<h4><a class="anchor" id="autotoc_md6"></a>
+1. &lt;strong&gt;Contar del 0 al 4&lt;/strong&gt;:</h4>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++) {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;%d &quot;</span>, i);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="comment">// Output: 0 1 2 3 4</span></div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md7"></a>
+2. &lt;strong&gt;Sumar números del 1 al 10&lt;/strong&gt;:</h4>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">    <span class="keywordtype">int</span> suma = 0;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 10; i++) {</div>
+<div class="line">        suma += i;</div>
+<div class="line">    }</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Suma: %d&quot;</span>, suma); <span class="comment">// Output: Suma: 55</span></div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md8"></a>
+3. &lt;strong&gt;Recorrer un array&lt;/strong&gt;:</h4>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">    <span class="keywordtype">int</span> arr[] = {10, 20, 30};</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; i++) {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;%d &quot;</span>, arr[i]);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="comment">// Output: 10 20 30</span></div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md9"></a>
+4. &lt;strong&gt;Decrementar (contar regresivamente)&lt;/strong&gt;:</h4>
+<div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 5; i &gt; 0; i--) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;%d &quot;</span>, i);</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Output: 5 4 3 2 1</span></div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md10"></a>
+5. &lt;strong&gt;Múltiples variables en el bucle&lt;/strong&gt;:</h4>
+<div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0, j = 10; i &lt; j; i++, j--) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;i=%d, j=%d\n&quot;</span>, i, j);</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">/* Output:</span></div>
+<div class="line"><span class="comment">   i=0, j=10</span></div>
+<div class="line"><span class="comment">   i=1, j=9</span></div>
+<div class="line"><span class="comment">   ... (hasta i=4, j=6) */</span></div>
+</div><!-- fragment --><hr  />
+<h3><a class="anchor" id="autotoc_md12"></a>
+&lt;strong&gt;Errores Comunes&lt;/strong&gt;</h3>
+<ul>
+<li><b>Condiciones infinitas</b>: <div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &gt;= 0; i++) { ... } <span class="comment">// Nunca termina (i siempre &gt;= 0).</span></div>
+</div><!-- fragment --></li>
+<li><b>Actualización incorrecta</b>: <div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i--) { ... } <span class="comment">// i decrece, nunca alcanza i &lt; 5.</span></div>
+</div><!-- fragment --></li>
+</ul>
+<hr  />
+<h3><a class="anchor" id="autotoc_md14"></a>
+&lt;strong&gt;Consejos&lt;/strong&gt;</h3>
+<ul>
+<li>Usa variables con nombres significativos (ej: <code>contador</code> en lugar de <code>i</code> si mejora la legibilidad).</li>
+<li>Evita modificar la variable de control dentro del cuerpo del bucle (puede causar comportamientos inesperados).</li>
+</ul>
+<p >Este bucle es ideal cuando se conoce el número de iteraciones de antemano. ¡Practica con variaciones para dominarlo! </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

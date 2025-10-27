@@ -1,0 +1,348 @@
+\hypertarget{group__apuntes-codigos}{}\doxysection{Codigos de Ejemplo}
+\label{group__apuntes-codigos}\index{Codigos de Ejemplo@{Codigos de Ejemplo}}
+
+
+Varios ejmplos de codigos.  
+
+
+Diagrama de colaboración para Codigos de Ejemplo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{group__apuntes-codigos}
+\end{center}
+\end{figure}
+Varios ejmplos de codigos. 
+
+\hypertarget{md_codigos_Matricez}{}\doxysubsubsection{Matricez}\label{md_codigos_Matricez}
+\hypertarget{group__apuntes-codigos_autotoc_md0}{}\doxysubsection{Matricez}\label{group__apuntes-codigos_autotoc_md0}
+\hypertarget{group__apuntes-codigos_autotoc_md1}{}\doxysubsection{¿\+Que es?}\label{group__apuntes-codigos_autotoc_md1}
+Una matriz es un arreglo rectangular bidimensional de números, símbolos u objetos matemáticos, organizados en filas (horizontales) y columnas (verticales), que se utiliza para resolver sistemas de ecuaciones lineales, almacenar y transformar datos, y en diversos campos como la informática, la física y la economía.\hypertarget{group__apuntes-codigos_autotoc_md2}{}\doxyparagraph{1. Inicializar una matriz con valores}\label{group__apuntes-codigos_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} matriz[3][3];}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Llenar la matriz con valores consecutivos}}
+\DoxyCodeLine{\textcolor{keywordtype}{int} valor = 1;}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
+\DoxyCodeLine{        matriz[i][j] = valor++;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{group__apuntes-codigos_autotoc_md3}{}\doxyparagraph{2. Sumar todos los elementos de una matriz}\label{group__apuntes-codigos_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} matriz[2][3] = \{\{1, 2, 3\}, \{4, 5, 6\}\};}
+\DoxyCodeLine{\textcolor{keywordtype}{int} suma = 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 2; i++) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
+\DoxyCodeLine{        suma += matriz[i][j];}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{printf(\textcolor{stringliteral}{"{}Suma total: \%d\(\backslash\)n"{}}, suma);}
+
+\end{DoxyCode}
+\hypertarget{group__apuntes-codigos_autotoc_md4}{}\doxyparagraph{3. Buscar un elemento en la matriz}\label{group__apuntes-codigos_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} matriz[2][3] = \{\{5, 8, 2\}, \{9, 4, 7\}\};}
+\DoxyCodeLine{\textcolor{keywordtype}{int} objetivo = 4;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} encontrado = 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 2; i++) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (matriz[i][j] == objetivo) \{}
+\DoxyCodeLine{            printf(\textcolor{stringliteral}{"{}Encontrado en [\%d][\%d]\(\backslash\)n"{}}, i, j);}
+\DoxyCodeLine{            encontrado = 1;}
+\DoxyCodeLine{            \textcolor{keywordflow}{break};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (encontrado) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{group__apuntes-codigos_autotoc_md5}{}\doxysubsubsection{4. Buscar un elemento en la matriz}\label{group__apuntes-codigos_autotoc_md5}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} matriz[3][3] = \{\{5, 8, 2\}, \{9, 4, 7\}, \{1, 3, 6\}\};}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} objetivo = 7;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} encontrado = 0;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} fila, columna;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Buscar el elemento en la matriz}}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (matriz[i][j] == objetivo) \{}
+\DoxyCodeLine{                encontrado = 1;}
+\DoxyCodeLine{                fila = i;}
+\DoxyCodeLine{                columna = j;}
+\DoxyCodeLine{                \textcolor{keywordflow}{break};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (encontrado) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (encontrado) \{}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}El valor \%d se encontró en la posición [\%d][\%d]\(\backslash\)n"{}},}
+\DoxyCodeLine{               objetivo, fila, columna);}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}El valor \%d no se encontró en la matriz\(\backslash\)n"{}}, objetivo);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{group__apuntes-codigos_autotoc_md6}{}\doxyparagraph{5. Matriz de caracteres (strings)}\label{group__apuntes-codigos_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{char} palabras[3][10] = \{\textcolor{stringliteral}{"{}Hola"{}}, \textcolor{stringliteral}{"{}Mundo"{}}, \textcolor{stringliteral}{"{}C"{}}\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++) \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Palabra \%d: \%s\(\backslash\)n"{}}, i, palabras[i]);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{group__apuntes-codigos_autotoc_md7}{}\doxyparagraph{6. Modificar valores de la matriz}\label{group__apuntes-codigos_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} matriz[2][2] = \{\{1, 2\}, \{3, 4\}\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Duplicar todos los valores}}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 2; i++) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 2; j++) \{}
+\DoxyCodeLine{        matriz[i][j] *= 2;}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}\%d "{}}, matriz[i][j]);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{group__apuntes-codigos_autotoc_md8}{}\doxysubsection{Más Ejemplos de Bucles for con Matrices Bidimensionales en C}\label{group__apuntes-codigos_autotoc_md8}
+Aquí tienes más ejemplos prácticos de cómo usar bucles {\ttfamily for} con matrices bidimensionales\+:\hypertarget{group__apuntes-codigos_autotoc_md9}{}\doxysubsubsection{7. Inicializar matriz con valores secuenciales}\label{group__apuntes-codigos_autotoc_md9}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} matriz[3][3];}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} contador = 1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Llenar la matriz con valores secuenciales}}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
+\DoxyCodeLine{            matriz[i][j] = contador++;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Imprimir la matriz}}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Matriz con valores secuenciales:\(\backslash\)n"{}});}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
+\DoxyCodeLine{            printf(\textcolor{stringliteral}{"{}\%d\(\backslash\)t"{}}, matriz[i][j]);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{group__apuntes-codigos_autotoc_md10}{}\doxysubsubsection{8. Suma de elementos de una matriz}\label{group__apuntes-codigos_autotoc_md10}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} matriz[2][3] = \{\{5, 8, 2\}, \{9, 4, 7\}\};}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} suma = 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Calcular la suma de todos los elementos}}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 2; i++) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
+\DoxyCodeLine{            suma += matriz[i][j];}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}La suma de todos los elementos es: \%d\(\backslash\)n"{}}, suma);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{group__apuntes-codigos_autotoc_md11}{}\doxysubsubsection{9. Encontrar el valor máximo en una matriz}\label{group__apuntes-codigos_autotoc_md11}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <limits.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} matriz[3][4] = \{\{12, 5, 8, 20\}, \{3, 15, 7, 9\}, \{11, 2, 18, 6\}\};}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} maximo = INT\_MIN;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} fila\_max, columna\_max;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Encontrar el valor máximo y su posición}}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 4; j++) \{}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (matriz[i][j] > maximo) \{}
+\DoxyCodeLine{                maximo = matriz[i][j];}
+\DoxyCodeLine{                fila\_max = i;}
+\DoxyCodeLine{                columna\_max = j;}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}El valor máximo es \%d en la posición [\%d][\%d]\(\backslash\)n"{}},}
+\DoxyCodeLine{           maximo, fila\_max, columna\_max);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{group__apuntes-codigos_autotoc_md12}{}\doxysubsubsection{10. Transponer una matriz}\label{group__apuntes-codigos_autotoc_md12}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} original[2][3] = \{\{1, 2, 3\}, \{4, 5, 6\}\};}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} transpuesta[3][2];}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Transponer la matriz}}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 2; i++) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
+\DoxyCodeLine{            transpuesta[j][i] = original[i][j];}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Mostrar la matriz original}}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Matriz original:\(\backslash\)n"{}});}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 2; i++) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
+\DoxyCodeLine{            printf(\textcolor{stringliteral}{"{}\%d\(\backslash\)t"{}}, original[i][j]);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Mostrar la matriz transpuesta}}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}\(\backslash\)nMatriz transpuesta:\(\backslash\)n"{}});}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 2; j++) \{}
+\DoxyCodeLine{            printf(\textcolor{stringliteral}{"{}\%d\(\backslash\)t"{}}, transpuesta[i][j]);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{group__apuntes-codigos_autotoc_md13}{}\doxysubsubsection{11. Multiplicación de matrices}\label{group__apuntes-codigos_autotoc_md13}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} A[2][3] = \{\{1, 2, 3\}, \{4, 5, 6\}\};}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} B[3][2] = \{\{7, 8\}, \{9, 10\}, \{11, 12\}\};}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} C[2][2] = \{\{0, 0\}, \{0, 0\}\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Multiplicar matrices A x B}}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 2; i++) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 2; j++) \{}
+\DoxyCodeLine{            \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 3; k++) \{}
+\DoxyCodeLine{                C[i][j] += A[i][k] * B[k][j];}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Mostrar el resultado}}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Resultado de la multiplicación A x B:\(\backslash\)n"{}});}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 2; i++) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 2; j++) \{}
+\DoxyCodeLine{            printf(\textcolor{stringliteral}{"{}\%d\(\backslash\)t"{}}, C[i][j]);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{group__apuntes-codigos_autotoc_md14}{}\doxysubsubsection{12. Matriz de caracteres (tablero de juego)}\label{group__apuntes-codigos_autotoc_md14}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} tablero[3][3] = \{}
+\DoxyCodeLine{        \{\textcolor{charliteral}{' '}, \textcolor{charliteral}{' '}, \textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{        \{\textcolor{charliteral}{' '}, \textcolor{charliteral}{' '}, \textcolor{charliteral}{' '}\},}
+\DoxyCodeLine{        \{\textcolor{charliteral}{' '}, \textcolor{charliteral}{' '}, \textcolor{charliteral}{' '}\}}
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Inicializar el tablero con algunas fichas}}
+\DoxyCodeLine{    tablero[0][0] = \textcolor{charliteral}{'X'};}
+\DoxyCodeLine{    tablero[1][1] = \textcolor{charliteral}{'O'};}
+\DoxyCodeLine{    tablero[2][2] = \textcolor{charliteral}{'X'};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Mostrar el tablero}}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Tablero de juego:\(\backslash\)n"{}});}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
+\DoxyCodeLine{            printf(\textcolor{stringliteral}{"{}| \%c "{}}, tablero[i][j]);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}|\(\backslash\)n"{}});}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (i < 2) printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{group__apuntes-codigos_autotoc_md15}{}\doxysubsubsection{13. Promedio de cada fila}\label{group__apuntes-codigos_autotoc_md15}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{float} matriz[4][3] = \{}
+\DoxyCodeLine{        \{85.5, 90.0, 78.5\},}
+\DoxyCodeLine{        \{92.0, 88.5, 76.0\},}
+\DoxyCodeLine{        \{79.0, 85.0, 91.5\},}
+\DoxyCodeLine{        \{88.0, 92.5, 84.0\}}
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Calcular el promedio de cada fila}}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Promedio por fila:\(\backslash\)n"{}});}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 4; i++) \{}
+\DoxyCodeLine{        \textcolor{keywordtype}{float} suma = 0;}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
+\DoxyCodeLine{            suma += matriz[i][j];}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordtype}{float} promedio = suma / 3;}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}Fila \%d: \%.2f\(\backslash\)n"{}}, i, promedio);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Puntos clave\+:}}
+
+
+\begin{DoxyItemize}
+\item Usa bucles anidados para recorrer filas y columnas
+\item El primer índice generalmente representa las filas
+\item El segundo índice generalmente representa las columnas
+\item Puedes usar variables diferentes para los índices (i/j, fila/columna, etc.)
+\item El bucle externo controla las filas y el interno las columnas 
+\end{DoxyItemize}

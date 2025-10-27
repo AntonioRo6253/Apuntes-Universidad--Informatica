@@ -1,0 +1,385 @@
+Use this prompt whenever you create a new practice exercise inside the {\ttfamily Practicas} collection. It standardizes clarity, pedagogy, and consistency across all topics (Variables, Operators, Conditionals, Loops, Arrays, Functions, Pointers, Dynamic Memory, Recursion, Debugging, etc.).
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md171}{}\doxysection{1. Metadata Block (\+YAML Front Matter)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md171}
+Place at the top of the exercise {\ttfamily README.\+md}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{title: <Short Descriptive Title>}
+\DoxyCodeLine{topic: <Main Topic Category>}
+\DoxyCodeLine{subtopics: [list, of, secondary, ideas]}
+\DoxyCodeLine{difficulty: beginner | easy | medium | hard | challenge}
+\DoxyCodeLine{estimated\_time: <minutes>}
+\DoxyCodeLine{prerequisites: [links / prior exercises]}
+\DoxyCodeLine{learning\_mode: concept | guided | project | challenge}
+\DoxyCodeLine{author: <Your Name>}
+\DoxyCodeLine{version: 1.0}
+\DoxyCodeLine{last\_update: YYYY-\/MM-\/DD}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md173}{}\doxysection{2. Overview}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md173}
+A concise paragraph (3–5 lines) explaining the real-\/world motivation or conceptual value.
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md175}{}\doxysection{3. Learning Objectives (\+Action Verbs)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md175}
+List 3–6 measurable outcomes starting with verbs. Example\+:
+\begin{DoxyItemize}
+\item Understand how to declare and initialize arrays in C.
+\item Apply pointer arithmetic to traverse memory safely.
+\item Distinguish between stack and heap allocation.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md177}{}\doxysection{4. Context / Scenario (\+Optional if Purely Technical)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md177}
+If helpful, provide a short narrative. Keep it under 120 words. Avoid fluff.
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md179}{}\doxysection{5. Problem Statement (\+Crystal Clear)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md179}
+State exactly what the learner must build or solve. Avoid ambiguity. Use bullet points for multi-\/step requirements. Each requirement SHOULD be testable.
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md181}{}\doxysection{6. Input Specification}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md181}
+Describe\+:
+\begin{DoxyItemize}
+\item Source (stdin? function parameters? file?)
+\item Format (types, order, delimiters)
+\item Valid ranges
+\item Invalid / edge behaviors (ignore? reject? sanitize?)
+\end{DoxyItemize}
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Input: Two integers N and M (1 <= N, M <= 10\string^6) separated by a single space.}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md183}{}\doxysection{7. Output Specification}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md183}
+State EXACT required output formatting. If multiple lines, enumerate them. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Output: A single line containing the sum of N and M.}
+
+\end{DoxyCode}
+ Mention trailing newline expectations if relevant.
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md185}{}\doxysection{8. Constraints \& Limits}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md185}
+Include computational, memory, stylistic, or time constraints. Example\+:
+\begin{DoxyItemize}
+\item Time\+: O(n)
+\item Memory\+: \texorpdfstring{$<$}{<}= 64 MB
+\item No global mutable state
+\item Must not use recursion (unless recursion topic)
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md187}{}\doxysection{9. Examples (\+At Least 2–3)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md187}
+Each example must include Input + Output blocks. One should cover a normal case, one an edge case, optionally one invalid case (if handled). Format\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Example 1}
+\DoxyCodeLine{Input:}
+\DoxyCodeLine{5 7}
+\DoxyCodeLine{Output:}
+\DoxyCodeLine{12}
+\DoxyCodeLine{}
+\DoxyCodeLine{Example 2 (Edge: max values)}
+\DoxyCodeLine{Input:}
+\DoxyCodeLine{1000000 1000000}
+\DoxyCodeLine{Output:}
+\DoxyCodeLine{2000000}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md189}{}\doxysection{10. Edge Cases to Consider}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md189}
+Provide a bullet list the student must consciously test (do not solve for them)\+:
+\begin{DoxyItemize}
+\item Minimum valid values (e.\+g., N = 0)
+\item Maximum boundary
+\item Repeated elements / duplicates
+\item Empty input (if relevant)
+\item Overflow risk scenarios
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md191}{}\doxysection{11. Step-\/by-\/\+Step Guidance (\+Optional Tiered Hints)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md191}
+If exercise is guided, provide progressive hint levels\+:
+\begin{DoxyEnumerate}
+\item High-\/level decomposition
+\item Data structure or algorithm suggestion
+\item Pseudocode (NOT full solution) Label this section clearly; omit for challenge tasks.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md193}{}\doxysection{12. Required Folder \& File Structure}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md193}
+Every exercise folder should look like\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<exercise-\/folder>/}
+\DoxyCodeLine{  <learning\_mode>-\/-\/<difficulty>.md   \# This template instantiated (SEE NAMING CONVENTION BELOW)}
+\DoxyCodeLine{  src/}
+\DoxyCodeLine{    main.c                \# Or designated entry point}
+\DoxyCodeLine{    (other .c/.h files)   \# Modularized logic}
+\DoxyCodeLine{  tests/                  \# (Optional) Manual or automated test drivers}
+\DoxyCodeLine{    test\_input\_01.txt}
+\DoxyCodeLine{    test\_expected\_01.txt}
+\DoxyCodeLine{  respuestas/             \# Student's solutions or reflection answers}
+\DoxyCodeLine{    REFLEXION.md          \# Post-\/exercise reflection prompts answered}
+\DoxyCodeLine{  docs/ (optional)        \# Extra diagrams, design notes}
+
+\end{DoxyCode}
+ If the course uses Doxygen later\+: add {\ttfamily include/} for headers.\hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md194}{}\doxysubsection{12.\+1 File Naming Convention (\+IMPORTANT)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md194}
+The main specification file that previously would be named {\ttfamily README.\+md} MUST instead be named using the following pattern\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<learning\_mode>-\/-\/<difficulty>.md}
+
+\end{DoxyCode}
+
+
+Where\+:
+\begin{DoxyItemize}
+\item {\ttfamily \texorpdfstring{$<$}{<}learning\+\_\+mode\texorpdfstring{$>$}{>}} is the exact value of the {\ttfamily learning\+\_\+mode} field in the metadata block (e.\+g., {\ttfamily concept}, {\ttfamily guided}, {\ttfamily project}, {\ttfamily challenge}).
+\item {\ttfamily \texorpdfstring{$<$}{<}difficulty\texorpdfstring{$>$}{>}} is the exact value of the {\ttfamily difficulty} field in the metadata block (e.\+g., {\ttfamily beginner}, {\ttfamily easy}, {\ttfamily medium}, {\ttfamily hard}, {\ttfamily challenge}).
+\end{DoxyItemize}
+
+Rules\+:
+\begin{DoxyItemize}
+\item Use all lowercase.
+\item Separate the two parts with exactly two hyphens ({\ttfamily -\/-\/}).
+\item No spaces or additional suffixes/prefixes.
+\item The file must reside inside the folder corresponding to its topic, e.\+g.\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Practicas/}
+\DoxyCodeLine{  3. Variables/}
+\DoxyCodeLine{    my-\/variables-\/exercise/   \# Folder name is flexible but descriptive}
+\DoxyCodeLine{      concept-\/-\/beginner.md   \# Specification file (this template applied)}
+\DoxyCodeLine{      src/}
+\DoxyCodeLine{      respuestas/}
+
+\end{DoxyCode}
+
+\item One exercise = one folder containing exactly one specification file following this convention.
+\item If multiple exercises share the same topic, each still has its own folder and one spec file named by this convention.
+\end{DoxyItemize}
+
+Examples\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{concept-\/-\/beginner.md}
+\DoxyCodeLine{guided-\/-\/medium.md}
+\DoxyCodeLine{project-\/-\/hard.md}
+\DoxyCodeLine{challenge-\/-\/challenge.md}
+
+\end{DoxyCode}
+
+
+Rationale\+: This naming scheme allows automated tooling to classify exercises by pedagogical mode and difficulty without parsing file contents.
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md196}{}\doxysection{13. Coding Requirements / Style}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md196}
+
+\begin{DoxyItemize}
+\item Use clear, self-\/documenting identifiers (English)
+\item No magic numbers (define constants)
+\item Functions \texorpdfstring{$<$}{<}= $\sim$40 LOC when possible
+\item One responsibility per function
+\item Header files only for declarations, no logic
+\item Always check return values (e.\+g., {\ttfamily malloc}, {\ttfamily scanf})
+\item Free all dynamically allocated memory
+\item Avoid undefined behavior (document assumptions)
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md198}{}\doxysection{14. Documentation Requirements}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md198}
+Inside code\+:
+\begin{DoxyItemize}
+\item File header comment\+: purpose + author + date
+\item Function comments\+: purpose, params, return, side effects, error conditions Example function doc (Doxygen-\/ready)\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md200}{}\doxysection{15. Testing Instructions}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md200}
+Describe how the learner can test manually or with provided scripts. Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Compile:}
+\DoxyCodeLine{  gcc -\/Wall -\/Wextra -\/std=c11 -\/O2 -\/o main src/*.c}
+\DoxyCodeLine{Run:}
+\DoxyCodeLine{  ./main < tests/test\_input\_01.txt}
+\DoxyCodeLine{Compare:}
+\DoxyCodeLine{  diff -\/u tests/test\_expected\_01.txt output.txt}
+
+\end{DoxyCode}
+ Encourage building additional edge test cases.
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md202}{}\doxysection{16. Evaluation / Grading Rubric}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md202}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Criterion   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Weight   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Criterion   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Weight   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endhead
+Correctness   &40\%   &Produces required outputs across test set    \\\cline{1-3}
+Memory Safety   &15\%   &No leaks, no UB, proper frees    \\\cline{1-3}
+Code Clarity   &15\%   &Readable, modular, documented    \\\cline{1-3}
+Adherence to Spec   &15\%   &Matches input/output/constraints exactly    \\\cline{1-3}
+Edge Cases   &10\%   &Explicitly handled / validated    \\\cline{1-3}
+Reflection   &5\%   &Thoughtful answers in {\ttfamily respuestas/\+REFLEXION.\+md}   \\\cline{1-3}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md204}{}\doxysection{17. Reflection Prompts (to place in $<$tt$>$respuestas/\+REFLEXION.\+md$<$/tt$>$)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md204}
+Students answer after solving\+:
+\begin{DoxyEnumerate}
+\item What was the most challenging part and why?
+\item Which edge case forced you to rethink your design?
+\item If you refactored\+: what improved (complexity? clarity?)
+\item What would you test next if given more time?
+\item One concept to review before the next exercise.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md206}{}\doxysection{18. Suggested Extensions (\+Optional)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md206}
+List 2–4 optional improvements increasing difficulty (e.\+g., add dynamic resizing, support negative inputs, implement recursive variant, measure performance).
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md208}{}\doxysection{19. Common Mistakes (\+Preemptive Warnings)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md208}
+
+\begin{DoxyItemize}
+\item Forgetting {\ttfamily \textbackslash{}n} in final output
+\item Not validating {\ttfamily scanf} return count
+\item Off-\/by-\/one loop boundaries
+\item Using uninitialized pointers
+\item Memory leaks after early returns
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md210}{}\doxysection{20. Glossary (\+If Terms Introduced)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md210}
+Define new or advanced terms briefly\+: e.\+g., \char`\"{}heap\char`\"{}, \char`\"{}segmentation fault\char`\"{}, \char`\"{}pointer decay\char`\"{}.
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md212}{}\doxysection{21. Version Control Guidance}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md212}
+Minimum recommended commit sequence\+:
+\begin{DoxyEnumerate}
+\item Initialize repo / add skeleton
+\item Parse input \& stub functions
+\item Implement core logic
+\item Add edge case handling
+\item Add tests \& verify
+\item Refactor \& document
+\item Final cleanup \& reflection
+\end{DoxyEnumerate}
+
+Commit messages\+: imperative mood (e.\+g., \char`\"{}\+Add input parsing for matrix size\char`\"{}).
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md214}{}\doxysection{22. Quality Checklist (\+Author Pre-\/\+Publish)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md214}
+Before releasing the exercise ensure\+:
+\begin{DoxyItemize}
+\item \mbox{[} \mbox{]} All sections above populated
+\item \mbox{[} \mbox{]} Examples compile \& run
+\item \mbox{[} \mbox{]} No ambiguous wording in spec
+\item \mbox{[} \mbox{]} At least one non-\/trivial edge case included
+\item \mbox{[} \mbox{]} Learning objectives are measurable
+\item \mbox{[} \mbox{]} Reflection prompts present
+\item \mbox{[} \mbox{]} Folder structure matches template
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md216}{}\doxysection{23. Mini Author Prompt (\+Reusable Snippet)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md216}
+Paste this into your own assistant when drafting a new exercise\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Create a C programming practice exercise following this structure:}
+\DoxyCodeLine{-\/ Provide metadata (title, topic, difficulty, time)}
+\DoxyCodeLine{-\/ Write a concise overview and clear problem statement}
+\DoxyCodeLine{-\/ Define precise input/output specifications and constraints}
+\DoxyCodeLine{-\/ Supply at least 2 normal examples + 1 edge example}
+\DoxyCodeLine{-\/ List explicit edge cases (not solved, only listed)}
+\DoxyCodeLine{-\/ Include learning objectives and optional narrative context}
+\DoxyCodeLine{-\/ Provide a rubric table with weights summing to 100\%}
+\DoxyCodeLine{-\/ Add reflection questions and 2–3 extension ideas}
+\DoxyCodeLine{-\/ Enforce coding style: modular, documented, safe memory usage}
+\DoxyCodeLine{-\/ Include folder layout (README.md, src/, tests/, respuestas/)}
+\DoxyCodeLine{Keep wording unambiguous, technical, and student-\/friendly.}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md218}{}\doxysection{24. Minimal Filled Example (\+Illustrative)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md218}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Title: Sum of Two Numbers}
+\DoxyCodeLine{Topic: Variables}
+\DoxyCodeLine{Difficulty: beginner}
+\DoxyCodeLine{Problem: Read two integers and print their sum followed by a newline.}
+\DoxyCodeLine{Input: Two integers A B (|A|, |B| <= 10\string^6) separated by space.}
+\DoxyCodeLine{Output: Single integer (A + B) with newline.}
+\DoxyCodeLine{Constraints: Use 32-\/bit signed int, handle negative values.}
+\DoxyCodeLine{Examples:}
+\DoxyCodeLine{ Input: 5 7   -\/> Output: 12}
+\DoxyCodeLine{ Input: -\/3 9  -\/> Output: 6}
+\DoxyCodeLine{ Edge: 1000000 1000000 -\/> 2000000}
+\DoxyCodeLine{Edge Cases: negatives, large boundaries, zero values}
+\DoxyCodeLine{Reflection Prompt: What error would overflow cause and why does it not happen here?}
+\DoxyCodeLine{Extensions: Add overflow detection; support arbitrary length using strings.}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md220}{}\doxysection{25. Tone \& Language Rules}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md220}
+
+\begin{DoxyItemize}
+\item Write all exercise content in clear, neutral instructional Spanish.
+\item Avoid slang, jokes, or cultural references.
+\item Prefer active voice (\char`\"{}\+Implement a function...\char`\"{} not \char`\"{}\+A function should be implemented\char`\"{}).
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md222}{}\doxysection{26. Accessibility \& Inclusivity Notes}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md222}
+
+\begin{DoxyItemize}
+\item Use gender-\/neutral language.
+\item Avoid assuming prior informal knowledge (define terms when first used).
+\item Keep color references optional (for visually impaired learners).
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md224}{}\doxysection{27. Maintenance Notes}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md224}
+If updating exercise\+:
+\begin{DoxyItemize}
+\item Bump {\ttfamily version} \& update {\ttfamily last\+\_\+update}
+\item Add a short CHANGELOG section at bottom listing modifications
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md226}{}\doxysection{28. CHANGELOG (\+Template Section for Future)}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md226}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\#\# Changelog}
+\DoxyCodeLine{-\/ 1.0 (YYYY-\/MM-\/DD): Initial release.}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+ \hypertarget{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md228}{}\doxysection{Final Reminder}\label{md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE_autotoc_md228}
+Consistency \texorpdfstring{$>$}{>} Cleverness. Your goal is to reduce ambiguity so the learner focuses on mastering the concept, not guessing intentions.
+
+\begin{quote}
+Use this file as the single source of truth when authoring new practice exercises. \end{quote}
