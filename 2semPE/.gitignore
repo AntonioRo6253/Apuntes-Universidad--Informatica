@@ -1,0 +1,70 @@
+# Archivos binarios y objetos
+**/bin/
+**/obj/
+*.o
+
+# Ignorar Codigo Fuente de Trabajos
+src/
+
+# Archivos de proyecto y dependencias de Code::Blocks
+*.cbp
+*.depend
+*.layout
+
+# Archivos ejecutables
+**/main
+
+# Archivos de Python compilados
+**/__pycache__/
+**/*.pyc
+
+# Archivos temporales y de sistema
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Otros archivos innecesarios
+*.log
+
+# Configuracion de Formateo de C/C++
+*.clang-format
+    
+*docs/
+
+# Build artifacts y binarios comunes
+**/bin/
+**/obj/
+**/out/
+**/build/
+**/dist/
+
+# Archivos ejecutables y de prueba
+*.exe
+*.out
+**/main
+
+# Archivos de C/C++ compilados y objetos
+*.o
+*.a
+*.so
+*.dll
+
+# Carpetas y archivos de pruebas/outputs locales
+**/output/
+**/outputs/
+
+# Archivos de editores / temporales
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Diagramas y documentos de diseño generados
+*.drawio
+*.drawio.png
+*.vsdx
+
+# Archivos de Word/RTF temporales que aparecen en los adjuntos
+*.rtf

@@ -1,0 +1,868 @@
+{\bfseries{Documentacion\+:}} \href{https://learn.microsoft.com/es-es/cpp/cpp/struct-cpp?view=msvc-170}{\texttt{ Microsoft}} $\vert$ \href{https://en.cppreference.com/w/c/language/struct.html}{\texttt{ cpp\+Reference}} $\vert$ \href{https://www.ibm.com/docs/en/zos/2.5.0?topic=interface-c-structures}{\texttt{ IBM}} $\vert$ \href{https://www.gnu.org/software/c-intro-and-ref/manual/html_node/Structures.html}{\texttt{ GNU}} {\bfseries{Tutoriales\+:}}
+\begin{DoxyItemize}
+\item \href{https://www.youtube.com/watch?v=49hn2gdRhoo}{\texttt{ Structs y typedef en C -\/ Curso de programación en C PASO a PASO (28)}}
+\item \href{https://www.youtube.com/watch?v=oKXP1HZ8xIs}{\texttt{ C structs 🏠}} {\bfseries{Libros\+:}}
+\item \href{https://www.mheducation.com.mx/programacion-en-c-c-java-y-uml-9786071512123-latam}{\texttt{ Programación en C, C++, Java y UML Luis Joyanes Aguilar\{2Edicion\}}} 280, 285, 287, 288, 291, 292, 293
+\item \mbox{[}C/\+C++ Como Programar\{4Edicion\}\mbox{]}() 355-\/361
+\end{DoxyItemize}
+
+Una {\bfseries{estructura}} es una colección de variables (llamadas {\bfseries{miembros}}) que pueden ser de diferentes tipos de datos, agrupadas bajo un nombre común en un bloque de memoria contiguo. Son fundamentales para organizar datos relacionados y crear tipos de datos complejos.
+
+{\bfseries{Características clave\+:}}
+\begin{DoxyItemize}
+\item Agrupan datos heterogéneos bajo un mismo nombre
+\item Ocupan memoria contigua para todos sus miembros
+\item No incluyen métodos (funciones) como en otros lenguajes
+\item También se conocen como \+\_\+\char`\"{}registros\char`\"{}\+\_\+ en algunos contextos
+\end{DoxyItemize}\hypertarget{md_teoria_17__Struct_autotoc_md251}{}\doxysubsection{Sintaxis Básica y Declaración}\label{md_teoria_17__Struct_autotoc_md251}
+\hypertarget{md_teoria_17__Struct_autotoc_md252}{}\doxysubsubsection{Definición de Estructuras}\label{md_teoria_17__Struct_autotoc_md252}
+{\bfseries{concepto}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{/* DEFINIR */}}
+\DoxyCodeLine{\textcolor{keyword}{struct }estructura \{ }
+\DoxyCodeLine{    tipo miembro1;}
+\DoxyCodeLine{    tipo miembro2;}
+\DoxyCodeLine{    \textcolor{comment}{// ...}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{comment}{/* USAR */}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} funcion()\{ }
+\DoxyCodeLine{    \textcolor{keyword}{struct }estructura miEstructura; \textcolor{comment}{// estructura persona}}
+\DoxyCodeLine{    miEstructura.miembro1; \textcolor{comment}{// llamar un miembro}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \DoxyHorRuler{0}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* DEFINICIÓN GLOBAL de la estructura */}}
+\DoxyCodeLine{\textcolor{keyword}{struct }jugador \{           \textcolor{comment}{// `struct` + nombre\_estructura}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} nivel;             \textcolor{comment}{// Miembro de tipo entero}}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} nombre[50];       \textcolor{comment}{// Miembro: arreglo de caracteres}}
+\DoxyCodeLine{    \textcolor{keywordtype}{float} salud;           \textcolor{comment}{// Miembro de tipo flotante}}
+\DoxyCodeLine{\}; \textcolor{comment}{// ¡No olvidar el punto y coma!}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* DECLARACIÓN de variables de estructura */}}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{comment}{/* Variables normales de estructura */}}
+\DoxyCodeLine{    \textcolor{keyword}{struct }jugador jugador1, jugador2; \textcolor{comment}{// En C puro, se requiere `struct`}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Acceso a miembros con operador punto (.) */}}
+\DoxyCodeLine{    strcpy(jugador1.nombre, \textcolor{stringliteral}{"{}Memo"{}});}
+\DoxyCodeLine{    jugador1.nivel = 35;}
+\DoxyCodeLine{    jugador1.salud = 100.0f;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Acceso con punteros usando operador flecha (-\/>) */}}
+\DoxyCodeLine{    \textcolor{keyword}{struct }jugador *ptr = \&jugador2;}
+\DoxyCodeLine{    strcpy(ptr-\/>nombre, \textcolor{stringliteral}{"{}Ana"{}});}
+\DoxyCodeLine{    ptr-\/>nivel = 28;}
+\DoxyCodeLine{    ptr-\/>salud = 85.5f;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ {\bfseries{Ejemplo de clase}} \begin{quote}
+nota \end{quote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct }\mbox{\hyperlink{structempleado}{empleado}} \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} \mbox{\hyperlink{structempleado_ade0df631ca6a4a8e29cbfeaf48274687}{codigo}};}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} \mbox{\hyperlink{structempleado_ab4a527bb5f43fb2216d355a8ec7df490}{nombre}}[40]; \textcolor{comment}{// nombre completo}}
+\DoxyCodeLine{    \textcolor{keywordtype}{float} \mbox{\hyperlink{structempleado_ae2f5499bb1a73ad93f6636bdd52d0973}{salario}};}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\{}
+\DoxyCodeLine{   \textcolor{comment}{/* definir varios en uno */}}
+\DoxyCodeLine{    \textcolor{keyword}{struct }\mbox{\hyperlink{structempleado}{empleado}} empleados[3] = \{}
+\DoxyCodeLine{        \{12324,\textcolor{stringliteral}{"{}pedro"{}},1500\}, \textcolor{comment}{// empleado1}}
+\DoxyCodeLine{        \{12314,\textcolor{stringliteral}{"{}memo"{}},1200\}, \textcolor{comment}{// empleado2}}
+\DoxyCodeLine{        \{11024,\textcolor{stringliteral}{"{}maria"{}},1000\}}
+\DoxyCodeLine{    \}; \textcolor{comment}{// arreglo de estructuras}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/* definir uno por uno */}}
+\DoxyCodeLine{    \textcolor{keyword}{struct }\mbox{\hyperlink{structempleado}{empleado}} empleado2;}
+\DoxyCodeLine{    \textcolor{keyword}{struct }\mbox{\hyperlink{structempleado}{empleado}} empleado2;}
+\DoxyCodeLine{    \textcolor{keyword}{struct }\mbox{\hyperlink{structempleado}{empleado}} empleado3;}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md254}{}\doxysubsubsection{Declaración Global}\label{md_teoria_17__Struct_autotoc_md254}
+{\bfseries{concepto}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Define la estructura y variables globales en una sola declaración.}}
+\DoxyCodeLine{\textcolor{keyword}{struct }Jugador \{ \textcolor{keywordtype}{int} nivel; \} jugador1, jugador2;}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{/* DEFINICIÓN con declaración inmediata de variables globales */}}
+\DoxyCodeLine{\textcolor{keyword}{struct }jugador \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} nivel;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} nombre[50];}
+\DoxyCodeLine{\} jugador1, jugador2, jugador3; \textcolor{comment}{// Variables globales}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{comment}{// Estas variables son accesibles en toda la función main}}
+\DoxyCodeLine{    strcpy(jugador1.nombre, \textcolor{stringliteral}{"{}Jugador Global"{}});}
+\DoxyCodeLine{    jugador1.nivel = 10;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Consideraciones de ámbito\+:}}
+\begin{DoxyItemize}
+\item Las estructuras definidas fuera de funciones tienen ámbito global
+\item Las variables declaradas junto con la definición son globales
+\item Para uso local, definir la estructura globalmente y declarar variables dentro de funciones
+\end{DoxyItemize}\hypertarget{md_teoria_17__Struct_autotoc_md255}{}\doxysubsection{Métodos de Inicialización}\label{md_teoria_17__Struct_autotoc_md255}
+{\bfseries{concepto}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Puedes rellenar la estructura al declararla para dejarla lista desde el inicio.}}
+\DoxyCodeLine{\textcolor{keyword}{struct }Tipo dato = \{.campo = valor\};}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md256}{}\doxysubsubsection{1. Inicialización Designada (\+C99+) -\/ $<$strong$>$\+RECOMENDADA$<$/strong$>$}\label{md_teoria_17__Struct_autotoc_md256}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct }jugador \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} nivel;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} nombre[50];}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} salud;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{comment}{/* Inicialización designada -\/ orden independiente */}}
+\DoxyCodeLine{    \textcolor{keyword}{struct }jugador jugador1 = \{}
+\DoxyCodeLine{        .nivel = 35,}
+\DoxyCodeLine{        .nombre = \textcolor{stringliteral}{"{}Memo"{}},  \textcolor{comment}{// Para literales de string}}
+\DoxyCodeLine{        .salud = 100}
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keyword}{struct }jugador jugador2 = \{}
+\DoxyCodeLine{        .nombre = \textcolor{stringliteral}{"{}Ana"{}},   \textcolor{comment}{// Puede ir en cualquier orden}}
+\DoxyCodeLine{        .salud = 80,}
+\DoxyCodeLine{        .nivel = 28}
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Jugador: \%s, Nivel: \%d, Salud: \%d\(\backslash\)n"{}}, }
+\DoxyCodeLine{           jugador1.nombre, jugador1.nivel, jugador1.salud);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Ventajas de la inicialización designada\+:}}
+\begin{DoxyItemize}
+\item Orden independiente de los miembros
+\item Código más legible y auto-\/documentado
+\item Puedes omitir miembros (se inicializan a 0 automáticamente)
+\item Menos propenso a errores al modificar la estructura
+\end{DoxyItemize}\hypertarget{md_teoria_17__Struct_autotoc_md257}{}\doxysubsubsection{2. Inicialización Posicional (\+Clásica)}\label{md_teoria_17__Struct_autotoc_md257}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct }jugador jugador3 = \{15, \textcolor{stringliteral}{"{}Juan"{}}, 50\}; \textcolor{comment}{// Orden: nivel, nombre, salud}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Precaución\+:}} El orden debe coincidir exactamente con la declaración de la estructura.\hypertarget{md_teoria_17__Struct_autotoc_md258}{}\doxysubsubsection{3. Inicialización Parcial y Cero}\label{md_teoria_17__Struct_autotoc_md258}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{/* Inicialización parcial -\/ miembros faltantes se ponen a 0 */}}
+\DoxyCodeLine{\textcolor{keyword}{struct }jugador jugador4 = \{}
+\DoxyCodeLine{    .nivel = 10,}
+\DoxyCodeLine{    .nombre = \textcolor{stringliteral}{"{}Nuevo"{}}}
+\DoxyCodeLine{    \textcolor{comment}{// salud se inicializa automáticamente a 0}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* Inicialización cero -\/ todos los miembros a 0 */}}
+\DoxyCodeLine{\textcolor{keyword}{struct }jugador jugador5 = \{0\};}
+\DoxyCodeLine{\textcolor{keyword}{struct }jugador jugador6 = \{\}; \textcolor{comment}{// C99+, equivalente a \{0\}}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md259}{}\doxysubsection{Modificación de Estructuras}\label{md_teoria_17__Struct_autotoc_md259}
+{\bfseries{concepto}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Usa . para variables y -\/> para punteros al acceder y modificar miembros.}}
+\DoxyCodeLine{jugador.nivel = 10;}
+\DoxyCodeLine{ptr-\/>salud = 90;}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct }jugador \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} nivel;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} nombre[50];}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} inventario[2][3];}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} salud;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{keyword}{struct }jugador jugador1 = \{}
+\DoxyCodeLine{        .nombre = \textcolor{stringliteral}{"{}Inicial"{}}, }
+\DoxyCodeLine{        .nivel = 1,}
+\DoxyCodeLine{        .inventario = \{}
+\DoxyCodeLine{            \{123,234,283\},}
+\DoxyCodeLine{            \{246,276,297\}}
+\DoxyCodeLine{        \}, }
+\DoxyCodeLine{        .salud = 100}
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Modificación de variables normales */}}
+\DoxyCodeLine{    strcpy(jugador1.nombre, \textcolor{stringliteral}{"{}Luis"{}});  \textcolor{comment}{// Cambiar string}}
+\DoxyCodeLine{    jugador1.nivel = 99;              \textcolor{comment}{// Cambiar número}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordtype}{int} nuevo\_inventario[2][3] = \{}
+\DoxyCodeLine{        \{1, 2, 3\}, }
+\DoxyCodeLine{        \{4, 5, 6\}}
+\DoxyCodeLine{    \};\textcolor{comment}{// cambiar matriz}}
+\DoxyCodeLine{    memcpy(jugador1.inventario,nuevoInven,\textcolor{keyword}{sizeof}(jugador1.inventario));}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    jugador1.salud = 150;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Modificación mediante punteros */}}
+\DoxyCodeLine{    \textcolor{keyword}{struct }jugador *ptr = \&jugador1;}
+\DoxyCodeLine{    strcpy(ptr-\/>nombre, \textcolor{stringliteral}{"{}María"{}});     \textcolor{comment}{// Usar -\/> con punteros}}
+\DoxyCodeLine{    ptr-\/>nivel = 10;}
+\DoxyCodeLine{    ptr-\/>salud = 75;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md260}{}\doxysubsection{Uso de $<$tt$>$typedef$<$/tt$>$ con Estructuras}\label{md_teoria_17__Struct_autotoc_md260}
+{\bfseries{concepto}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// typedef crea un alias de tipo para no repetir la palabra struct cada vez.}}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{ \textcolor{keywordtype}{int} nivel; \} Jugador;}
+\DoxyCodeLine{Jugador heroe;}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* Método 1: typedef con estructura definida por separado */}}
+\DoxyCodeLine{\textcolor{keyword}{struct }jugador\_struct \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} nivel;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} nombre[50];}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }jugador\_struct Jugador; \textcolor{comment}{// Alias}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* Método 2: typedef combinado con definición (MÁS COMÚN) */}}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} nivel;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} nombre[50];}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} salud;}
+\DoxyCodeLine{\} Jugador; \textcolor{comment}{// ¡Jugador es ahora un tipo!}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* Método 3: Para estructuras que se autorreferencian */}}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }nodo \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} valor;}
+\DoxyCodeLine{    \textcolor{keyword}{struct }nodo *siguiente; \textcolor{comment}{// Aquí necesitamos 'struct nodo'}}
+\DoxyCodeLine{\} Nodo;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    Jugador jugador1; \textcolor{comment}{// ¡Sin 'struct'!}}
+\DoxyCodeLine{    jugador1.nivel = 10;}
+\DoxyCodeLine{    strcpy(jugador1.nombre, \textcolor{stringliteral}{"{}Ejemplo"{}});}
+\DoxyCodeLine{    jugador1.salud = 100;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    Nodo primer\_nodo = \{5, NULL\};}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Ventajas de typedef\+:}}
+\begin{DoxyItemize}
+\item Código más limpio y legible
+\item No requiere repetir {\ttfamily struct}
+\item Facilita el mantenimiento
+\item Mejor abstracción de datos
+\end{DoxyItemize}
+
+{\bfseries{Consideraciones\+:}}
+\begin{DoxyItemize}
+\item En estructuras autorreferenciadas (como listas enlazadas), se debe usar el nombre completo {\ttfamily struct nombre} dentro de la definición
+\end{DoxyItemize}\hypertarget{md_teoria_17__Struct_autotoc_md261}{}\doxysubsection{Estructuras Anidadas}\label{md_teoria_17__Struct_autotoc_md261}
+{\bfseries{concepto}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Una estructura puede contener otras para encapsular datos relacionados.}}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{ \textcolor{keyword}{struct }Jugador info; \textcolor{keyword}{struct }Posicion lugar; \} Entidad;}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md262}{}\doxysubsubsection{Uso con $<$tt$>$typedef$<$/tt$>$ (\+Recomendado)}\label{md_teoria_17__Struct_autotoc_md262}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* Definir estructuras base con typedef */}}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} nivel;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} nombre[50];}
+\DoxyCodeLine{    \textcolor{keywordtype}{float} salud;}
+\DoxyCodeLine{\} Jugador;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} y;}
+\DoxyCodeLine{\} Posicion;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* Estructura que contiene otras estructuras */}}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    Jugador jugador;        \textcolor{comment}{// Estructura anidada}}
+\DoxyCodeLine{    Posicion posicion;      \textcolor{comment}{// Otra estructura anidada}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} zona\_actual;}
+\DoxyCodeLine{\} EntidadJugador;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{comment}{/* Declaración y acceso anidado */}}
+\DoxyCodeLine{    EntidadJugador heroe;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    strcpy(heroe.jugador.nombre, \textcolor{stringliteral}{"{}Guerrero"{}});}
+\DoxyCodeLine{    heroe.jugador.nivel = 15;}
+\DoxyCodeLine{    heroe.jugador.salud = 95.5f;}
+\DoxyCodeLine{    heroe.posicion.x = 100;}
+\DoxyCodeLine{    heroe.posicion.y = 200;}
+\DoxyCodeLine{    heroe.zona\_actual = 3;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}\%s está en posición (\%d, \%d)\(\backslash\)n"{}}, }
+\DoxyCodeLine{           heroe.jugador.nombre, heroe.posicion.x, heroe.posicion.y);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md263}{}\doxysubsubsection{Inicialización de Estructuras Anidadas}\label{md_teoria_17__Struct_autotoc_md263}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{/* Inicialización designada para estructuras anidadas */}}
+\DoxyCodeLine{EntidadJugador enemigo = \{}
+\DoxyCodeLine{    .jugador = \{}
+\DoxyCodeLine{        .nombre = \textcolor{stringliteral}{"{}Orco"{}},}
+\DoxyCodeLine{        .nivel = 5,}
+\DoxyCodeLine{        .salud = 75.0f}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{    .posicion = \{}
+\DoxyCodeLine{        .x = 150,}
+\DoxyCodeLine{        .y = 180}
+\DoxyCodeLine{    \},}
+\DoxyCodeLine{    .zona\_actual = 3}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* Inicialización posicional (menos legible) */}}
+\DoxyCodeLine{EntidadJugador npc = \{}
+\DoxyCodeLine{    \{\textcolor{stringliteral}{"{}NPC"{}}, 2, 50.0f\},  \textcolor{comment}{// jugador}}
+\DoxyCodeLine{    \{50, 75\},           \textcolor{comment}{// posicion  }}
+\DoxyCodeLine{    1                   \textcolor{comment}{// zona\_actual}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md264}{}\doxysubsection{Arreglos en Estructuras}\label{md_teoria_17__Struct_autotoc_md264}
+{\bfseries{concepto}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Los arreglos ocupan memoria dentro de la estructura; los punteros apuntan fuera.}}
+\DoxyCodeLine{\textcolor{keywordtype}{char} nombre[32];}
+\DoxyCodeLine{\textcolor{keywordtype}{char} *alias;}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md265}{}\doxysubsubsection{Punteros vs. Arreglos\+: Diferencias Clave}\label{md_teoria_17__Struct_autotoc_md265}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define MAX\_TITULO 100}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define MAX\_EDITORIAL 50}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    \textcolor{comment}{/* DIFERENCIAS CRÍTICAS: */}}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} titulo[MAX\_TITULO];    \textcolor{comment}{// 1. Arreglo: memoria incluida en la estructura}}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} *autor;               \textcolor{comment}{// 2. Puntero: memoria externa, debe asignarse}}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} editorial[MAX\_EDITORIAL];}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} año;}
+\DoxyCodeLine{    \textcolor{keywordtype}{float} precio;}
+\DoxyCodeLine{\} Libro;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    Libro libro1;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{\textcolor{comment}{/* PARA ARREGLOS: usar strcpy/strncpy/snprintf */}}
+\DoxyCodeLine{    strncpy(libro1.titulo, \textcolor{stringliteral}{"{}Programación en C"{}}, MAX\_TITULO -\/ 1);}
+\DoxyCodeLine{    libro1.titulo[MAX\_TITULO -\/ 1] = \textcolor{charliteral}{'\(\backslash\)0'}; \textcolor{comment}{// Asegurar terminación nula}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Metodo mas seguro: snprintf */}}
+\DoxyCodeLine{    snprintf(libro1.editorial, MAX\_EDITORIAL, \textcolor{stringliteral}{"{}Editorial Técnica"{}});}
+\DoxyCodeLine{    }
+\DoxyCodeLine{\textcolor{comment}{/* PARA PUNTEROS: asignación directa (literales) */}}
+\DoxyCodeLine{    libro1.autor = \textcolor{stringliteral}{"{}Luis Joyanes"{}}; \textcolor{comment}{// Solo para literales de string}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* PARA PUNTEROS: asignación dinámica (strings variables) */}}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} nombre\_autor[] = \textcolor{stringliteral}{"{}Ana García"{}};}
+\DoxyCodeLine{    libro1.autor = malloc(strlen(nombre\_autor) + 1);}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (libro1.autor != NULL) \{}
+\DoxyCodeLine{        strcpy(libro1.autor, nombre\_autor);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    libro1.año = 2024;}
+\DoxyCodeLine{    libro1.precio = 45.99f;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* ¡IMPORTANTE: Liberar memoria asignada dinámicamente! */}}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (libro1.autor != NULL \&\& libro1.autor != \textcolor{stringliteral}{"{}Luis Joyanes"{}}) \{}
+\DoxyCodeLine{        free(libro1.autor);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md266}{}\doxysubsubsection{Ejemplo Completo con Arreglos de Estructuras}\label{md_teoria_17__Struct_autotoc_md266}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define NUM\_LIBROS 3}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} titulo[100];}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} autor[50];}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} año;}
+\DoxyCodeLine{\} Libro;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{comment}{/* Inicialización de arreglo de estructuras */}}
+\DoxyCodeLine{    Libro biblioteca[NUM\_LIBROS] = \{}
+\DoxyCodeLine{        \{\textcolor{stringliteral}{"{}C Programming Language"{}}, \textcolor{stringliteral}{"{}Kernighan \& Ritchie"{}}, 1978\},}
+\DoxyCodeLine{        \{\textcolor{stringliteral}{"{}Effective C"{}}, \textcolor{stringliteral}{"{}Robert Seacord"{}}, 2020\},}
+\DoxyCodeLine{        \{\textcolor{stringliteral}{"{}Modern C"{}}, \textcolor{stringliteral}{"{}Jens Gustedt"{}}, 2019\}}
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Inicialización designada para arreglos */}}
+\DoxyCodeLine{    Libro libros\_designados[NUM\_LIBROS] = \{}
+\DoxyCodeLine{        \{.titulo = \textcolor{stringliteral}{"{}Libro A"{}}, .autor = \textcolor{stringliteral}{"{}Autor A"{}}, .año = 2000\},}
+\DoxyCodeLine{        \{.titulo = \textcolor{stringliteral}{"{}Libro B"{}}, .autor = \textcolor{stringliteral}{"{}Autor B"{}}, .año = 2010\},}
+\DoxyCodeLine{        \{.titulo = \textcolor{stringliteral}{"{}Libro C"{}}, .autor = \textcolor{stringliteral}{"{}Autor C"{}}, .año = 2020\}}
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Recorrer arreglo de estructuras */}}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < NUM\_LIBROS; i++) \{}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}Libro \%d: \%s por \%s (\%d)\(\backslash\)n"{}}, }
+\DoxyCodeLine{               i + 1, }
+\DoxyCodeLine{               biblioteca[i].titulo, }
+\DoxyCodeLine{               biblioteca[i].autor, }
+\DoxyCodeLine{               biblioteca[i].año);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md267}{}\doxysubsection{Estructuras como Parámetros de Funciones}\label{md_teoria_17__Struct_autotoc_md267}
+{\bfseries{concepto}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Pasar referencias evita copias grandes y permite modificar el original.}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} actualizar(miEstructura *miembro)\{}
+\DoxyCodeLine{miEstructura -\/> *miembro = 0;}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md268}{}\doxysubsubsection{Paso por Referencia vs. Paso por Valor}\label{md_teoria_17__Struct_autotoc_md268}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} nivel;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} nombre[50];}
+\DoxyCodeLine{    \textcolor{keywordtype}{float} salud;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} experiencia;}
+\DoxyCodeLine{\} Jugador;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* PASO POR REFERENCIA (RECOMENDADO) */}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} subirNivel(Jugador *jugador) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (jugador == NULL) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    jugador-\/>nivel++;}
+\DoxyCodeLine{    jugador-\/>salud += 10.0f;}
+\DoxyCodeLine{    jugador-\/>experiencia = 0;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}\%s subió al nivel \%d!\(\backslash\)n"{}}, jugador-\/>nombre, jugador-\/>nivel);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* PASO POR VALOR (copia toda la estructura) */}}
+\DoxyCodeLine{Jugador crearCopia(Jugador original) \{}
+\DoxyCodeLine{    \textcolor{comment}{/* Modificaciones afectan solo a la copia */}}
+\DoxyCodeLine{    original.nivel = 1; \textcolor{comment}{// No afecta al original}}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} original;    \textcolor{comment}{// Retorna nueva copia}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* PASO POR REFERENCIA CONSTANTE (solo lectura) */}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} mostrarJugador(\textcolor{keyword}{const} Jugador *jugador) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (jugador == NULL) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}=== ESTADÍSTICAS ===\(\backslash\)n"{}});}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Nombre: \%s\(\backslash\)n"{}}, jugador-\/>nombre);}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Nivel: \%d\(\backslash\)n"{}}, jugador-\/>nivel);}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Salud: \%.1f\(\backslash\)n"{}}, jugador-\/>salud);}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Experiencia: \%d\(\backslash\)n"{}}, jugador-\/>experiencia);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* FUNCIÓN QUE RETORNA ESTRUCTURA */}}
+\DoxyCodeLine{Jugador crearJugador(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *nombre, \textcolor{keywordtype}{int} nivel\_inicial) \{}
+\DoxyCodeLine{    Jugador nuevo = \{}
+\DoxyCodeLine{        .nivel = nivel\_inicial,}
+\DoxyCodeLine{        .salud = nivel\_inicial * 10.0f,}
+\DoxyCodeLine{        .experiencia = 0}
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{// Copiar nombre de forma segura}}
+\DoxyCodeLine{    strncpy(nuevo.nombre, nombre, \textcolor{keyword}{sizeof}(nuevo.nombre) -\/ 1);}
+\DoxyCodeLine{    nuevo.nombre[\textcolor{keyword}{sizeof}(nuevo.nombre) -\/ 1] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} nuevo; \textcolor{comment}{// Retorna por valor (copia)}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    Jugador heroe = crearJugador(\textcolor{stringliteral}{"{}Héroe"{}}, 1);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Paso por referencia */}}
+\DoxyCodeLine{    subirNivel(\&heroe);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Paso por referencia constante (solo lectura) */}}
+\DoxyCodeLine{    mostrarJugador(\&heroe);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Paso por valor -\/ crea copia */}}
+\DoxyCodeLine{    Jugador copia = crearCopia(heroe);}
+\DoxyCodeLine{    mostrarJugador(\&copia);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md269}{}\doxysubsection{Asignación y Comparación de Estructuras}\label{md_teoria_17__Struct_autotoc_md269}
+{\bfseries{concepto}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Asignar copia toda la estructura; comparar requiere revisar cada miembro.}}
+\DoxyCodeLine{miEstructura1 = miEstructura2;}
+\DoxyCodeLine{\textcolor{keywordtype}{bool} iguales = (miEstructura1.miembro == miEstructura2.miembro);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} y;}
+\DoxyCodeLine{\} Punto;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    Punto p1 = \{10, 20\};}
+\DoxyCodeLine{    Punto p2, p3;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* ASIGNACIÓN DIRECTA (C99+) */}}
+\DoxyCodeLine{    p2 = p1; \textcolor{comment}{// Copia todos los miembros}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}p1: (\%d, \%d)\(\backslash\)n"{}}, p1.x, p1.y);}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}p2: (\%d, \%d)\(\backslash\)n"{}}, p2.x, p2.y);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* COMPARACIÓN -\/ NO se puede usar == */}}
+\DoxyCodeLine{    \textcolor{comment}{// ❌ INCORRECTO: if (p1 == p2) }}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* ✅ CORRECTO: comparar miembro por miembro */}}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} son\_iguales = (p1.x == p2.x \&\& p1.y == p2.y);}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Los puntos \%s iguales\(\backslash\)n"{}}, son\_iguales ? \textcolor{stringliteral}{"{}son"{}} : \textcolor{stringliteral}{"{}no son"{}});}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Usar memcpy para copias más controladas */}}
+\DoxyCodeLine{    memcpy(\&p3, \&p1, \textcolor{keyword}{sizeof}(Punto));}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}p3: (\%d, \%d)\(\backslash\)n"{}}, p3.x, p3.y);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md270}{}\doxysubsection{Mejores Prácticas y Consideraciones de Rendimiento}\label{md_teoria_17__Struct_autotoc_md270}
+{\bfseries{concepto}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Ordenar los miembros por tamaño reduce padding y mejora el uso de memoria.}}
+\DoxyCodeLine{\textcolor{keyword}{struct }Producto \{ \textcolor{keywordtype}{int} id; \textcolor{keywordtype}{float} precio; \textcolor{keywordtype}{char} nombre[32]; \};}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md271}{}\doxysubsubsection{Diseño de Estructuras Eficientes}\label{md_teoria_17__Struct_autotoc_md271}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stddef.h>} \textcolor{comment}{// para offsetof}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* BUEN DISEÑO: miembros alineados naturalmente */}}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} id;           \textcolor{comment}{// 4 bytes}}
+\DoxyCodeLine{    \textcolor{keywordtype}{float} precio;     \textcolor{comment}{// 4 bytes  }}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} nombre[32];  \textcolor{comment}{// 32 bytes}}
+\DoxyCodeLine{\} Producto;           \textcolor{comment}{// Total: \string~40 bytes, bien alineado}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* MAL DISEÑO: mezcla sin considerar alineación */}}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} letra;       \textcolor{comment}{// 1 byte (+3 padding)}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} numero;       \textcolor{comment}{// 4 bytes}}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} simbolo;     \textcolor{comment}{// 1 byte (+3 padding)}}
+\DoxyCodeLine{\} EstructuraIneficiente; \textcolor{comment}{// Total: 12 bytes (¡solo 6 útiles!)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} mostrarTamaños() \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Tamaño de Producto: \%zu bytes\(\backslash\)n"{}}, \textcolor{keyword}{sizeof}(Producto));}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Tamaño de EstructuraIneficiente: \%zu bytes\(\backslash\)n"{}}, }
+\DoxyCodeLine{           \textcolor{keyword}{sizeof}(EstructuraIneficiente));}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Mostrar offsets de miembros */}}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Offset de 'id' en Producto: \%zu\(\backslash\)n"{}}, offsetof(Producto, \textcolor{keywordtype}{id}));}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Offset de 'precio' en Producto: \%zu\(\backslash\)n"{}}, offsetof(Producto, precio));}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md272}{}\doxysubsubsection{Gestión de Memoria para Estructuras}\label{md_teoria_17__Struct_autotoc_md272}
+{\bfseries{concepto}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Si guardas punteros}}
+\DoxyCodeLine{perfil-\/>nombre = malloc(...); \textcolor{comment}{// reserva }}
+\DoxyCodeLine{free(perfil-\/>nombre); \textcolor{comment}{// libera memoria de manera explícita.}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} *nombre;      \textcolor{comment}{// Memoria dinámica}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} *puntuaciones; \textcolor{comment}{// Arreglo dinámico}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} num\_puntuaciones;}
+\DoxyCodeLine{\} PerfilJugador;}
+\DoxyCodeLine{}
+\DoxyCodeLine{PerfilJugador* crearPerfil(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *nombre, \textcolor{keywordtype}{int} capacidad\_puntuaciones) \{}
+\DoxyCodeLine{    PerfilJugador *nuevo = malloc(\textcolor{keyword}{sizeof}(PerfilJugador));}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (nuevo == NULL) \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Asignar memoria para el nombre */}}
+\DoxyCodeLine{    nuevo-\/>nombre = malloc(strlen(nombre) + 1);}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (nuevo-\/>nombre == NULL) \{}
+\DoxyCodeLine{        free(nuevo);}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    strcpy(nuevo-\/>nombre, nombre);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* Asignar memoria para arreglo de puntuaciones */}}
+\DoxyCodeLine{    nuevo-\/>puntuaciones = malloc(capacidad\_puntuaciones * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (nuevo-\/>puntuaciones == NULL) \{}
+\DoxyCodeLine{        free(nuevo-\/>nombre);}
+\DoxyCodeLine{        free(nuevo);}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    nuevo-\/>num\_puntuaciones = 0;}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} nuevo;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} liberarPerfil(PerfilJugador *perfil) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (perfil != NULL) \{}
+\DoxyCodeLine{        free(perfil-\/>nombre);       \textcolor{comment}{// Liberar string}}
+\DoxyCodeLine{        free(perfil-\/>puntuaciones); \textcolor{comment}{// Liberar arreglo}}
+\DoxyCodeLine{        free(perfil);               \textcolor{comment}{// Liberar estructura}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md273}{}\doxysubsection{Ejemplo Completo\+: Sistema de Gestión}\label{md_teoria_17__Struct_autotoc_md273}
+{\bfseries{concepto}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Aplica todas las ideas: estructuras, arreglos y funciones trabajando juntas.}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define MAX\_ESTUDIANTES 100}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define MAX\_NOMBRE 50}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} nombre[MAX\_NOMBRE];}
+\DoxyCodeLine{    \textcolor{keywordtype}{float} calificaciones[3];}
+\DoxyCodeLine{    \textcolor{keywordtype}{float} promedio;}
+\DoxyCodeLine{\} Estudiante;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{    Estudiante estudiantes[MAX\_ESTUDIANTES];}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} cantidad;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} curso[50];}
+\DoxyCodeLine{\} Grupo;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} inicializarGrupo(Grupo *grupo, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *nombre\_curso) \{}
+\DoxyCodeLine{    grupo-\/>cantidad = 0;}
+\DoxyCodeLine{    strncpy(grupo-\/>curso, nombre\_curso, \textcolor{keyword}{sizeof}(grupo-\/>curso) -\/ 1);}
+\DoxyCodeLine{    grupo-\/>curso[\textcolor{keyword}{sizeof}(grupo-\/>curso) -\/ 1] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} agregarEstudiante(Grupo *grupo, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *nombre, }
+\DoxyCodeLine{                      \textcolor{keywordtype}{float} calif1, \textcolor{keywordtype}{float} calif2, \textcolor{keywordtype}{float} calif3) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (grupo-\/>cantidad >= MAX\_ESTUDIANTES) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} -\/1; \textcolor{comment}{// Grupo lleno}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    Estudiante *nuevo = \&grupo-\/>estudiantes[grupo-\/>cantidad];}
+\DoxyCodeLine{    nuevo-\/>id = grupo-\/>cantidad + 1;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    strncpy(nuevo-\/>nombre, nombre, MAX\_NOMBRE -\/ 1);}
+\DoxyCodeLine{    nuevo-\/>nombre[MAX\_NOMBRE -\/ 1] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    nuevo-\/>calificaciones[0] = calif1;}
+\DoxyCodeLine{    nuevo-\/>calificaciones[1] = calif2;}
+\DoxyCodeLine{    nuevo-\/>calificaciones[2] = calif3;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    nuevo-\/>promedio = (calif1 + calif2 + calif3) / 3.0f;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} grupo-\/>cantidad++; \textcolor{comment}{// Retorna índice y luego incrementa}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} mostrarGrupo(\textcolor{keyword}{const} Grupo *grupo) \{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}=== GRUPO: \%s ===\(\backslash\)n"{}}, grupo-\/>curso);}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Total estudiantes: \%d\(\backslash\)n\(\backslash\)n"{}}, grupo-\/>cantidad);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < grupo-\/>cantidad; i++) \{}
+\DoxyCodeLine{        \textcolor{keyword}{const} Estudiante *est = \&grupo-\/>estudiantes[i];}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}ID: \%d, Nombre: \%s\(\backslash\)n"{}}, est-\/>id, est-\/>nombre);}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}Calificaciones: \%.1f, \%.1f, \%.1f\(\backslash\)n"{}}, }
+\DoxyCodeLine{               est-\/>calificaciones[0], }
+\DoxyCodeLine{               est-\/>calificaciones[1], }
+\DoxyCodeLine{               est-\/>calificaciones[2]);}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}Promedio: \%.2f\(\backslash\)n\(\backslash\)n"{}}, est-\/>promedio);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{WhileVarCentinela__PromediarCalificaciones_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    Grupo matematicas;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    inicializarGrupo(\&matematicas, \textcolor{stringliteral}{"{}Matemáticas Avanzadas"{}});}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    agregarEstudiante(\&matematicas, \textcolor{stringliteral}{"{}Ana García"{}}, 85.5f, 90.0f, 88.5f);}
+\DoxyCodeLine{    agregarEstudiante(\&matematicas, \textcolor{stringliteral}{"{}Luis Martínez"{}}, 78.0f, 82.5f, 79.0f);}
+\DoxyCodeLine{    agregarEstudiante(\&matematicas, \textcolor{stringliteral}{"{}María López"{}}, 92.0f, 95.5f, 91.0f);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    mostrarGrupo(\&matematicas);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md274}{}\doxysubsection{Errores Comunes y Cómo Evitarlos}\label{md_teoria_17__Struct_autotoc_md274}
+\hypertarget{md_teoria_17__Struct_autotoc_md275}{}\doxysubsubsection{1. Olvidar el punto y coma}\label{md_teoria_17__Struct_autotoc_md275}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// ❌ INCORRECTO}}
+\DoxyCodeLine{\textcolor{keyword}{struct }ejemplo \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} a;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} b;}
+\DoxyCodeLine{\} \textcolor{comment}{// Falta ;}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// ✅ CORRECTO  }}
+\DoxyCodeLine{\textcolor{keyword}{struct }ejemplo \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} a;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} b;}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md276}{}\doxysubsubsection{2. Confundir operadores . y -\/$>$}\label{md_teoria_17__Struct_autotoc_md276}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct }punto \{ \textcolor{keywordtype}{int} x, y; \} p;}
+\DoxyCodeLine{\textcolor{keyword}{struct }punto *ptr = \&p;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// ❌ INCORRECTO}}
+\DoxyCodeLine{ptr.x = 10;   \textcolor{comment}{// ptr es puntero, usa -\/>}}
+\DoxyCodeLine{(*ptr).x = 10; \textcolor{comment}{// Funciona pero verboso}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// ✅ CORRECTO}}
+\DoxyCodeLine{ptr-\/>x = 10;  \textcolor{comment}{// Sintaxis clara y concisa}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md277}{}\doxysubsubsection{3. Asignación incorrecta de strings}\label{md_teoria_17__Struct_autotoc_md277}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct }persona \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} nombre[50];}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} *apellido;}
+\DoxyCodeLine{\} p;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// ❌ INCORRECTO}}
+\DoxyCodeLine{p.nombre = \textcolor{stringliteral}{"{}Juan"{}};   \textcolor{comment}{// No se puede asignar a arreglos}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// ✅ CORRECTO  }}
+\DoxyCodeLine{strcpy(p.nombre, \textcolor{stringliteral}{"{}Juan"{}});     \textcolor{comment}{// Para arreglos}}
+\DoxyCodeLine{p.apellido = \textcolor{stringliteral}{"{}Pérez"{}};         \textcolor{comment}{// Para punteros (solo literales)}}
+
+\end{DoxyCode}
+\hypertarget{md_teoria_17__Struct_autotoc_md278}{}\doxysubsubsection{4. No verificar punteros nulos}\label{md_teoria_17__Struct_autotoc_md278}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} procesarJugador(\textcolor{keyword}{struct} jugador *j) \{}
+\DoxyCodeLine{    \textcolor{comment}{// ❌ PELIGROSO}}
+\DoxyCodeLine{    j-\/>nivel = 10; \textcolor{comment}{// Crash si j es NULL}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{// ✅ SEGURO}}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (j != NULL) \{}
+\DoxyCodeLine{        j-\/>nivel = 10;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Recomendaciones finales\+:}}
+\begin{DoxyEnumerate}
+\item Usa {\ttfamily typedef} para código más limpio
+\item Prefiere inicialización designada (C99+)
+\item Usa paso por referencia para estructuras grandes
+\item Siempre verifica punteros antes de acceder a miembros
+\item Considera el padding y alineación para estructuras críticas en rendimiento 
+\end{DoxyEnumerate}

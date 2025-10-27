@@ -1,0 +1,24 @@
+Seleccione una opcion:
+1. Consultar temperatura
+2. Ajustar luces
+3. Revisar seguridad
+4. Salir
+Opcion invalida
+Seleccione una opcion:
+1. Consultar temperatura
+2. Ajustar luces
+3. Revisar seguridad
+4. Salir
+Revisando seguridad...
+Seleccione una opcion:
+1. Consultar temperatura
+2. Ajustar luces
+3. Revisar seguridad
+4. Salir
+Ajustando luces...
+Seleccione una opcion:
+1. Consultar temperatura
+2. Ajustar luces
+3. Revisar seguridad
+4. Salir
+Saliendo del sistema.

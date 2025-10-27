@@ -1,0 +1,6 @@
+<map id="Apuntes" name="Apuntes">
+<area shape="rect" id="node1" title="Recopilación de notas rápidas (módulo independiente)." alt="" coords="5,55,80,80"/>
+<area shape="rect" id="node2" href="$group__apuntes-codigos.html" title="Varios ejmplos de codigos." alt="" coords="128,5,279,31"/>
+<area shape="rect" id="node3" href="$group__apuntes-practicas.html" title="Ejercicios y prácticas relacionados." alt="" coords="163,55,244,80"/>
+<area shape="rect" id="node4" href="$group__apuntes-teoria.html" title="Conceptos y explicaciones teóricas." alt="" coords="173,104,234,129"/>
+</map>

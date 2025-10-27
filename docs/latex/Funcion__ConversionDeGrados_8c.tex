@@ -1,0 +1,72 @@
+\hypertarget{Funcion__ConversionDeGrados_8c}{}\doxysection{Referencia del Archivo Funciones/\+Funcion\+\_\+\+Conversion\+De\+Grados.c}
+\label{Funcion__ConversionDeGrados_8c}\index{Funciones/Funcion\_ConversionDeGrados.c@{Funciones/Funcion\_ConversionDeGrados.c}}
+
+
+Usando funciones para conversion de grados.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Funcion__ConversionDeGrados_8c_a27ebe21b06c10e99e30b2b0a185781ee}{cent\+\_\+a\+\_\+fahr}} (double)
+\begin{DoxyCompactList}\small\item\em Convierte grados Celsius a Fahrenheit. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{Funcion__ConversionDeGrados_8c_acc7cb4c68d9248b63427fe349c47a664}{fahr\+\_\+a\+\_\+cent}} (double)
+\begin{DoxyCompactList}\small\item\em Convierte grados Fahrenheit a Celsius. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Funcion__ConversionDeGrados_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Funcion__ConversionDeGrados_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\begin{DoxyCompactList}\small\item\em Presenta el menú interactivo de conversiones y despacha opciones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Usando funciones para conversion de grados. 
+
+\begin{DoxyAuthor}{Autor}
+Antonio Rafael 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+01 de septiembre de 2025
+\end{DoxyDate}
+\label{Funcion__ConversionDeGrados_8c_conversion_de_grados}%
+\Hypertarget{Funcion__ConversionDeGrados_8c_conversion_de_grados}%
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{Funcion__ConversionDeGrados_8c_a27ebe21b06c10e99e30b2b0a185781ee}\label{Funcion__ConversionDeGrados_8c_a27ebe21b06c10e99e30b2b0a185781ee}} 
+\index{Funcion\_ConversionDeGrados.c@{Funcion\_ConversionDeGrados.c}!cent\_a\_fahr@{cent\_a\_fahr}}
+\index{cent\_a\_fahr@{cent\_a\_fahr}!Funcion\_ConversionDeGrados.c@{Funcion\_ConversionDeGrados.c}}
+\doxysubsubsection{\texorpdfstring{cent\_a\_fahr()}{cent\_a\_fahr()}}
+{\footnotesize\ttfamily void cent\+\_\+a\+\_\+fahr (\begin{DoxyParamCaption}\item[{double}]{LOCAL\+\_\+gradosC }\end{DoxyParamCaption})}
+
+
+
+Convierte grados Celsius a Fahrenheit. 
+
+Esta funcion toma un numero en Celsius, lo multiplica por 1.\+8 y lo imprime en consola.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em LOCAL\+\_\+gradosC} & Cantidad de grados Celsius a convertir \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Funcion__ConversionDeGrados_8c_acc7cb4c68d9248b63427fe349c47a664}\label{Funcion__ConversionDeGrados_8c_acc7cb4c68d9248b63427fe349c47a664}} 
+\index{Funcion\_ConversionDeGrados.c@{Funcion\_ConversionDeGrados.c}!fahr\_a\_cent@{fahr\_a\_cent}}
+\index{fahr\_a\_cent@{fahr\_a\_cent}!Funcion\_ConversionDeGrados.c@{Funcion\_ConversionDeGrados.c}}
+\doxysubsubsection{\texorpdfstring{fahr\_a\_cent()}{fahr\_a\_cent()}}
+{\footnotesize\ttfamily double fahr\+\_\+a\+\_\+cent (\begin{DoxyParamCaption}\item[{double}]{LOCAL\+\_\+gradosF }\end{DoxyParamCaption})}
+
+
+
+Convierte grados Fahrenheit a Celsius. 
+
+Esta funcion toma un numero en Fahrenheit, le resta 32.\+0, lo divide entre 1.\+8 y retorna el resultado como decimal.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em LOCAL\+\_\+gradosF} & Cantidad de grados Fahrenheit a convertir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+double Cantidad de grados Celsius convertidos 
+\end{DoxyReturn}

@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Apuntes Universitarios - Informatica: Practice Exercise Authoring Prompt (Template &amp; Structure Guide)</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Apuntes Universitarios - Informatica<span id="projectnumber">&#160;1.0.0-alpha</span>
+   </div>
+   <div id="projectbrief">Coleccion de apuntes y practicas de informatica en la UDG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md_practicas_000__Prompt_IA_PROMPT_EXERCISE_STRUCTURE.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Practice Exercise Authoring Prompt (Template &amp; Structure Guide) </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p >Use this prompt whenever you create a new practice exercise inside the <code>Practicas</code> collection. It standardizes clarity, pedagogy, and consistency across all topics (Variables, Operators, Conditionals, Loops, Arrays, Functions, Pointers, Dynamic Memory, Recursion, Debugging, etc.).</p>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md171"></a>
+1. Metadata Block (YAML Front Matter)</h1>
+<p >Place at the top of the exercise <code>README.md</code>. </p><div class="fragment"><div class="line">title: &lt;Short Descriptive Title&gt;</div>
+<div class="line">topic: &lt;Main Topic Category&gt;</div>
+<div class="line">subtopics: [list, of, secondary, ideas]</div>
+<div class="line">difficulty: beginner | easy | medium | hard | challenge</div>
+<div class="line">estimated_time: &lt;minutes&gt;</div>
+<div class="line">prerequisites: [links / prior exercises]</div>
+<div class="line">learning_mode: concept | guided | project | challenge</div>
+<div class="line">author: &lt;Your Name&gt;</div>
+<div class="line">version: 1.0</div>
+<div class="line">last_update: YYYY-MM-DD</div>
+</div><!-- fragment --><hr  />
+ <h1><a class="anchor" id="autotoc_md173"></a>
+2. Overview</h1>
+<p >A concise paragraph (3–5 lines) explaining the real-world motivation or conceptual value.</p>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md175"></a>
+3. Learning Objectives (Action Verbs)</h1>
+<p >List 3–6 measurable outcomes starting with verbs. Example:</p><ul>
+<li>Understand how to declare and initialize arrays in C.</li>
+<li>Apply pointer arithmetic to traverse memory safely.</li>
+<li>Distinguish between stack and heap allocation.</li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md177"></a>
+4. Context / Scenario (Optional if Purely Technical)</h1>
+<p >If helpful, provide a short narrative. Keep it under 120 words. Avoid fluff.</p>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md179"></a>
+5. Problem Statement (Crystal Clear)</h1>
+<p >State exactly what the learner must build or solve. Avoid ambiguity. Use bullet points for multi-step requirements. Each requirement SHOULD be testable.</p>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md181"></a>
+6. Input Specification</h1>
+<p >Describe:</p><ul>
+<li>Source (stdin? function parameters? file?)</li>
+<li>Format (types, order, delimiters)</li>
+<li>Valid ranges</li>
+<li>Invalid / edge behaviors (ignore? reject? sanitize?)</li>
+</ul>
+<p >Example: </p><div class="fragment"><div class="line">Input: Two integers N and M (1 &lt;= N, M &lt;= 10^6) separated by a single space.</div>
+</div><!-- fragment --><hr  />
+ <h1><a class="anchor" id="autotoc_md183"></a>
+7. Output Specification</h1>
+<p >State EXACT required output formatting. If multiple lines, enumerate them. </p><div class="fragment"><div class="line">Output: A single line containing the sum of N and M.</div>
+</div><!-- fragment --><p> Mention trailing newline expectations if relevant.</p>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md185"></a>
+8. Constraints &amp; Limits</h1>
+<p >Include computational, memory, stylistic, or time constraints. Example:</p><ul>
+<li>Time: O(n)</li>
+<li>Memory: &lt;= 64 MB</li>
+<li>No global mutable state</li>
+<li>Must not use recursion (unless recursion topic)</li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md187"></a>
+9. Examples (At Least 2–3)</h1>
+<p >Each example must include Input + Output blocks. One should cover a normal case, one an edge case, optionally one invalid case (if handled). Format: </p><div class="fragment"><div class="line">Example 1</div>
+<div class="line">Input:</div>
+<div class="line">5 7</div>
+<div class="line">Output:</div>
+<div class="line">12</div>
+<div class="line"> </div>
+<div class="line">Example 2 (Edge: max values)</div>
+<div class="line">Input:</div>
+<div class="line">1000000 1000000</div>
+<div class="line">Output:</div>
+<div class="line">2000000</div>
+</div><!-- fragment --><hr  />
+ <h1><a class="anchor" id="autotoc_md189"></a>
+10. Edge Cases to Consider</h1>
+<p >Provide a bullet list the student must consciously test (do not solve for them):</p><ul>
+<li>Minimum valid values (e.g., N = 0)</li>
+<li>Maximum boundary</li>
+<li>Repeated elements / duplicates</li>
+<li>Empty input (if relevant)</li>
+<li>Overflow risk scenarios</li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md191"></a>
+11. Step-by-Step Guidance (Optional Tiered Hints)</h1>
+<p >If exercise is guided, provide progressive hint levels:</p><ol type="1">
+<li>High-level decomposition</li>
+<li>Data structure or algorithm suggestion</li>
+<li>Pseudocode (NOT full solution) Label this section clearly; omit for challenge tasks.</li>
+</ol>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md193"></a>
+12. Required Folder &amp; File Structure</h1>
+<p >Every exercise folder should look like: </p><div class="fragment"><div class="line">&lt;exercise-folder&gt;/</div>
+<div class="line">  &lt;learning_mode&gt;--&lt;difficulty&gt;.md   # This template instantiated (SEE NAMING CONVENTION BELOW)</div>
+<div class="line">  src/</div>
+<div class="line">    main.c                # Or designated entry point</div>
+<div class="line">    (other .c/.h files)   # Modularized logic</div>
+<div class="line">  tests/                  # (Optional) Manual or automated test drivers</div>
+<div class="line">    test_input_01.txt</div>
+<div class="line">    test_expected_01.txt</div>
+<div class="line">  respuestas/             # Student&#39;s solutions or reflection answers</div>
+<div class="line">    REFLEXION.md          # Post-exercise reflection prompts answered</div>
+<div class="line">  docs/ (optional)        # Extra diagrams, design notes</div>
+</div><!-- fragment --><p> If the course uses Doxygen later: add <code>include/</code> for headers.</p>
+<h2><a class="anchor" id="autotoc_md194"></a>
+12.1 File Naming Convention (IMPORTANT)</h2>
+<p >The main specification file that previously would be named <code>README.md</code> MUST instead be named using the following pattern:</p>
+<div class="fragment"><div class="line">&lt;learning_mode&gt;--&lt;difficulty&gt;.md</div>
+</div><!-- fragment --><p >Where:</p><ul>
+<li><code>&lt;learning_mode&gt;</code> is the exact value of the <code>learning_mode</code> field in the metadata block (e.g., <code>concept</code>, <code>guided</code>, <code>project</code>, <code>challenge</code>).</li>
+<li><code>&lt;difficulty&gt;</code> is the exact value of the <code>difficulty</code> field in the metadata block (e.g., <code>beginner</code>, <code>easy</code>, <code>medium</code>, <code>hard</code>, <code>challenge</code>).</li>
+</ul>
+<p >Rules:</p><ul>
+<li>Use all lowercase.</li>
+<li>Separate the two parts with exactly two hyphens (<code>--</code>).</li>
+<li>No spaces or additional suffixes/prefixes.</li>
+<li>The file must reside inside the folder corresponding to its topic, e.g.: <div class="fragment"><div class="line">Practicas/</div>
+<div class="line">  3. Variables/</div>
+<div class="line">    my-variables-exercise/   # Folder name is flexible but descriptive</div>
+<div class="line">      concept--beginner.md   # Specification file (this template applied)</div>
+<div class="line">      src/</div>
+<div class="line">      respuestas/</div>
+</div><!-- fragment --></li>
+<li>One exercise = one folder containing exactly one specification file following this convention.</li>
+<li>If multiple exercises share the same topic, each still has its own folder and one spec file named by this convention.</li>
+</ul>
+<p >Examples: </p><div class="fragment"><div class="line">concept--beginner.md</div>
+<div class="line">guided--medium.md</div>
+<div class="line">project--hard.md</div>
+<div class="line">challenge--challenge.md</div>
+</div><!-- fragment --><p >Rationale: This naming scheme allows automated tooling to classify exercises by pedagogical mode and difficulty without parsing file contents.</p>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md196"></a>
+13. Coding Requirements / Style</h1>
+<ul>
+<li>Use clear, self-documenting identifiers (English)</li>
+<li>No magic numbers (define constants)</li>
+<li>Functions &lt;= ~40 LOC when possible</li>
+<li>One responsibility per function</li>
+<li>Header files only for declarations, no logic</li>
+<li>Always check return values (e.g., <code>malloc</code>, <code>scanf</code>)</li>
+<li>Free all dynamically allocated memory</li>
+<li>Avoid undefined behavior (document assumptions)</li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md198"></a>
+14. Documentation Requirements</h1>
+<p >Inside code:</p><ul>
+<li>File header comment: purpose + author + date</li>
+<li>Function comments: purpose, params, return, side effects, error conditions Example function doc (Doxygen-ready): <div class="fragment"><div class="line"> </div>
+</div><!-- fragment --></li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md200"></a>
+15. Testing Instructions</h1>
+<p >Describe how the learner can test manually or with provided scripts. Example: </p><div class="fragment"><div class="line">Compile:</div>
+<div class="line">  gcc -Wall -Wextra -std=c11 -O2 -o main src/*.c</div>
+<div class="line">Run:</div>
+<div class="line">  ./main &lt; tests/test_input_01.txt</div>
+<div class="line">Compare:</div>
+<div class="line">  diff -u tests/test_expected_01.txt output.txt</div>
+</div><!-- fragment --><p> Encourage building additional edge test cases.</p>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md202"></a>
+16. Evaluation / Grading Rubric</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Criterion   </th><th class="markdownTableHeadNone">Weight   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Correctness   </td><td class="markdownTableBodyNone">40%   </td><td class="markdownTableBodyNone">Produces required outputs across test set    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Memory Safety   </td><td class="markdownTableBodyNone">15%   </td><td class="markdownTableBodyNone">No leaks, no UB, proper frees    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Code Clarity   </td><td class="markdownTableBodyNone">15%   </td><td class="markdownTableBodyNone">Readable, modular, documented    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Adherence to Spec   </td><td class="markdownTableBodyNone">15%   </td><td class="markdownTableBodyNone">Matches input/output/constraints exactly    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Edge Cases   </td><td class="markdownTableBodyNone">10%   </td><td class="markdownTableBodyNone">Explicitly handled / validated    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Reflection   </td><td class="markdownTableBodyNone">5%   </td><td class="markdownTableBodyNone">Thoughtful answers in <code>respuestas/REFLEXION.md</code>   </td></tr>
+</table>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md204"></a>
+17. Reflection Prompts (to place in &lt;tt&gt;respuestas/REFLEXION.md&lt;/tt&gt;)</h1>
+<p >Students answer after solving:</p><ol type="1">
+<li>What was the most challenging part and why?</li>
+<li>Which edge case forced you to rethink your design?</li>
+<li>If you refactored: what improved (complexity? clarity?)</li>
+<li>What would you test next if given more time?</li>
+<li>One concept to review before the next exercise.</li>
+</ol>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md206"></a>
+18. Suggested Extensions (Optional)</h1>
+<p >List 2–4 optional improvements increasing difficulty (e.g., add dynamic resizing, support negative inputs, implement recursive variant, measure performance).</p>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md208"></a>
+19. Common Mistakes (Preemptive Warnings)</h1>
+<ul>
+<li>Forgetting <code>\n</code> in final output</li>
+<li>Not validating <code>scanf</code> return count</li>
+<li>Off-by-one loop boundaries</li>
+<li>Using uninitialized pointers</li>
+<li>Memory leaks after early returns</li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md210"></a>
+20. Glossary (If Terms Introduced)</h1>
+<p >Define new or advanced terms briefly: e.g., "heap", "segmentation fault", "pointer decay".</p>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md212"></a>
+21. Version Control Guidance</h1>
+<p >Minimum recommended commit sequence:</p><ol type="1">
+<li>Initialize repo / add skeleton</li>
+<li>Parse input &amp; stub functions</li>
+<li>Implement core logic</li>
+<li>Add edge case handling</li>
+<li>Add tests &amp; verify</li>
+<li>Refactor &amp; document</li>
+<li>Final cleanup &amp; reflection</li>
+</ol>
+<p >Commit messages: imperative mood (e.g., "Add input parsing for matrix size").</p>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md214"></a>
+22. Quality Checklist (Author Pre-Publish)</h1>
+<p >Before releasing the exercise ensure:</p><ul>
+<li>[ ] All sections above populated</li>
+<li>[ ] Examples compile &amp; run</li>
+<li>[ ] No ambiguous wording in spec</li>
+<li>[ ] At least one non-trivial edge case included</li>
+<li>[ ] Learning objectives are measurable</li>
+<li>[ ] Reflection prompts present</li>
+<li>[ ] Folder structure matches template</li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md216"></a>
+23. Mini Author Prompt (Reusable Snippet)</h1>
+<p >Paste this into your own assistant when drafting a new exercise: </p><div class="fragment"><div class="line">Create a C programming practice exercise following this structure:</div>
+<div class="line">- Provide metadata (title, topic, difficulty, time)</div>
+<div class="line">- Write a concise overview and clear problem statement</div>
+<div class="line">- Define precise input/output specifications and constraints</div>
+<div class="line">- Supply at least 2 normal examples + 1 edge example</div>
+<div class="line">- List explicit edge cases (not solved, only listed)</div>
+<div class="line">- Include learning objectives and optional narrative context</div>
+<div class="line">- Provide a rubric table with weights summing to 100%</div>
+<div class="line">- Add reflection questions and 2–3 extension ideas</div>
+<div class="line">- Enforce coding style: modular, documented, safe memory usage</div>
+<div class="line">- Include folder layout (README.md, src/, tests/, respuestas/)</div>
+<div class="line">Keep wording unambiguous, technical, and student-friendly.</div>
+</div><!-- fragment --><hr  />
+ <h1><a class="anchor" id="autotoc_md218"></a>
+24. Minimal Filled Example (Illustrative)</h1>
+<div class="fragment"><div class="line">Title: Sum of Two Numbers</div>
+<div class="line">Topic: Variables</div>
+<div class="line">Difficulty: beginner</div>
+<div class="line">Problem: Read two integers and print their sum followed by a newline.</div>
+<div class="line">Input: Two integers A B (|A|, |B| &lt;= 10^6) separated by space.</div>
+<div class="line">Output: Single integer (A + B) with newline.</div>
+<div class="line">Constraints: Use 32-bit signed int, handle negative values.</div>
+<div class="line">Examples:</div>
+<div class="line"> Input: 5 7   -&gt; Output: 12</div>
+<div class="line"> Input: -3 9  -&gt; Output: 6</div>
+<div class="line"> Edge: 1000000 1000000 -&gt; 2000000</div>
+<div class="line">Edge Cases: negatives, large boundaries, zero values</div>
+<div class="line">Reflection Prompt: What error would overflow cause and why does it not happen here?</div>
+<div class="line">Extensions: Add overflow detection; support arbitrary length using strings.</div>
+</div><!-- fragment --><hr  />
+ <h1><a class="anchor" id="autotoc_md220"></a>
+25. Tone &amp; Language Rules</h1>
+<ul>
+<li>Write all exercise content in clear, neutral instructional Spanish.</li>
+<li>Avoid slang, jokes, or cultural references.</li>
+<li>Prefer active voice ("Implement a function..." not "A function should be implemented").</li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md222"></a>
+26. Accessibility &amp; Inclusivity Notes</h1>
+<ul>
+<li>Use gender-neutral language.</li>
+<li>Avoid assuming prior informal knowledge (define terms when first used).</li>
+<li>Keep color references optional (for visually impaired learners).</li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md224"></a>
+27. Maintenance Notes</h1>
+<p >If updating exercise:</p><ul>
+<li>Bump <code>version</code> &amp; update <code>last_update</code></li>
+<li>Add a short CHANGELOG section at bottom listing modifications</li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md226"></a>
+28. CHANGELOG (Template Section for Future)</h1>
+<div class="fragment"><div class="line">### Changelog</div>
+<div class="line">- 1.0 (YYYY-MM-DD): Initial release.</div>
+</div><!-- fragment --><hr  />
+ <h1><a class="anchor" id="autotoc_md228"></a>
+Final Reminder</h1>
+<p >Consistency &gt; Cleverness. Your goal is to reduce ambiguity so the learner focuses on mastering the concept, not guessing intentions.</p>
+<blockquote class="doxtable">
+<p >&zwj;Use this file as the single source of truth when authoring new practice exercises. </p>
+</blockquote>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

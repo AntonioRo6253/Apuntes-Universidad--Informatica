@@ -1,0 +1,4 @@
+<map id="oxxo" name="oxxo">
+<area shape="rect" id="node1" title="Modela la tienda con dos refrigeradores controlados." alt="" coords="28,109,81,136"/>
+<area shape="rect" id="node2" href="$structrefrigerador.html" title="Representa un refrigerador con bandejas y metadatos." alt="" coords="5,5,104,32"/>
+</map>

@@ -1,0 +1,29 @@
+\hypertarget{2semPE_2apuntes_2practicas_205_8_01Strings_201-concat-nombre-apellido_2src_2main_8c}{}\doxysection{Referencia del Archivo practicas/05. Strings/01-\/concat-\/nombre-\/apellido/src/main.c}
+\label{2semPE_2apuntes_2practicas_205_8_01Strings_201-concat-nombre-apellido_2src_2main_8c}\index{practicas/05. Strings/01-\/concat-\/nombre-\/apellido/src/main.c@{practicas/05. Strings/01-\/concat-\/nombre-\/apellido/src/main.c}}
+
+
+Construye \char`\"{}\+Nombre Apellido\char`\"{} de forma segura usando fgets y strncat.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{2semPE_2apuntes_2practicas_205_8_01Strings_201-concat-nombre-apellido_2src_2main_8c_aae1c291782a22dfa1d54bd80cba5c1fa}\label{2semPE_2apuntes_2practicas_205_8_01Strings_201-concat-nombre-apellido_2src_2main_8c_aae1c291782a22dfa1d54bd80cba5c1fa}} 
+\#define {\bfseries MAX\+\_\+\+PART}~80
+\begin{DoxyCompactList}\small\item\em Longitud máxima admitida para nombre o apellido individuales. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{2semPE_2apuntes_2practicas_205_8_01Strings_201-concat-nombre-apellido_2src_2main_8c_ac004ff9046dedd789b285bacaf951eb0}\label{2semPE_2apuntes_2practicas_205_8_01Strings_201-concat-nombre-apellido_2src_2main_8c_ac004ff9046dedd789b285bacaf951eb0}} 
+\#define {\bfseries MAX\+\_\+\+FULL}~(\mbox{\hyperlink{2semPE_2apuntes_2practicas_205_8_01Strings_201-concat-nombre-apellido_2src_2main_8c_aae1c291782a22dfa1d54bd80cba5c1fa}{MAX\+\_\+\+PART}}$\ast$2 + 2) /$\ast$ nombre + espacio + apellido + nul $\ast$/
+\begin{DoxyCompactList}\small\item\em Capacidad del buffer final \char`\"{}\+Nombre Apellido\char`\"{} incluyendo espacios. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{2semPE_2apuntes_2practicas_205_8_01Strings_201-concat-nombre-apellido_2src_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{2semPE_2apuntes_2practicas_205_8_01Strings_201-concat-nombre-apellido_2src_2main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+int {\bfseries main} (void)
+\begin{DoxyCompactList}\small\item\em Lee nombre y apellido, los normaliza y construye la salida segura. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Construye \char`\"{}\+Nombre Apellido\char`\"{} de forma segura usando fgets y strncat. 
+

@@ -1,0 +1,5 @@
+Ingrese consumos diarios en kWh (valor negativo para terminar).
+Dias registrados: 2
+Consumo total: 215 kWh
+Promedio diario: 107.50 kWh
+Maximo diario: 120 kWh

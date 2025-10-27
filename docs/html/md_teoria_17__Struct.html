@@ -1,0 +1,844 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Apuntes Universitarios - Informatica: 17. Struct</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Apuntes Universitarios - Informatica<span id="projectnumber">&#160;1.0.0-alpha</span>
+   </div>
+   <div id="projectbrief">Coleccion de apuntes y practicas de informatica en la UDG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md_teoria_17__Struct.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title"><ol type="1">
+<li>Struct </li>
+</ol>
+</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p ><b>Documentacion:</b> <a href="https://learn.microsoft.com/es-es/cpp/cpp/struct-cpp?view=msvc-170">Microsoft</a> | <a href="https://en.cppreference.com/w/c/language/struct.html">cppReference</a> | <a href="https://www.ibm.com/docs/en/zos/2.5.0?topic=interface-c-structures">IBM</a> | <a href="https://www.gnu.org/software/c-intro-and-ref/manual/html_node/Structures.html">GNU</a> <b>Tutoriales:</b></p><ul>
+<li><a href="https://www.youtube.com/watch?v=49hn2gdRhoo">Structs y typedef en C - Curso de programación en C PASO a PASO (28)</a></li>
+<li><a href="https://www.youtube.com/watch?v=oKXP1HZ8xIs">C structs 🏠</a> <b>Libros:</b></li>
+<li><a href="https://www.mheducation.com.mx/programacion-en-c-c-java-y-uml-9786071512123-latam">Programación en C, C++, Java y UML Luis Joyanes Aguilar{2Edicion}</a> 280, 285, 287, 288, 291, 292, 293</li>
+<li>[C/C++ Como Programar{4Edicion}]() 355-361</li>
+</ul>
+<p >Una <b>estructura</b> es una colección de variables (llamadas <b>miembros</b>) que pueden ser de diferentes tipos de datos, agrupadas bajo un nombre común en un bloque de memoria contiguo. Son fundamentales para organizar datos relacionados y crear tipos de datos complejos.</p>
+<p ><b>Características clave:</b></p><ul>
+<li>Agrupan datos heterogéneos bajo un mismo nombre</li>
+<li>Ocupan memoria contigua para todos sus miembros</li>
+<li>No incluyen métodos (funciones) como en otros lenguajes</li>
+<li>También se conocen como _"registros"_ en algunos contextos</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md251"></a>
+Sintaxis Básica y Declaración</h2>
+<h3><a class="anchor" id="autotoc_md252"></a>
+Definición de Estructuras</h3>
+<p ><b>concepto</b> </p><div class="fragment"><div class="line"><span class="comment">/* DEFINIR */</span></div>
+<div class="line"><span class="keyword">struct </span>estructura { </div>
+<div class="line">    tipo miembro1;</div>
+<div class="line">    tipo miembro2;</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">}</div>
+<div class="line"><span class="comment">/* USAR */</span></div>
+<div class="line"><span class="keywordtype">void</span> funcion(){ </div>
+<div class="line">    <span class="keyword">struct </span>estructura miEstructura; <span class="comment">// estructura persona</span></div>
+<div class="line">    miEstructura.miembro1; <span class="comment">// llamar un miembro</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> <hr  />
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* DEFINICIÓN GLOBAL de la estructura */</span></div>
+<div class="line"><span class="keyword">struct </span>jugador {           <span class="comment">// `struct` + nombre_estructura</span></div>
+<div class="line">    <span class="keywordtype">int</span> nivel;             <span class="comment">// Miembro de tipo entero</span></div>
+<div class="line">    <span class="keywordtype">char</span> nombre[50];       <span class="comment">// Miembro: arreglo de caracteres</span></div>
+<div class="line">    <span class="keywordtype">float</span> salud;           <span class="comment">// Miembro de tipo flotante</span></div>
+<div class="line">}; <span class="comment">// ¡No olvidar el punto y coma!</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* DECLARACIÓN de variables de estructura */</span></div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <span class="comment">/* Variables normales de estructura */</span></div>
+<div class="line">    <span class="keyword">struct </span>jugador jugador1, jugador2; <span class="comment">// En C puro, se requiere `struct`</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Acceso a miembros con operador punto (.) */</span></div>
+<div class="line">    strcpy(jugador1.nombre, <span class="stringliteral">&quot;Memo&quot;</span>);</div>
+<div class="line">    jugador1.nivel = 35;</div>
+<div class="line">    jugador1.salud = 100.0f;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Acceso con punteros usando operador flecha (-&gt;) */</span></div>
+<div class="line">    <span class="keyword">struct </span>jugador *ptr = &amp;jugador2;</div>
+<div class="line">    strcpy(ptr-&gt;nombre, <span class="stringliteral">&quot;Ana&quot;</span>);</div>
+<div class="line">    ptr-&gt;nivel = 28;</div>
+<div class="line">    ptr-&gt;salud = 85.5f;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aWhileVarCentinela__PromediarCalificaciones_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdoc">Controla el ciclo con variable centinela para promediar calificaciones.</div><div class="ttdef"><b>Definition:</b> WhileVarCentinela_PromediarCalificaciones.c:15</div></div>
+</div><!-- fragment --><p> <b>Ejemplo de clase</b> </p><blockquote class="doxtable">
+<p >&zwj;nota </p>
+</blockquote>
+<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="structempleado.html">empleado</a> {</div>
+<div class="line">    <span class="keywordtype">int</span> <a class="code hl_variable" href="structempleado.html#ade0df631ca6a4a8e29cbfeaf48274687">codigo</a>;</div>
+<div class="line">    <span class="keywordtype">char</span> <a class="code hl_variable" href="structempleado.html#ab4a527bb5f43fb2216d355a8ec7df490">nombre</a>[40]; <span class="comment">// nombre completo</span></div>
+<div class="line">    <span class="keywordtype">float</span> <a class="code hl_variable" href="structempleado.html#ae2f5499bb1a73ad93f6636bdd52d0973">salario</a>;</div>
+<div class="line">};</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(){</div>
+<div class="line">   <span class="comment">/* definir varios en uno */</span></div>
+<div class="line">    <span class="keyword">struct </span><a class="code hl_struct" href="structempleado.html">empleado</a> empleados[3] = {</div>
+<div class="line">        {12324,<span class="stringliteral">&quot;pedro&quot;</span>,1500}, <span class="comment">// empleado1</span></div>
+<div class="line">        {12314,<span class="stringliteral">&quot;memo&quot;</span>,1200}, <span class="comment">// empleado2</span></div>
+<div class="line">        {11024,<span class="stringliteral">&quot;maria&quot;</span>,1000}</div>
+<div class="line">    }; <span class="comment">// arreglo de estructuras</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">/* definir uno por uno */</span></div>
+<div class="line">    <span class="keyword">struct </span><a class="code hl_struct" href="structempleado.html">empleado</a> empleado2;</div>
+<div class="line">    <span class="keyword">struct </span><a class="code hl_struct" href="structempleado.html">empleado</a> empleado2;</div>
+<div class="line">    <span class="keyword">struct </span><a class="code hl_struct" href="structempleado.html">empleado</a> empleado3;</div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="astructempleado_html"><div class="ttname"><a href="structempleado.html">empleado</a></div><div class="ttdoc">Registro básico de un empleado dentro del ejercicio interactivo.</div><div class="ttdef"><b>Definition:</b> practica3.1.c:11</div></div>
+<div class="ttc" id="astructempleado_html_ab4a527bb5f43fb2216d355a8ec7df490"><div class="ttname"><a href="structempleado.html#ab4a527bb5f43fb2216d355a8ec7df490">empleado::nombre</a></div><div class="ttdeci">char nombre[40]</div><div class="ttdef"><b>Definition:</b> practica3.1.c:13</div></div>
+<div class="ttc" id="astructempleado_html_ade0df631ca6a4a8e29cbfeaf48274687"><div class="ttname"><a href="structempleado.html#ade0df631ca6a4a8e29cbfeaf48274687">empleado::codigo</a></div><div class="ttdeci">int codigo</div><div class="ttdef"><b>Definition:</b> practica3.1.c:12</div></div>
+<div class="ttc" id="astructempleado_html_ae2f5499bb1a73ad93f6636bdd52d0973"><div class="ttname"><a href="structempleado.html#ae2f5499bb1a73ad93f6636bdd52d0973">empleado::salario</a></div><div class="ttdeci">float salario</div><div class="ttdef"><b>Definition:</b> practica3.1.c:14</div></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md254"></a>
+Declaración Global</h3>
+<p ><b>concepto</b> </p><div class="fragment"><div class="line"><span class="comment">// Define la estructura y variables globales en una sola declaración.</span></div>
+<div class="line"><span class="keyword">struct </span>Jugador { <span class="keywordtype">int</span> nivel; } jugador1, jugador2;</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">/* DEFINICIÓN con declaración inmediata de variables globales */</span></div>
+<div class="line"><span class="keyword">struct </span>jugador {</div>
+<div class="line">    <span class="keywordtype">int</span> nivel;</div>
+<div class="line">    <span class="keywordtype">char</span> nombre[50];</div>
+<div class="line">} jugador1, jugador2, jugador3; <span class="comment">// Variables globales</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <span class="comment">// Estas variables son accesibles en toda la función main</span></div>
+<div class="line">    strcpy(jugador1.nombre, <span class="stringliteral">&quot;Jugador Global&quot;</span>);</div>
+<div class="line">    jugador1.nivel = 10;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p ><b>Consideraciones de ámbito:</b></p><ul>
+<li>Las estructuras definidas fuera de funciones tienen ámbito global</li>
+<li>Las variables declaradas junto con la definición son globales</li>
+<li>Para uso local, definir la estructura globalmente y declarar variables dentro de funciones</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md255"></a>
+Métodos de Inicialización</h2>
+<p ><b>concepto</b> </p><div class="fragment"><div class="line"><span class="comment">// Puedes rellenar la estructura al declararla para dejarla lista desde el inicio.</span></div>
+<div class="line"><span class="keyword">struct </span>Tipo dato = {.campo = valor};</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md256"></a>
+1. Inicialización Designada (C99+) - &lt;strong&gt;RECOMENDADA&lt;/strong&gt;</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>jugador {</div>
+<div class="line">    <span class="keywordtype">int</span> nivel;</div>
+<div class="line">    <span class="keywordtype">char</span> nombre[50];</div>
+<div class="line">    <span class="keywordtype">int</span> salud;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <span class="comment">/* Inicialización designada - orden independiente */</span></div>
+<div class="line">    <span class="keyword">struct </span>jugador jugador1 = {</div>
+<div class="line">        .nivel = 35,</div>
+<div class="line">        .nombre = <span class="stringliteral">&quot;Memo&quot;</span>,  <span class="comment">// Para literales de string</span></div>
+<div class="line">        .salud = 100</div>
+<div class="line">    };</div>
+<div class="line">    </div>
+<div class="line">    <span class="keyword">struct </span>jugador jugador2 = {</div>
+<div class="line">        .nombre = <span class="stringliteral">&quot;Ana&quot;</span>,   <span class="comment">// Puede ir en cualquier orden</span></div>
+<div class="line">        .salud = 80,</div>
+<div class="line">        .nivel = 28</div>
+<div class="line">    };</div>
+<div class="line">    </div>
+<div class="line">    printf(<span class="stringliteral">&quot;Jugador: %s, Nivel: %d, Salud: %d\n&quot;</span>, </div>
+<div class="line">           jugador1.nombre, jugador1.nivel, jugador1.salud);</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p ><b>Ventajas de la inicialización designada:</b></p><ul>
+<li>Orden independiente de los miembros</li>
+<li>Código más legible y auto-documentado</li>
+<li>Puedes omitir miembros (se inicializan a 0 automáticamente)</li>
+<li>Menos propenso a errores al modificar la estructura</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md257"></a>
+2. Inicialización Posicional (Clásica)</h3>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>jugador jugador3 = {15, <span class="stringliteral">&quot;Juan&quot;</span>, 50}; <span class="comment">// Orden: nivel, nombre, salud</span></div>
+</div><!-- fragment --><p ><b>Precaución:</b> El orden debe coincidir exactamente con la declaración de la estructura.</p>
+<h3><a class="anchor" id="autotoc_md258"></a>
+3. Inicialización Parcial y Cero</h3>
+<div class="fragment"><div class="line"><span class="comment">/* Inicialización parcial - miembros faltantes se ponen a 0 */</span></div>
+<div class="line"><span class="keyword">struct </span>jugador jugador4 = {</div>
+<div class="line">    .nivel = 10,</div>
+<div class="line">    .nombre = <span class="stringliteral">&quot;Nuevo&quot;</span></div>
+<div class="line">    <span class="comment">// salud se inicializa automáticamente a 0</span></div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Inicialización cero - todos los miembros a 0 */</span></div>
+<div class="line"><span class="keyword">struct </span>jugador jugador5 = {0};</div>
+<div class="line"><span class="keyword">struct </span>jugador jugador6 = {}; <span class="comment">// C99+, equivalente a {0}</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md259"></a>
+Modificación de Estructuras</h2>
+<p ><b>concepto</b> </p><div class="fragment"><div class="line"><span class="comment">// Usa . para variables y -&gt; para punteros al acceder y modificar miembros.</span></div>
+<div class="line">jugador.nivel = 10;</div>
+<div class="line">ptr-&gt;salud = 90;</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>jugador {</div>
+<div class="line">    <span class="keywordtype">int</span> nivel;</div>
+<div class="line">    <span class="keywordtype">char</span> nombre[50];</div>
+<div class="line">    <span class="keywordtype">int</span> inventario[2][3];</div>
+<div class="line">    <span class="keywordtype">int</span> salud;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <span class="keyword">struct </span>jugador jugador1 = {</div>
+<div class="line">        .nombre = <span class="stringliteral">&quot;Inicial&quot;</span>, </div>
+<div class="line">        .nivel = 1,</div>
+<div class="line">        .inventario = {</div>
+<div class="line">            {123,234,283},</div>
+<div class="line">            {246,276,297}</div>
+<div class="line">        }, </div>
+<div class="line">        .salud = 100</div>
+<div class="line">    };</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Modificación de variables normales */</span></div>
+<div class="line">    strcpy(jugador1.nombre, <span class="stringliteral">&quot;Luis&quot;</span>);  <span class="comment">// Cambiar string</span></div>
+<div class="line">    jugador1.nivel = 99;              <span class="comment">// Cambiar número</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">int</span> nuevo_inventario[2][3] = {</div>
+<div class="line">        {1, 2, 3}, </div>
+<div class="line">        {4, 5, 6}</div>
+<div class="line">    };<span class="comment">// cambiar matriz</span></div>
+<div class="line">    memcpy(jugador1.inventario,nuevoInven,<span class="keyword">sizeof</span>(jugador1.inventario));</div>
+<div class="line">    </div>
+<div class="line">    jugador1.salud = 150;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Modificación mediante punteros */</span></div>
+<div class="line">    <span class="keyword">struct </span>jugador *ptr = &amp;jugador1;</div>
+<div class="line">    strcpy(ptr-&gt;nombre, <span class="stringliteral">&quot;María&quot;</span>);     <span class="comment">// Usar -&gt; con punteros</span></div>
+<div class="line">    ptr-&gt;nivel = 10;</div>
+<div class="line">    ptr-&gt;salud = 75;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md260"></a>
+Uso de &lt;tt&gt;typedef&lt;/tt&gt; con Estructuras</h2>
+<p ><b>concepto</b> </p><div class="fragment"><div class="line"><span class="comment">// typedef crea un alias de tipo para no repetir la palabra struct cada vez.</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{ <span class="keywordtype">int</span> nivel; } Jugador;</div>
+<div class="line">Jugador heroe;</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Método 1: typedef con estructura definida por separado */</span></div>
+<div class="line"><span class="keyword">struct </span>jugador_struct {</div>
+<div class="line">    <span class="keywordtype">int</span> nivel;</div>
+<div class="line">    <span class="keywordtype">char</span> nombre[50];</div>
+<div class="line">};</div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>jugador_struct Jugador; <span class="comment">// Alias</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Método 2: typedef combinado con definición (MÁS COMÚN) */</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="keywordtype">int</span> nivel;</div>
+<div class="line">    <span class="keywordtype">char</span> nombre[50];</div>
+<div class="line">    <span class="keywordtype">int</span> salud;</div>
+<div class="line">} Jugador; <span class="comment">// ¡Jugador es ahora un tipo!</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Método 3: Para estructuras que se autorreferencian */</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>nodo {</div>
+<div class="line">    <span class="keywordtype">int</span> valor;</div>
+<div class="line">    <span class="keyword">struct </span>nodo *siguiente; <span class="comment">// Aquí necesitamos &#39;struct nodo&#39;</span></div>
+<div class="line">} Nodo;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    Jugador jugador1; <span class="comment">// ¡Sin &#39;struct&#39;!</span></div>
+<div class="line">    jugador1.nivel = 10;</div>
+<div class="line">    strcpy(jugador1.nombre, <span class="stringliteral">&quot;Ejemplo&quot;</span>);</div>
+<div class="line">    jugador1.salud = 100;</div>
+<div class="line">    </div>
+<div class="line">    Nodo primer_nodo = {5, NULL};</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p ><b>Ventajas de typedef:</b></p><ul>
+<li>Código más limpio y legible</li>
+<li>No requiere repetir <code>struct</code></li>
+<li>Facilita el mantenimiento</li>
+<li>Mejor abstracción de datos</li>
+</ul>
+<p ><b>Consideraciones:</b></p><ul>
+<li>En estructuras autorreferenciadas (como listas enlazadas), se debe usar el nombre completo <code>struct nombre</code> dentro de la definición</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md261"></a>
+Estructuras Anidadas</h2>
+<p ><b>concepto</b> </p><div class="fragment"><div class="line"><span class="comment">// Una estructura puede contener otras para encapsular datos relacionados.</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{ <span class="keyword">struct </span>Jugador info; <span class="keyword">struct </span>Posicion lugar; } Entidad;</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md262"></a>
+Uso con &lt;tt&gt;typedef&lt;/tt&gt; (Recomendado)</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Definir estructuras base con typedef */</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="keywordtype">int</span> nivel;</div>
+<div class="line">    <span class="keywordtype">char</span> nombre[50];</div>
+<div class="line">    <span class="keywordtype">float</span> salud;</div>
+<div class="line">} Jugador;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="keywordtype">int</span> x;</div>
+<div class="line">    <span class="keywordtype">int</span> y;</div>
+<div class="line">} Posicion;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Estructura que contiene otras estructuras */</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    Jugador jugador;        <span class="comment">// Estructura anidada</span></div>
+<div class="line">    Posicion posicion;      <span class="comment">// Otra estructura anidada</span></div>
+<div class="line">    <span class="keywordtype">int</span> zona_actual;</div>
+<div class="line">} EntidadJugador;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <span class="comment">/* Declaración y acceso anidado */</span></div>
+<div class="line">    EntidadJugador heroe;</div>
+<div class="line">    </div>
+<div class="line">    strcpy(heroe.jugador.nombre, <span class="stringliteral">&quot;Guerrero&quot;</span>);</div>
+<div class="line">    heroe.jugador.nivel = 15;</div>
+<div class="line">    heroe.jugador.salud = 95.5f;</div>
+<div class="line">    heroe.posicion.x = 100;</div>
+<div class="line">    heroe.posicion.y = 200;</div>
+<div class="line">    heroe.zona_actual = 3;</div>
+<div class="line">    </div>
+<div class="line">    printf(<span class="stringliteral">&quot;%s está en posición (%d, %d)\n&quot;</span>, </div>
+<div class="line">           heroe.jugador.nombre, heroe.posicion.x, heroe.posicion.y);</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md263"></a>
+Inicialización de Estructuras Anidadas</h3>
+<div class="fragment"><div class="line"><span class="comment">/* Inicialización designada para estructuras anidadas */</span></div>
+<div class="line">EntidadJugador enemigo = {</div>
+<div class="line">    .jugador = {</div>
+<div class="line">        .nombre = <span class="stringliteral">&quot;Orco&quot;</span>,</div>
+<div class="line">        .nivel = 5,</div>
+<div class="line">        .salud = 75.0f</div>
+<div class="line">    },</div>
+<div class="line">    .posicion = {</div>
+<div class="line">        .x = 150,</div>
+<div class="line">        .y = 180</div>
+<div class="line">    },</div>
+<div class="line">    .zona_actual = 3</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Inicialización posicional (menos legible) */</span></div>
+<div class="line">EntidadJugador npc = {</div>
+<div class="line">    {<span class="stringliteral">&quot;NPC&quot;</span>, 2, 50.0f},  <span class="comment">// jugador</span></div>
+<div class="line">    {50, 75},           <span class="comment">// posicion  </span></div>
+<div class="line">    1                   <span class="comment">// zona_actual</span></div>
+<div class="line">};</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md264"></a>
+Arreglos en Estructuras</h2>
+<p ><b>concepto</b> </p><div class="fragment"><div class="line"><span class="comment">// Los arreglos ocupan memoria dentro de la estructura; los punteros apuntan fuera.</span></div>
+<div class="line"><span class="keywordtype">char</span> nombre[32];</div>
+<div class="line"><span class="keywordtype">char</span> *alias;</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md265"></a>
+Punteros vs. Arreglos: Diferencias Clave</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define MAX_TITULO 100</span></div>
+<div class="line"><span class="preprocessor">#define MAX_EDITORIAL 50</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="comment">/* DIFERENCIAS CRÍTICAS: */</span></div>
+<div class="line">    <span class="keywordtype">char</span> titulo[MAX_TITULO];    <span class="comment">// 1. Arreglo: memoria incluida en la estructura</span></div>
+<div class="line">    <span class="keywordtype">char</span> *autor;               <span class="comment">// 2. Puntero: memoria externa, debe asignarse</span></div>
+<div class="line">    <span class="keywordtype">char</span> editorial[MAX_EDITORIAL];</div>
+<div class="line">    <span class="keywordtype">int</span> año;</div>
+<div class="line">    <span class="keywordtype">float</span> precio;</div>
+<div class="line">} Libro;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    Libro libro1;</div>
+<div class="line">    </div>
+<div class="line"><span class="comment">/* PARA ARREGLOS: usar strcpy/strncpy/snprintf */</span></div>
+<div class="line">    strncpy(libro1.titulo, <span class="stringliteral">&quot;Programación en C&quot;</span>, MAX_TITULO - 1);</div>
+<div class="line">    libro1.titulo[MAX_TITULO - 1] = <span class="charliteral">&#39;\0&#39;</span>; <span class="comment">// Asegurar terminación nula</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Metodo mas seguro: snprintf */</span></div>
+<div class="line">    snprintf(libro1.editorial, MAX_EDITORIAL, <span class="stringliteral">&quot;Editorial Técnica&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line"><span class="comment">/* PARA PUNTEROS: asignación directa (literales) */</span></div>
+<div class="line">    libro1.autor = <span class="stringliteral">&quot;Luis Joyanes&quot;</span>; <span class="comment">// Solo para literales de string</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* PARA PUNTEROS: asignación dinámica (strings variables) */</span></div>
+<div class="line">    <span class="keywordtype">char</span> nombre_autor[] = <span class="stringliteral">&quot;Ana García&quot;</span>;</div>
+<div class="line">    libro1.autor = malloc(strlen(nombre_autor) + 1);</div>
+<div class="line">    <span class="keywordflow">if</span> (libro1.autor != NULL) {</div>
+<div class="line">        strcpy(libro1.autor, nombre_autor);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    libro1.año = 2024;</div>
+<div class="line">    libro1.precio = 45.99f;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* ¡IMPORTANTE: Liberar memoria asignada dinámicamente! */</span></div>
+<div class="line">    <span class="keywordflow">if</span> (libro1.autor != NULL &amp;&amp; libro1.autor != <span class="stringliteral">&quot;Luis Joyanes&quot;</span>) {</div>
+<div class="line">        free(libro1.autor);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md266"></a>
+Ejemplo Completo con Arreglos de Estructuras</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define NUM_LIBROS 3</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="keywordtype">char</span> titulo[100];</div>
+<div class="line">    <span class="keywordtype">char</span> autor[50];</div>
+<div class="line">    <span class="keywordtype">int</span> año;</div>
+<div class="line">} Libro;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <span class="comment">/* Inicialización de arreglo de estructuras */</span></div>
+<div class="line">    Libro biblioteca[NUM_LIBROS] = {</div>
+<div class="line">        {<span class="stringliteral">&quot;C Programming Language&quot;</span>, <span class="stringliteral">&quot;Kernighan &amp; Ritchie&quot;</span>, 1978},</div>
+<div class="line">        {<span class="stringliteral">&quot;Effective C&quot;</span>, <span class="stringliteral">&quot;Robert Seacord&quot;</span>, 2020},</div>
+<div class="line">        {<span class="stringliteral">&quot;Modern C&quot;</span>, <span class="stringliteral">&quot;Jens Gustedt&quot;</span>, 2019}</div>
+<div class="line">    };</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Inicialización designada para arreglos */</span></div>
+<div class="line">    Libro libros_designados[NUM_LIBROS] = {</div>
+<div class="line">        {.titulo = <span class="stringliteral">&quot;Libro A&quot;</span>, .autor = <span class="stringliteral">&quot;Autor A&quot;</span>, .año = 2000},</div>
+<div class="line">        {.titulo = <span class="stringliteral">&quot;Libro B&quot;</span>, .autor = <span class="stringliteral">&quot;Autor B&quot;</span>, .año = 2010},</div>
+<div class="line">        {.titulo = <span class="stringliteral">&quot;Libro C&quot;</span>, .autor = <span class="stringliteral">&quot;Autor C&quot;</span>, .año = 2020}</div>
+<div class="line">    };</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Recorrer arreglo de estructuras */</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NUM_LIBROS; i++) {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Libro %d: %s por %s (%d)\n&quot;</span>, </div>
+<div class="line">               i + 1, </div>
+<div class="line">               biblioteca[i].titulo, </div>
+<div class="line">               biblioteca[i].autor, </div>
+<div class="line">               biblioteca[i].año);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md267"></a>
+Estructuras como Parámetros de Funciones</h2>
+<p ><b>concepto</b> </p><div class="fragment"><div class="line"><span class="comment">// Pasar referencias evita copias grandes y permite modificar el original.</span></div>
+<div class="line"><span class="keywordtype">void</span> actualizar(miEstructura *miembro){</div>
+<div class="line">miEstructura -&gt; *miembro = 0;</div>
+<div class="line">};</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md268"></a>
+Paso por Referencia vs. Paso por Valor</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="keywordtype">int</span> nivel;</div>
+<div class="line">    <span class="keywordtype">char</span> nombre[50];</div>
+<div class="line">    <span class="keywordtype">float</span> salud;</div>
+<div class="line">    <span class="keywordtype">int</span> experiencia;</div>
+<div class="line">} Jugador;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* PASO POR REFERENCIA (RECOMENDADO) */</span></div>
+<div class="line"><span class="keywordtype">void</span> subirNivel(Jugador *jugador) {</div>
+<div class="line">    <span class="keywordflow">if</span> (jugador == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line">    </div>
+<div class="line">    jugador-&gt;nivel++;</div>
+<div class="line">    jugador-&gt;salud += 10.0f;</div>
+<div class="line">    jugador-&gt;experiencia = 0;</div>
+<div class="line">    </div>
+<div class="line">    printf(<span class="stringliteral">&quot;%s subió al nivel %d!\n&quot;</span>, jugador-&gt;nombre, jugador-&gt;nivel);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* PASO POR VALOR (copia toda la estructura) */</span></div>
+<div class="line">Jugador crearCopia(Jugador original) {</div>
+<div class="line">    <span class="comment">/* Modificaciones afectan solo a la copia */</span></div>
+<div class="line">    original.nivel = 1; <span class="comment">// No afecta al original</span></div>
+<div class="line">    <span class="keywordflow">return</span> original;    <span class="comment">// Retorna nueva copia</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* PASO POR REFERENCIA CONSTANTE (solo lectura) */</span></div>
+<div class="line"><span class="keywordtype">void</span> mostrarJugador(<span class="keyword">const</span> Jugador *jugador) {</div>
+<div class="line">    <span class="keywordflow">if</span> (jugador == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line">    </div>
+<div class="line">    printf(<span class="stringliteral">&quot;=== ESTADÍSTICAS ===\n&quot;</span>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Nombre: %s\n&quot;</span>, jugador-&gt;nombre);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Nivel: %d\n&quot;</span>, jugador-&gt;nivel);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Salud: %.1f\n&quot;</span>, jugador-&gt;salud);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Experiencia: %d\n&quot;</span>, jugador-&gt;experiencia);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* FUNCIÓN QUE RETORNA ESTRUCTURA */</span></div>
+<div class="line">Jugador crearJugador(<span class="keyword">const</span> <span class="keywordtype">char</span> *nombre, <span class="keywordtype">int</span> nivel_inicial) {</div>
+<div class="line">    Jugador nuevo = {</div>
+<div class="line">        .nivel = nivel_inicial,</div>
+<div class="line">        .salud = nivel_inicial * 10.0f,</div>
+<div class="line">        .experiencia = 0</div>
+<div class="line">    };</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Copiar nombre de forma segura</span></div>
+<div class="line">    strncpy(nuevo.nombre, nombre, <span class="keyword">sizeof</span>(nuevo.nombre) - 1);</div>
+<div class="line">    nuevo.nombre[<span class="keyword">sizeof</span>(nuevo.nombre) - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> nuevo; <span class="comment">// Retorna por valor (copia)</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    Jugador heroe = crearJugador(<span class="stringliteral">&quot;Héroe&quot;</span>, 1);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Paso por referencia */</span></div>
+<div class="line">    subirNivel(&amp;heroe);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Paso por referencia constante (solo lectura) */</span></div>
+<div class="line">    mostrarJugador(&amp;heroe);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Paso por valor - crea copia */</span></div>
+<div class="line">    Jugador copia = crearCopia(heroe);</div>
+<div class="line">    mostrarJugador(&amp;copia);</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md269"></a>
+Asignación y Comparación de Estructuras</h2>
+<p ><b>concepto</b> </p><div class="fragment"><div class="line"><span class="comment">// Asignar copia toda la estructura; comparar requiere revisar cada miembro.</span></div>
+<div class="line">miEstructura1 = miEstructura2;</div>
+<div class="line"><span class="keywordtype">bool</span> iguales = (miEstructura1.miembro == miEstructura2.miembro);</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="keywordtype">int</span> x;</div>
+<div class="line">    <span class="keywordtype">int</span> y;</div>
+<div class="line">} Punto;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    Punto p1 = {10, 20};</div>
+<div class="line">    Punto p2, p3;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* ASIGNACIÓN DIRECTA (C99+) */</span></div>
+<div class="line">    p2 = p1; <span class="comment">// Copia todos los miembros</span></div>
+<div class="line">    </div>
+<div class="line">    printf(<span class="stringliteral">&quot;p1: (%d, %d)\n&quot;</span>, p1.x, p1.y);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;p2: (%d, %d)\n&quot;</span>, p2.x, p2.y);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* COMPARACIÓN - NO se puede usar == */</span></div>
+<div class="line">    <span class="comment">// ❌ INCORRECTO: if (p1 == p2) </span></div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* ✅ CORRECTO: comparar miembro por miembro */</span></div>
+<div class="line">    <span class="keywordtype">bool</span> son_iguales = (p1.x == p2.x &amp;&amp; p1.y == p2.y);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Los puntos %s iguales\n&quot;</span>, son_iguales ? <span class="stringliteral">&quot;son&quot;</span> : <span class="stringliteral">&quot;no son&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Usar memcpy para copias más controladas */</span></div>
+<div class="line">    memcpy(&amp;p3, &amp;p1, <span class="keyword">sizeof</span>(Punto));</div>
+<div class="line">    printf(<span class="stringliteral">&quot;p3: (%d, %d)\n&quot;</span>, p3.x, p3.y);</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md270"></a>
+Mejores Prácticas y Consideraciones de Rendimiento</h2>
+<p ><b>concepto</b> </p><div class="fragment"><div class="line"><span class="comment">// Ordenar los miembros por tamaño reduce padding y mejora el uso de memoria.</span></div>
+<div class="line"><span class="keyword">struct </span>Producto { <span class="keywordtype">int</span> id; <span class="keywordtype">float</span> precio; <span class="keywordtype">char</span> nombre[32]; };</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md271"></a>
+Diseño de Estructuras Eficientes</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stddef.h&gt;</span> <span class="comment">// para offsetof</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* BUEN DISEÑO: miembros alineados naturalmente */</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="keywordtype">int</span> id;           <span class="comment">// 4 bytes</span></div>
+<div class="line">    <span class="keywordtype">float</span> precio;     <span class="comment">// 4 bytes  </span></div>
+<div class="line">    <span class="keywordtype">char</span> nombre[32];  <span class="comment">// 32 bytes</span></div>
+<div class="line">} Producto;           <span class="comment">// Total: ~40 bytes, bien alineado</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* MAL DISEÑO: mezcla sin considerar alineación */</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="keywordtype">char</span> letra;       <span class="comment">// 1 byte (+3 padding)</span></div>
+<div class="line">    <span class="keywordtype">int</span> numero;       <span class="comment">// 4 bytes</span></div>
+<div class="line">    <span class="keywordtype">char</span> simbolo;     <span class="comment">// 1 byte (+3 padding)</span></div>
+<div class="line">} EstructuraIneficiente; <span class="comment">// Total: 12 bytes (¡solo 6 útiles!)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> mostrarTamaños() {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Tamaño de Producto: %zu bytes\n&quot;</span>, <span class="keyword">sizeof</span>(Producto));</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Tamaño de EstructuraIneficiente: %zu bytes\n&quot;</span>, </div>
+<div class="line">           <span class="keyword">sizeof</span>(EstructuraIneficiente));</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Mostrar offsets de miembros */</span></div>
+<div class="line">    printf(<span class="stringliteral">&quot;Offset de &#39;id&#39; en Producto: %zu\n&quot;</span>, offsetof(Producto, <span class="keywordtype">id</span>));</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Offset de &#39;precio&#39; en Producto: %zu\n&quot;</span>, offsetof(Producto, precio));</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md272"></a>
+Gestión de Memoria para Estructuras</h3>
+<p ><b>concepto</b> </p><div class="fragment"><div class="line"><span class="comment">// Si guardas punteros</span></div>
+<div class="line">perfil-&gt;nombre = malloc(...); <span class="comment">// reserva </span></div>
+<div class="line">free(perfil-&gt;nombre); <span class="comment">// libera memoria de manera explícita.</span></div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="keywordtype">char</span> *nombre;      <span class="comment">// Memoria dinámica</span></div>
+<div class="line">    <span class="keywordtype">int</span> *puntuaciones; <span class="comment">// Arreglo dinámico</span></div>
+<div class="line">    <span class="keywordtype">int</span> num_puntuaciones;</div>
+<div class="line">} PerfilJugador;</div>
+<div class="line"> </div>
+<div class="line">PerfilJugador* crearPerfil(<span class="keyword">const</span> <span class="keywordtype">char</span> *nombre, <span class="keywordtype">int</span> capacidad_puntuaciones) {</div>
+<div class="line">    PerfilJugador *nuevo = malloc(<span class="keyword">sizeof</span>(PerfilJugador));</div>
+<div class="line">    <span class="keywordflow">if</span> (nuevo == NULL) <span class="keywordflow">return</span> NULL;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Asignar memoria para el nombre */</span></div>
+<div class="line">    nuevo-&gt;nombre = malloc(strlen(nombre) + 1);</div>
+<div class="line">    <span class="keywordflow">if</span> (nuevo-&gt;nombre == NULL) {</div>
+<div class="line">        free(nuevo);</div>
+<div class="line">        <span class="keywordflow">return</span> NULL;</div>
+<div class="line">    }</div>
+<div class="line">    strcpy(nuevo-&gt;nombre, nombre);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* Asignar memoria para arreglo de puntuaciones */</span></div>
+<div class="line">    nuevo-&gt;puntuaciones = malloc(capacidad_puntuaciones * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line">    <span class="keywordflow">if</span> (nuevo-&gt;puntuaciones == NULL) {</div>
+<div class="line">        free(nuevo-&gt;nombre);</div>
+<div class="line">        free(nuevo);</div>
+<div class="line">        <span class="keywordflow">return</span> NULL;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    nuevo-&gt;num_puntuaciones = 0;</div>
+<div class="line">    <span class="keywordflow">return</span> nuevo;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> liberarPerfil(PerfilJugador *perfil) {</div>
+<div class="line">    <span class="keywordflow">if</span> (perfil != NULL) {</div>
+<div class="line">        free(perfil-&gt;nombre);       <span class="comment">// Liberar string</span></div>
+<div class="line">        free(perfil-&gt;puntuaciones); <span class="comment">// Liberar arreglo</span></div>
+<div class="line">        free(perfil);               <span class="comment">// Liberar estructura</span></div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md273"></a>
+Ejemplo Completo: Sistema de Gestión</h2>
+<p ><b>concepto</b> </p><div class="fragment"><div class="line"><span class="comment">// Aplica todas las ideas: estructuras, arreglos y funciones trabajando juntas.</span></div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define MAX_ESTUDIANTES 100</span></div>
+<div class="line"><span class="preprocessor">#define MAX_NOMBRE 50</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="keywordtype">int</span> id;</div>
+<div class="line">    <span class="keywordtype">char</span> nombre[MAX_NOMBRE];</div>
+<div class="line">    <span class="keywordtype">float</span> calificaciones[3];</div>
+<div class="line">    <span class="keywordtype">float</span> promedio;</div>
+<div class="line">} Estudiante;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    Estudiante estudiantes[MAX_ESTUDIANTES];</div>
+<div class="line">    <span class="keywordtype">int</span> cantidad;</div>
+<div class="line">    <span class="keywordtype">char</span> curso[50];</div>
+<div class="line">} Grupo;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> inicializarGrupo(Grupo *grupo, <span class="keyword">const</span> <span class="keywordtype">char</span> *nombre_curso) {</div>
+<div class="line">    grupo-&gt;cantidad = 0;</div>
+<div class="line">    strncpy(grupo-&gt;curso, nombre_curso, <span class="keyword">sizeof</span>(grupo-&gt;curso) - 1);</div>
+<div class="line">    grupo-&gt;curso[<span class="keyword">sizeof</span>(grupo-&gt;curso) - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> agregarEstudiante(Grupo *grupo, <span class="keyword">const</span> <span class="keywordtype">char</span> *nombre, </div>
+<div class="line">                      <span class="keywordtype">float</span> calif1, <span class="keywordtype">float</span> calif2, <span class="keywordtype">float</span> calif3) {</div>
+<div class="line">    <span class="keywordflow">if</span> (grupo-&gt;cantidad &gt;= MAX_ESTUDIANTES) {</div>
+<div class="line">        <span class="keywordflow">return</span> -1; <span class="comment">// Grupo lleno</span></div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    Estudiante *nuevo = &amp;grupo-&gt;estudiantes[grupo-&gt;cantidad];</div>
+<div class="line">    nuevo-&gt;id = grupo-&gt;cantidad + 1;</div>
+<div class="line">    </div>
+<div class="line">    strncpy(nuevo-&gt;nombre, nombre, MAX_NOMBRE - 1);</div>
+<div class="line">    nuevo-&gt;nombre[MAX_NOMBRE - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line">    </div>
+<div class="line">    nuevo-&gt;calificaciones[0] = calif1;</div>
+<div class="line">    nuevo-&gt;calificaciones[1] = calif2;</div>
+<div class="line">    nuevo-&gt;calificaciones[2] = calif3;</div>
+<div class="line">    </div>
+<div class="line">    nuevo-&gt;promedio = (calif1 + calif2 + calif3) / 3.0f;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> grupo-&gt;cantidad++; <span class="comment">// Retorna índice y luego incrementa</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> mostrarGrupo(<span class="keyword">const</span> Grupo *grupo) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;=== GRUPO: %s ===\n&quot;</span>, grupo-&gt;curso);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Total estudiantes: %d\n\n&quot;</span>, grupo-&gt;cantidad);</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; grupo-&gt;cantidad; i++) {</div>
+<div class="line">        <span class="keyword">const</span> Estudiante *est = &amp;grupo-&gt;estudiantes[i];</div>
+<div class="line">        printf(<span class="stringliteral">&quot;ID: %d, Nombre: %s\n&quot;</span>, est-&gt;id, est-&gt;nombre);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Calificaciones: %.1f, %.1f, %.1f\n&quot;</span>, </div>
+<div class="line">               est-&gt;calificaciones[0], </div>
+<div class="line">               est-&gt;calificaciones[1], </div>
+<div class="line">               est-&gt;calificaciones[2]);</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Promedio: %.2f\n\n&quot;</span>, est-&gt;promedio);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="WhileVarCentinela__PromediarCalificaciones_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    Grupo matematicas;</div>
+<div class="line">    </div>
+<div class="line">    inicializarGrupo(&amp;matematicas, <span class="stringliteral">&quot;Matemáticas Avanzadas&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    agregarEstudiante(&amp;matematicas, <span class="stringliteral">&quot;Ana García&quot;</span>, 85.5f, 90.0f, 88.5f);</div>
+<div class="line">    agregarEstudiante(&amp;matematicas, <span class="stringliteral">&quot;Luis Martínez&quot;</span>, 78.0f, 82.5f, 79.0f);</div>
+<div class="line">    agregarEstudiante(&amp;matematicas, <span class="stringliteral">&quot;María López&quot;</span>, 92.0f, 95.5f, 91.0f);</div>
+<div class="line">    </div>
+<div class="line">    mostrarGrupo(&amp;matematicas);</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md274"></a>
+Errores Comunes y Cómo Evitarlos</h2>
+<h3><a class="anchor" id="autotoc_md275"></a>
+1. Olvidar el punto y coma</h3>
+<div class="fragment"><div class="line"><span class="comment">// ❌ INCORRECTO</span></div>
+<div class="line"><span class="keyword">struct </span>ejemplo {</div>
+<div class="line">    <span class="keywordtype">int</span> a;</div>
+<div class="line">    <span class="keywordtype">char</span> b;</div>
+<div class="line">} <span class="comment">// Falta ;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ✅ CORRECTO  </span></div>
+<div class="line"><span class="keyword">struct </span>ejemplo {</div>
+<div class="line">    <span class="keywordtype">int</span> a;</div>
+<div class="line">    <span class="keywordtype">char</span> b;</div>
+<div class="line">};</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md276"></a>
+2. Confundir operadores . y -&gt;</h3>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>punto { <span class="keywordtype">int</span> x, y; } p;</div>
+<div class="line"><span class="keyword">struct </span>punto *ptr = &amp;p;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ❌ INCORRECTO</span></div>
+<div class="line">ptr.x = 10;   <span class="comment">// ptr es puntero, usa -&gt;</span></div>
+<div class="line">(*ptr).x = 10; <span class="comment">// Funciona pero verboso</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ✅ CORRECTO</span></div>
+<div class="line">ptr-&gt;x = 10;  <span class="comment">// Sintaxis clara y concisa</span></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md277"></a>
+3. Asignación incorrecta de strings</h3>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>persona {</div>
+<div class="line">    <span class="keywordtype">char</span> nombre[50];</div>
+<div class="line">    <span class="keywordtype">char</span> *apellido;</div>
+<div class="line">} p;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ❌ INCORRECTO</span></div>
+<div class="line">p.nombre = <span class="stringliteral">&quot;Juan&quot;</span>;   <span class="comment">// No se puede asignar a arreglos</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ✅ CORRECTO  </span></div>
+<div class="line">strcpy(p.nombre, <span class="stringliteral">&quot;Juan&quot;</span>);     <span class="comment">// Para arreglos</span></div>
+<div class="line">p.apellido = <span class="stringliteral">&quot;Pérez&quot;</span>;         <span class="comment">// Para punteros (solo literales)</span></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md278"></a>
+4. No verificar punteros nulos</h3>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> procesarJugador(<span class="keyword">struct</span> jugador *j) {</div>
+<div class="line">    <span class="comment">// ❌ PELIGROSO</span></div>
+<div class="line">    j-&gt;nivel = 10; <span class="comment">// Crash si j es NULL</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// ✅ SEGURO</span></div>
+<div class="line">    <span class="keywordflow">if</span> (j != NULL) {</div>
+<div class="line">        j-&gt;nivel = 10;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><p ><b>Recomendaciones finales:</b></p><ol type="1">
+<li>Usa <code>typedef</code> para código más limpio</li>
+<li>Prefiere inicialización designada (C99+)</li>
+<li>Usa paso por referencia para estructuras grandes</li>
+<li>Siempre verifica punteros antes de acceder a miembros</li>
+<li>Considera el padding y alineación para estructuras críticas en rendimiento </li>
+</ol>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

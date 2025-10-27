@@ -1,0 +1,233 @@
+{\bfseries{Apunte Mejorado\+: Sentencia switch en C}}
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Introducción}} ~\newline
+ La sentencia {\ttfamily switch} es una estructura de control que permite seleccionar una entre múltiples alternativas, basándose en el valor de una {\bfseries{expresión de control (selector)}}. Es ideal cuando las decisiones dependen de valores discretos (ej\+: menús, categorías, opciones).
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Sintaxis Básica}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{switch} (selector) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} etiqueta1: }
+\DoxyCodeLine{        sentencias1;}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} etiqueta2: }
+\DoxyCodeLine{        sentencias2;}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{default}: }
+\DoxyCodeLine{        sentencias\_default; \textcolor{comment}{// Opcional}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Reglas Importantes}} ~\newline
+
+\begin{DoxyEnumerate}
+\item El {\bfseries{selector}} debe ser de tipo {\ttfamily int} o {\ttfamily char} (no {\ttfamily float}, {\ttfamily double} o strings). ~\newline
+
+\item Las {\bfseries{etiquetas}} deben ser constantes únicas (ej\+: {\ttfamily case 5\+:}, `case \textquotesingle{}A'\+:{\ttfamily ). \texorpdfstring{$<$}{<}br\texorpdfstring{$>$}{>}}
+\item {\ttfamily El}default{\ttfamily es opcional, pero recomendado para manejar valores inesperados. \texorpdfstring{$<$}{<}br\texorpdfstring{$>$}{>}}
+\item {\ttfamily La sentencia}break{\ttfamily termina la ejecución del}switch\`{}. Sin ella, se ejecutarán todos los casos siguientes ({\bfseries{fall-\/through}}). ~\newline
+
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{IA\+: Tabla de Operadores Comunes}} ~\newline
+ \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Operador   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Uso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Ejemplo    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Operador   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Uso   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Ejemplo    }\\\cline{1-3}
+\endhead
+Incremento   &{\ttfamily variable++}   &{\ttfamily i++;}    \\\cline{1-3}
+Decremento   &{\ttfamily variable-\/-\/}   &{\ttfamily j-\/-\/;}    \\\cline{1-3}
+Suma y asignación   &{\ttfamily variable +=}   &{\ttfamily k += 2;}    \\\cline{1-3}
+Lógico AND   &{\ttfamily \&\&}   &{\ttfamily if (a \&\& b)}    \\\cline{1-3}
+Lógico OR   &{\ttfamily \textbackslash{}$\vert$\textbackslash{}$\vert$}   &{\ttfamily if (a \textbackslash{}$\vert$\textbackslash{}$\vert$ b)}   \\\cline{1-3}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Ejemplo 1\+: Selección Simple}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{switch} (opcion) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} 0: }
+\DoxyCodeLine{        puts(\textcolor{stringliteral}{"{}Cero!"{}});}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} 1: }
+\DoxyCodeLine{        puts(\textcolor{stringliteral}{"{}Uno!"{}});}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{default}: }
+\DoxyCodeLine{        puts(\textcolor{stringliteral}{"{}Fuera de rango"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Ejemplo 2\+: Múltiples Etiquetas (Fall-\/\+Through Controlado)}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{switch} (nota) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \textcolor{charliteral}{'A'}: }
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \textcolor{charliteral}{'B'}: }
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \textcolor{charliteral}{'C'}: }
+\DoxyCodeLine{        puts(\textcolor{stringliteral}{"{}Aprobado"{}});}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \textcolor{charliteral}{'D'}: }
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \textcolor{charliteral}{'F'}: }
+\DoxyCodeLine{        puts(\textcolor{stringliteral}{"{}Reprobado"{}});}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{default}: }
+\DoxyCodeLine{        puts(\textcolor{stringliteral}{"{}Nota inválida"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Comparación if-\/else vs. switch}} ~\newline
+ \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Característica   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily if-\/else}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily switch}    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Característica   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily if-\/else}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily switch}    }\\\cline{1-3}
+\endhead
+Tipo de condiciones   &Expresiones booleanas (ej\+: {\ttfamily \texorpdfstring{$>$}{>}=5})   &Valores discretos (ej\+: {\ttfamily 5})    \\\cline{1-3}
+Legibilidad   &Mejor para rangos   &Ideal para opciones fijas    \\\cline{1-3}
+Eficiencia   &Puede ser menos eficiente   &Optimizado para múltiples casos    \\\cline{1-3}
+Uso de {\ttfamily break}   &No aplica   &Crítico para evitar fall-\/through   \\\cline{1-3}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Precaución\+: Omisión de {\ttfamily break}}} ~\newline
+ Si se omite {\ttfamily break}, el programa ejecutará {\bfseries{todos los casos siguientes}} hasta encontrar un {\ttfamily break} o el final del {\ttfamily switch}. Esto puede causar comportamientos inesperados. Ejemplo\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{switch} (tipo\_vehiculo) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} 1: }
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}Turismo\(\backslash\)n"{}});}
+\DoxyCodeLine{        \textcolor{comment}{// Sin break: ¡Ejecutará el siguiente caso!}}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} 2: }
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}Autobús\(\backslash\)n"{}});}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{comment}{// Si tipo\_vehiculo es 1, imprimirá "{}Turismo"{} y "{}Autobús"{}.}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Evaluación en Cortocircuito}} ~\newline
+ En expresiones lógicas con {\ttfamily \&\&} y {\ttfamily $\vert$$\vert$}, C evalúa solo hasta donde sea necesario. Ejemplo\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (a != 0 \&\& b / a > 2) \{ }
+\DoxyCodeLine{    \textcolor{comment}{// Si a es 0, evita la división (evita error)}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ {\bfseries{Explicación}}\+: ~\newline
+
+\begin{DoxyItemize}
+\item En {\ttfamily \&\&}\+: Si el primer operando es falso, el segundo no se evalúa. ~\newline
+
+\item En {\ttfamily $\vert$$\vert$}\+: Si el primer operando es verdadero, el segundo no se evalúa. ~\newline
+
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Usos Prácticos}} ~\newline
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Menús Interactivos}}\+: ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{switch} (opcion\_menu) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} 1: abrir\_archivo(); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} 2: guardar\_archivo(); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{default}: printf(\textcolor{stringliteral}{"{}Opción no válida\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\item {\bfseries{Autenticación de Usuarios}}\+: ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{switch} (nivel\_acceso) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} 1: printf(\textcolor{stringliteral}{"{}Administrador\(\backslash\)n"{}}); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} 2: printf(\textcolor{stringliteral}{"{}Usuario\(\backslash\)n"{}}); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{default}: printf(\textcolor{stringliteral}{"{}Invitado\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Conclusión}} ~\newline
+ El {\ttfamily switch} es una herramienta poderosa para decisiones basadas en valores discretos. Su correcto uso depende de\+: ~\newline
+
+\begin{DoxyItemize}
+\item Elegir el tipo correcto para el selector. ~\newline
+
+\item Incluir {\ttfamily break} donde sea necesario. ~\newline
+
+\item Manejar casos inesperados con {\ttfamily default}. ~\newline
+
+\end{DoxyItemize}
+
+{\bfseries{Ejemplo Adicional -\/ Conversión de Grados}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{switch} (escala) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \textcolor{charliteral}{'C'}: }
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}Convertir a Fahrenheit\(\backslash\)n"{}});}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \textcolor{charliteral}{'F'}: }
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}Convertir a Celsius\(\backslash\)n"{}});}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{default}: }
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}Escala no soportada\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Referencia}}\+: Apuntes de páginas 132-\/137 -\/ Libro \char`\"{}\+C, C++, Java y UML\char`\"{} (Luis Joyanes). 
