@@ -3,6 +3,8 @@
 **/obj/
 *.o
 
+# Ignorar Codigo Fuente de Trabajos
+ src/
 # Archivos de proyecto y dependencias de Code::Blocks
 *.cbp
 *.depend
