@@ -4,11 +4,11 @@ _**Versión:** 1.0.0-alpha_
 
 **Colección organizada de apuntes y prácticas** desarrollados durante mi formación en la **Universidad de Guadalajara**. Este repositorio funciona como archivo digital y recopila conocimientos aplicados en distintas asignaturas de la carrera de **Informática**.
 
-## 📖 Materias
+## 📖 Ver Material Online
 
 ### 💻 Desarrollo
 - [x] Fundamentos de la Programación
-- [x] Programación Estructurada
+- [x] [Programación Estructurada](https://github.com/AntonioRo6253/Apuntes-Universidad--Informatica/tree/main/2semPE)
 - [ ] Programación Orientada a Objetos
 - [ ] Estructura de Datos
 - [ ] Ingeniería de Software
@@ -22,7 +22,7 @@ _**Versión:** 1.0.0-alpha_
 - [ ] Control de Proyectos
 - [ ] Calidad del Software
 
-## ⭳ Instalación
+## ⭳ Instalación Local
 
 Estos apuntes están escritos en Markdown. Para visualizarlos cómodamente te recomiendo usar **Obsidian, VSCode o Notion**. Si prefieres una vista rápida, abre `docs/index.html` en tu navegador.
 
