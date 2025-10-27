@@ -28,7 +28,7 @@ Estos apuntes están escritos en Markdown. Para visualizarlos cómodamente te re
 
 ### 📱 Obsidian
 1. [Instalar Obsidian](https://obsidian.md/download)
-2. Descargar este repositorio
+2. [Descargar este repositorio](https://github.com/AntonioRo6253/Apuntes-Universidad--Informatica/archive/refs/tags/1.0.0-alpha.zip)
 3. Descomprimir `Apuntes-Universidad--Informatica.zip`
 4. En Obsidian: **Administrar Bóvedas > Abrir carpeta como bóveda** y selecciona la carpeta descargada
 
@@ -37,7 +37,7 @@ Estos apuntes están escritos en Markdown. Para visualizarlos cómodamente te re
 - [Excalidraw](obsidian://show-plugin?id=obsidian-excalidraw-plugin)
 
 ### 💻 VSCode
-1. Descargar este repositorio
+1. [Descargar este repositorio](https://github.com/AntonioRo6253/Apuntes-Universidad--Informatica/archive/refs/tags/1.0.0-alpha.zip)
 2. Descomprimir la carpeta
 3. Arrastrar la carpeta a VSCode
 4. Abrir cualquier archivo en `apuntes/teoria`
