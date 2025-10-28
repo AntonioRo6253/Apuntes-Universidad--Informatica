@@ -8,7 +8,7 @@ _**Versión:** 1.0.0-alpha_
 
 ### 💻 Desarrollo
 - [x] Fundamentos de la Programación
-- [x] [Programación Estructurada](https://github.com/AntonioRo6253/Apuntes-Universidad--Informatica/tree/main/2semPE)
+- [x] [Programación Estructurada](https://github.com/AntonioRo6253/Apuntes-Universidad--Informatica/blob/main/2semPE/README.md#-conocimientos-clave-abordados)
 - [ ] Programación Orientada a Objetos
 - [ ] Estructura de Datos
 - [ ] Ingeniería de Software
